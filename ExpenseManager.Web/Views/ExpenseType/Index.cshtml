@@ -1,0 +1,232 @@
+﻿
+@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<ExpenseManager.Helper.ViewModels.ExpenceTypeViewModel>
+
+@{
+    ViewBag.Title = "Expense Types";
+    List<LookupModel> ct = ViewBag.ExpenseCategoriesLookup;
+    int expenseCategoryId = ViewBag.expenseCategoryId;
+   
+}
+<div>
+    <h4 class="page-title">Expense Type</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card-header">
+            <div class="row">
+               
+                <div class=" col-md-6 ">
+                    Expense Category
+                    <select class="form-control search-slt" style="width: 50%;" value="expenseCategoryId" name="ExpenseCategoryId" id="ddexpenseCategoryId">
+
+                        <option value="0">--Select Expense Category--</option>
+
+
+                        @foreach (var item in ct)
+                        {
+                            if (item.Id != expenseCategoryId)
+                            {
+
+                                <option value="@item.Id">@item.Name</option>
+                            }
+
+                        }
+
+                    </select>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="button" class=" btn btn-success btn-md " data-toggle="modal" data-target="#exampleModal" style="float: right; margin-top: 20px;" id="btn_AddCompany"><i class="fa fa-plus"></i> Add Type </button>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <form class="modal-content" id="frmForm" method="post" data_parsley_validate="">
+                            <input type="hidden" id="expenseCategoryId" name="ExpenseCategoryId" />
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">New Expense Type</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-row" style="margin: 2px">
+
+                                    <div class="form-group col-md-12">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control " placeholder="Expense Type Name" id="ddexpenseType" name="name" required>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="checkbox" name="IsActive" id="IsActive">
+                                        <label class="control-label" for="IsActive"> IsActive</label>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Submit </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="partialList"></div>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('.dataTable').DataTable({ "ordering": false });
+            loadExpenseTypeLists();
+          
+
+        });
+        $('#ddexpenseCategoryId').change(function () {
+                
+            $('#partialList').html("");
+            loadExpenseTypeLists();
+
+        });
+
+        function loadExpenseTypeLists() {
+
+
+
+            var categoryId = $("#ddexpenseCategoryId").val();
+            if (categoryId == null || categoryId === "") {
+
+                return;
+            }
+
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("ExpenseTypeByCategoryList", "ExpenseType")?expenseCategoryId=' + categoryId,
+                data: params,
+                success: function (data) {
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+
+        $(document).ready(function() {
+            $('#ddexpenseCategoryId').change(function() {
+                var categoryId = $('#ddexpenseCategoryId option:selected').val();
+                $('#expenseCategoryId').val(categoryId);
+
+                //$('#partialList').html("");
+                //loadStaffLists();
+            });
+
+
+
+        });
+
+        $(document).ready(function () {
+
+       
+
+            $('#frmForm').parsley().on('field:validated', function() {
+                var ok = $('.parsley-error').length === 0;
+                $('.bs-callout-info').toggleClass('hidden', !ok);
+                $('.bs-callout-danger').toggleClass('hidden', ok);
+            }).on('form:submit', function () {
+                ClearInlineError("dvError");
+
+                var expenseTypeName = $("#ddexpenseType").val();
+                var expeCategoryId = $("#ddexpenseCategoryId").val();
+
+                if (expenseTypeName == null || expenseTypeName === "" || expenseTypeName.length < 2) {
+                    alert("Expense Type Name must be at least 2 characters");
+                    return false;
+                }
+
+                if (expeCategoryId == null || expeCategoryId === "" || parseInt(expeCategoryId) === 0) {
+                    alert("Please select Expense Category");
+              
+                    return false;
+                }
+
+                var frm = $("#frmForm");
+                var params = frm.serializeArray();
+
+
+                Swal.fire({
+                    title: 'Confirm',
+                    text: "Are you sure you want to submit now!",
+                    type: 'info',
+                    showCancelButton: true,
+                    confirmButtonText: 'Yes',
+                    showLoaderOnConfirm: true,
+                    allowOutsideClick: false,
+                    preConfirm: () => {
+                        return $.ajax({
+                            type: "POST",
+                            url: '@Url.Action("CreateExpenseType", "ExpenseType")',
+                            data: params,
+                            success: function (data) {
+                                return data;
+                            }
+                        });
+                    },
+
+                }).then((result) => {
+                   
+                    if (result.value.IsSuccessful) {
+                       
+                        Swal.fire({
+                            type: 'success',
+                            title: 'Success',
+                            text: 'Item created successfully'
+
+                        }).then((result) => {
+                            window.location.reload();
+                            //loadExpenseTypeLists();
+                           
+                        });
+
+
+                    } else {
+                        Swal.fire('Error!', result.value.Error,'error');
+                    }
+                });
+
+
+                return false;
+            });
+
+
+        });
+
+
+    </script>
+}

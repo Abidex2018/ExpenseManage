@@ -1,0 +1,271 @@
+﻿
+@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<ExpenseManager.Helper.ViewModels.ExpenceItemViewModel>
+
+@{
+    ViewBag.Title = "Expense Items";
+    List<LookupModel> ct = ViewBag.ExpenseCategoriesLookup;
+    int expenseCategoryId = ViewBag.expenseCategoryId;
+
+}
+<div>
+    <h4 class="page-title">Expense Item</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                  
+                    <div class=" col-md-4 ">
+                        Expense Category
+                        <select class="form-control search-slt" name="ExpenseCategoryId" id="ddlExpenseCategoryId" required>
+
+                            <option value="0">--Select Expense Category--</option>
+
+
+                            @foreach (var item in ct)
+                            {
+                                if (item.Id != expenseCategoryId)
+                                {
+
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+
+                            }
+
+                        </select>
+
+                    </div>
+                    <div class=" col-md-4 ">
+                        Expense Type
+                        <select class="form-control search-slt"  name="ExpenseTypeId" id="ddexpenseTypeId">
+
+                            <option value="0">--Select Expense Type--</option>
+
+                        </select>
+                    </div>
+                    <div class="col-md-4 text-right">
+                        <button type="button" class="btn btn-success btn-md " data-toggle="modal" data-target="#exampleModal" style="float: right; margin-top: 20px;" id="btn_AddCompany"><i class="fa fa-plus"></i> Add Item </button>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+
+                        <form class="modal-content" id="frmForm" method="post" data_parsley_validate="">
+                            <input type="hidden" id="dexpenseCategoryId" name="ExpenseCategoryId" />
+                            <input type="hidden" id="dexpenseTypeId" name="ExpenseTypeId" />
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">New Expense Item</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-row" style="margin: 2px">
+
+                                    <div class="form-group col-md-12">
+                                        <label>Name</label>
+                                        <input type="text" class="form-control " placeholder=" Expense Item Name" id="ddexpenseItem" name="name" required>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="checkbox" name="IsActive" id="IsActive">
+                                        <label class="control-label" for="IsActive"> IsActive</label>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Submit </button>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="partialList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts
+{
+
+    <script>
+    $(document).ready(function () {
+        $('.dataTable').DataTable({ "ordering": false});
+      
+    });
+    function loadExpenseItemLists() {
+
+
+
+        var categoryId = $("#ddlExpenseCategoryId").val();
+        if (categoryId == null || categoryId === "") {
+
+            return;
+        }
+
+
+        var typeId = $("#ddexpenseTypeId").val();
+        if (typeId == null || typeId === "") {
+
+            return;
+        }
+        $('#blockDiv').block({
+            css: { border: 'none', padding: '10px',
+                backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+            }
+        });
+
+        var frm = $("#fetchTxnFrom");
+        var params = frm.serializeArray();
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("ExpenseItemByCategory_Or_Type_List", "ExpenseItem")?expenseCategoryId=' + categoryId + '&expenseTypeId=' + typeId,
+            data: params,
+            success: function (data) {
+                $('#partialList').html(data);
+            },
+            complete: function () {
+                $('#blockDiv').unblock();
+            }
+        });
+
+    }
+
+   
+    $(document).ready(function () {
+        $('#ddlExpenseCategoryId').change(function () {
+                
+            $('#partialList').html("");
+            loadExpenseItemLists();
+
+        });
+
+        $('#ddexpenseTypeId').change(function () {
+                
+            $('#partialList').html("");
+            loadExpenseItemLists();
+
+        });
+       
+
+        $('#ddlExpenseCategoryId').change(function () {
+            var categoryId = $('#ddlExpenseCategoryId option:selected').val();
+            $('#dexpenseCategoryId').val(categoryId);
+            $('#ddexpenseTypeId').empty();
+
+            $.ajax({
+                type: "POST",
+                url: "/ExpenseType/GetLookup",
+                data: JSON.stringify({ expenseCategoryId: $('#ddlExpenseCategoryId').val()}),
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $('#ddexpenseTypeId').append('<option value="">--Select Expense Type--</option>');
+                    $.each(data.Items, function (index, value) {
+                        $('#ddexpenseTypeId').append('<option value="'+ value.Id+'">'+ value.Name+'</option>');
+                    });
+                }
+            });
+
+        });
+        $('#ddexpenseTypeId').change(function () {
+            var typeId = $('#ddexpenseTypeId option:selected').val();
+            $('#dexpenseTypeId').val(typeId);
+
+        });
+
+        $('#frmForm').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+        }).on('form:submit', function () {
+
+            var expenseTypeId = $("#ddexpenseType").val();
+            var expeCategoryId = $("#ddexpenseCategoryId").val();
+            var expenseItem = $("#ddexpenseItem").val();
+
+            if (expenseItem == null || expenseItem === "" || expenseItem.length < 2) {
+                alert("Expense Name must be at least 2 characters");
+                return false;
+            }
+            //if (expenseTypeId == null || expenseTypeId === "" || parseInt(expenseTypeId) === 0) {
+            //    alert("Please select Expense Type");
+            //    return false;
+            //}
+
+            //if (expeCategoryId == null || expeCategoryId === "" || parseInt(expeCategoryId) === 0) {
+            //    alert("Please select Expense Category");
+
+            //    return false;
+            //}
+
+
+            var frm = $("#frmForm");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("CreateExpenseItem", "ExpenseItem")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+               
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Item created successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                       // loadExpenseItemLists();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+    </script>
+}

@@ -1,0 +1,334 @@
+﻿@model ExpenseManager.Helper.ViewModels.RequisitionViewModel
+
+
+@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.ViewModels
+@using Microsoft.AspNet.Identity
+@{
+    /**/
+
+    /**/
+  
+    UserRepository userRepo = new UserRepository();
+    var currentUser = userRepo.GetById(User.Identity.GetUserId());
+
+}
+@if (currentUser.IsAdmin)
+{
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content" id="frmAddRequisition" method="post" data_parsley_validate="">
+
+            <div class="modal-header">
+                <h4 class="modal-title">Add Requisition</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row" style="margin: 1px">
+
+                    <div class="form-group col-md-4">
+                        <label>Company</label>
+                        @Html.DropDownListFor(c => c.CompanyId, new SelectList(ViewBag.CompaniesLookup, "Id", "Name", @Model.CompanyId), "-- Please select --", new { @id = "lCompanyId", @class = "form-control", required = "required" })
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>Department</label>
+                        @Html.DropDownListFor(c => c.CompanyDepartmentId, new SelectList(ViewBag.CompDepartmentsLookup, "Id", "Name", @Model.CompanyDepartmentId), "-- Please select --", new { @id = "dlDepartmentId", @class = "form-control", required = "required" })
+                    </div>
+                   
+                    <div class="form-group col-md-4">
+                        <label>Beneficiary</label>
+                        @Html.DropDownListFor(c => c.BeneficiaryId, new SelectList(ViewBag.BeneficiariesLookup, "Value", "Name", @Model.BeneficiaryId), "-- Please select --", new { @id = "BeneficiariyId", @class = "form-control", required = "required" })
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Request Title</label>
+                        <input type="text" class="form-control " value="" id="requestTitle" name="requestTitle" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Description</label>
+                        <input type="text" class="form-control " value="" id="expenseDescription" name="expenseDescription" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Category</label>
+                        @Html.DropDownListFor(c => c.ExpenseCategoryId, new SelectList(ViewBag.ExpenseCategoriesLookup, "Id", "Name", @Model.ExpenseCategoryId), "-- Please select --", new { @id = "ddlExpenseCategoryId", @class = "form-control", required = "required" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Type</label>
+                        @Html.DropDownListFor(c => c.ExpenseTypeId, new SelectList(ViewBag.ExpenseTypesLookup, "Id", "Name", @Model.ExpenseTypeId), "-- Please select --", new { @id = "ddlExpenseTypeId", @class = "form-control", required = "required" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Item</label>
+                        @Html.DropDownListFor(c => c.ExpenseItemId, new SelectList(ViewBag.ExpenseItemsLookup, "Id", "Name", @Model.ExpenseItemId), "-- Please select --", new { @id = "ddlExpenseItemId", @class = "form-control", required = "required" })
+                    </div>
+
+
+                    <div class="form-group col-md-4">
+                        <label>Quantity</label>
+                        <input type="number" min="1" class="form-control " value="" id="quantity" name="quantity" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Unit Price</label>
+                        <input type="number" step="0.01" min="1" class="form-control " value="" id="unitPrice" name="unitPrice" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Total Amount</label>
+                        <input type="text" class="form-control " value="" id="totalAmount" name="totalAmount" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Submit</button>
+            </div>
+        </form>
+    </div>
+}
+else
+{
+    <div class="modal-dialog modal-lg" role="document">
+        <form class="modal-content" id="frmAddRequisition" method="post" data_parsley_validate="">
+            @Html.Hidden("CompanyDepartmentId", currentUser.CompanyDepartmentId)
+            @Html.Hidden("BeneficiaryId", currentUser.Id)
+            <div class="modal-header">
+                <h4 class="modal-title">Add Requisition</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="form-row" style="margin: 1px">
+
+                    <div class="form-group col-md-4">
+                        <label>Company</label>
+                        <input type="text" class="form-control " value="@currentUser.CompanyName" id="dlCompanyId" name="Company" readonly="" required>
+                    </div>
+
+                    <div class="form-group col-md-4">
+                        <label>Department</label>
+                        <input type="text" class="form-control " value="@currentUser.DepartmentName" id="dlCompanyId" name="DepartmentId" readonly="" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Beneficiary</label>
+                        <input type="text" class="form-control " value="@currentUser.LastName  @currentUser.FirstName" id="Id" name="DepartmentId" readonly="" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Request Title</label>
+                        <input type="text" class="form-control " value="" id="requestTitle" name="requestTitle" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Description</label>
+                        <input type="text" class="form-control " value="" id="expenseDescription" name="expenseDescription" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Category</label>
+                        @Html.DropDownListFor(c => c.ExpenseCategoryId, new SelectList(ViewBag.ExpenseCategoriesLookup, "Id", "Name", @Model.ExpenseCategoryId), "-- Please select --", new { @id = "ddlExpenseCategoryId", @class = "form-control", required = "required" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Type</label>
+                        @Html.DropDownListFor(c => c.ExpenseTypeId, new SelectList(ViewBag.ExpenseTypesLookup, "Id", "Name", @Model.ExpenseTypeId), "-- Please select --", new { @id = "ddlExpenseTypeId", @class = "form-control", required = "required" })
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Expense Item</label>
+                        @Html.DropDownListFor(c => c.ExpenseItemId, new SelectList(ViewBag.ExpenseItemsLookup, "Id", "Name", @Model.ExpenseItemId), "-- Please select --", new { @id = "ddlExpenseItemId", @class = "form-control", required = "required" })
+                    </div>
+
+
+                    <div class="form-group col-md-4">
+                        <label>Quantity</label>
+                        <input type="number" min="1" class="form-control " value="" id="quantity" name="quantity" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Unit Price</label>
+                        <input type="number" step="0.01" min="1" class="form-control " value="" id="unitPrice" name="unitPrice" required>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Total Amount</label>
+                        <input type="text" class="form-control " value="" id="totalAmount" name="totalAmount" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Submit</button>
+            </div>
+        </form>
+    </div>
+}
+
+    <script>
+
+    $(document).ready(function () {
+
+        $('#unitPrice').change(function () {
+
+            $('#totalAmount').html('');
+            if ($('#unitPrice').val() != null && $('#quantity').val() != null) {
+
+                var quantity = parseInt($('#quantity').val());
+                var unitprice = parseFloat($('#unitPrice').val());
+                var totalamount = quantity * unitprice;
+                $('#totalAmount').val(CurrencyFormatted(totalamount));
+            }
+        });
+
+        $('#quantity').change(function () {
+
+            $('#totalAmount').html('');
+            if ($('#unitPrice').val() != null && $('#quantity').val() != null) {
+
+                var quantity = parseInt($('#quantity').val());
+                var unitprice = parseFloat($('#unitPrice').val());
+                var totalamount = quantity * unitprice;
+                $('#totalAmount').val(CurrencyFormatted(totalamount));
+            }
+        });
+
+
+
+        $('#lCompanyId').change(function () {
+          
+
+            $('#dlDepartmentId').html('');
+
+            if ($('#lCompanyId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/CompanyDepartment/GetLookup",
+                    data: JSON.stringify({ companyId: $('#lCompanyId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        
+                        $('#dlDepartmentId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#dlDepartmentId').append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                        });
+                    }
+                });
+
+            }
+        });
+
+
+        $('#ddlDepartmentId').change(function () {
+
+            $('#ddlBeneficiaryId').html('');
+
+            if ($('#ddlDepartmentId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/Staff/GetLookup",
+                    data: JSON.stringify({ departmentId: $('#ddlDepartmentId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#ddlBeneficiaryId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#ddlBeneficiaryId').append('<option value="' + value.Value + '">' + value.Name + '</option>');
+                        });
+                    }
+                });
+            }
+        });
+
+
+        $('#ddlExpenseCategoryId').change(function () {
+
+
+            $('#ddlExpenseTypeId').html('');
+            if ($('#ddlExpenseCategoryId').val() != null ) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/ExpenseType/GetLookup",
+                    data: JSON.stringify({ expenseCategoryId: $('#ddlExpenseCategoryId').val()}),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#ddlExpenseTypeId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#ddlExpenseTypeId').append('<option value="'+ value.Id+'">'+ value.Name+'</option>');
+                        });
+                    }
+                });
+            }
+        });
+
+        $('#ddlExpenseTypeId').change(function () {
+
+
+            $('#ddlExpenseItemId').html('');
+            if ($('#ddlExpenseTypeId').val() != null ) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/ExpenseItem/GetLookup",
+                    data: JSON.stringify({ expenseTypeId: $('#ddlExpenseTypeId').val()}),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#ddlExpenseItemId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#ddlExpenseItemId').append('<option value="'+ value.Id+'">'+ value.Name+'</option>');
+                        });
+                    }
+                });
+            }
+        });
+
+
+
+        $('#frmAddRequisition').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+             }).on('form:submit', function () {
+
+
+            var frm = $("#frmAddRequisition");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("CreateRequisition", "Requisition")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Requisition submitted successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+    </script>
+
+

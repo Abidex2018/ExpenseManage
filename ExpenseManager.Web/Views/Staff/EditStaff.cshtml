@@ -1,0 +1,150 @@
+﻿
+
+
+@model ExpenseManager.Helper.ViewModels.StaffViewModel
+
+
+
+<div class="modal-dialog" role="document">
+    <form class="modal-content" id="frmForm" method="post" data_parsley_validate="">
+        @Html.Hidden("AspNetUserId", Model.AspNetUserId)
+        <div class="modal-header">
+            <h4 class="modal-title">Edit Staff</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row" style="margin: 2px">
+
+                <div class="form-group col-md-6">
+                    <label>Company</label>
+                    <input type="text" class="form-control " value="@Model.CompanyName" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Department</label>
+                    <input type="text" class="form-control " value="@Model.DepartmentName" readonly>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Name</label>
+                    <input type="text" class="form-control " value="@Model.FullName" readonly>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Designation</label>
+                    <input type="text" class="form-control " value="@Model.Designation" id="designation" name="designation" required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+            <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Update</button>
+        </div>
+    </form>
+</div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+        $('#ddlCompanyId').change(function () {
+
+            $('#ddlAspNetUserId').html('');
+            $('#ddlCompanyDepartmentId').html('');
+            if ($('#ddlCompanyId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/CompanyDepartment/GetLookup",
+                    data: JSON.stringify({ companyId: $('#ddlCompanyId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#ddlCompanyDepartmentId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#ddlCompanyDepartmentId').append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                        });
+                    }
+                });
+
+            }
+        });
+
+        $('#ddlCompanyDepartmentId').change(function () {
+
+            $('#ddlAspNetUserId').html('');
+
+            if ($('#ddlCompanyDepartmentId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/User/GetLookupForStaffCreation",
+                    data: JSON.stringify({ compDepartmentId: $('#ddlCompanyDepartmentId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#ddlAspNetUserId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#ddlAspNetUserId').append('<option value="' + value.Value + '">' + value.Name + '</option>');
+                        });
+                    }
+                });
+            }
+        });
+
+
+        $('#frmForm').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+        }).on('form:submit', function () {
+
+
+            var frm = $("#frmForm");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("UpdateStaff", "Staff")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Staff updated successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+</script>

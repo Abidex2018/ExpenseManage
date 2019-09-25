@@ -1,0 +1,15 @@
+@charset "UTF-8";
+/* CSS Document for Congalotto.com created on 19/04/2013 */
+
+/* languages */
+
+.flags {display:block!important; padding-top:4px; float: right;}
+#langchooser {display:none!important; padding:0; float:right;}
+
+/* lotto slider */
+
+#slider-code a.buttons, ul.pager {display:none;}
+#slider-code .viewport {width:100%; height:123px;}
+ul.overview li {float:left; margin-bottom:10px;}
+
+

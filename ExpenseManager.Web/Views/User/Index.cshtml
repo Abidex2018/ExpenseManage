@@ -1,0 +1,103 @@
+﻿@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<UserViewModel>
+
+@{
+    ViewBag.Title = "Manage Users";
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+    int companyId = ViewBag.companyId;
+}
+<div>
+    <h4 class="page-title">Manage Users</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class=" col-md-6 ">
+                       
+                            <select class="form-control search-slt" style="float: left; width: 50%;" name="companyId" id="ddlCompanyId">
+
+                                <option value="0">--select Company--</option>
+
+
+                                @foreach (var item in cp)
+                                {
+                                    if (item.Id != companyId)
+                                    {
+
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+
+                                }
+
+                            </select>
+                      
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a class="modal-link btn btn-success" href="@Url.Action("AddUser", "User")" data-modal=""><i class="fa fa-plus"></i> Add New</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="partialList"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            loadUserLists();
+         
+            $('#ddlCompanyId').change(function () {
+
+                $('#partialList').html("");
+                loadUserLists();
+
+            });
+
+        });
+        function loadUserLists() {
+
+
+
+            var companyId = $("#ddlCompanyId").val();
+            if (companyId == null || companyId === "") {
+
+                return;
+            }
+
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("GetUserByCompanyList", "User")?companyId=' + companyId,
+                data: params,
+                success: function (data) {
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+      
+    </script>
+}

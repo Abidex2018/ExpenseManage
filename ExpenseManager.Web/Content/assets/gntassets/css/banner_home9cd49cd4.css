@@ -1,0 +1,409 @@
+
+/* ////// BANNERS HOME LTK ////// */
+
+
+/* main banner */
+
+	
+.lottokings #main_banner,
+.lottokings .main_banner {
+    height:370px;
+	margin:0 0 20px 0;
+	overflow: hidden;
+}
+
+.lottokings #main_banner,
+.lottokings .main_banner,
+.lottokings .main_banner .banner_bg {
+    position:relative;
+}
+
+  .lottokings .banner_bg {
+        /*height:260px;*/
+		width: 100% !important;
+    }
+	
+.lottokings .main_banner h2,
+.lottokings .main_banner .banner_caption p em {
+    font-family:'PTSansRegular', Arial, sans-serif; 
+}
+
+.lottokings .main_banner .banner_caption {
+        background: #eba80a; 
+        background: -moz-linear-gradient(left, #eba80a 0%, #f1c020 40%, #fadf3c 100%); 
+        background: -webkit-linear-gradient(left, #eba80a 0%,#f1c020 40%,#fadf3c 100%); 
+        background: linear-gradient(to right, #eba80a 0%,#f1c020 40%,#fadf3c 100%); 
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eba80a', endColorstr='#fadf3c',GradientType=1 ); 
+    }
+	
+.lottokings .main_banner .banner_caption h3,
+.lottokings .main_banner h2{
+            letter-spacing:-1px;
+        }
+
+.lottokings .main_banner .banner_caption p em span{
+    font-family:'PTSansBold', Arial, sans-serif;
+}
+
+.home_new_users .banner_jackpot,
+.home_new_users .banner_jackpot h2 {
+    text-align:center;
+}
+
+.home_new_users .banner_jackpot{
+    position:relative;
+}
+
+.home_new_users .banner_jackpot  {
+    float:right;
+}
+
+.home_new_users .banner_jackpot {
+    height:276px;
+    padding:12px;
+    overflow:hidden;
+    background:#fff;
+    background:rgba(255,255,255, .6);
+}
+
+    .home_new_users .banner_jackpot h2,
+    .home_new_users .banner_jackpot h2 em {
+        font-weight:400;
+    }
+	
+	 .home_new_users .banner_jackpot .bjackpot,
+	 .home_new_users .banner_jackpot .tb_jackpot,
+	 .home_new_users .banner_jackpot h2 {
+		 color:#00516c;
+	 }
+
+
+    .home_new_users .banner_jackpot h2 {
+        text-transform:uppercase;
+		font-size:18px;
+		line-height:18px;
+		position:static; 
+        float:none;
+    }
+
+
+        .home_new_users .banner_jackpot h2 em,
+        .home_new_users .banner_jackpot span{
+            display:inline-block;
+        }
+
+        .home_new_users .banner_jackpot h2 em{
+            margin:0 6px 0 0;
+			font-style: normal;
+            padding: 0 6px 0 0;
+			color: #314951;
+            border-right:2px solid #abb8c0;
+            line-height:16px;
+			font-family: 'PTSansBold', Arial, sans-serif;
+        }
+
+
+.banner_jackpot .btn.bg_red,
+.main_banner .btn.bg_red {
+    height:59px;
+    margin:0;
+    line-height:59px;
+    font-size:28px; 
+    font-weight:normal!important;
+    background:#f9693d!important;
+    padding:0 20px!important;
+ 	width:auto;
+	display:inline-block!important;
+}
+
+
+#banner_countdown_time_1{
+    display:inline-block!important;
+    margin:0 0 0 5px!important;
+}
+
+.lottokings .main_banner .banner_caption .btn.bg_red {
+    float:right;
+}
+
+.lottokings .main_banner .banner_caption .btn.bg_red:hover,
+.banner_jackpot .btn.bg_red:hover{
+    background:#ec5c30!important;
+}
+
+.lottokings .main_banner .banner_caption p em span {
+            color:#fff;
+        }
+
+.lang_es-la .main_banner .banner_caption h3 {font-size:19px!important;}	
+
+    .lottoking .banner_woman_animation {
+        display:none;
+    }
+	
+/* Default Banner V1 */
+
+    .lottokings .main_banner .banner_bg {
+        background:url(../../images_v4/congalotto.com/banner_home/banner_lottokings_07-12-2016.html) center center no-repeat #eeebc5;
+        background-size:auto 260px;
+    }
+
+/* Default Banner V2 */
+
+    .lottokings .home_new_users .main_banner .banner_bg {
+        height:370px;
+		background:url(../../images_v4/congalotto.com/banner_home/banner_lottokings_new-users.html) center center no-repeat #eeebc5; 
+		background-size:auto auto;
+    }
+
+    .lottokings .main_banner .main_center {
+        width:982px;
+        height:100%;
+    }
+
+        .lottokings .main_banner h2 span {
+            font-size:32px;
+        }
+
+        .lottokings .main_banner h2 span {
+            margin:0;
+        }
+
+        .lottokings .main_banner h2 {
+            top:100px;
+            left:0;
+            width:auto;
+            text-shadow:none;
+        }
+
+    .lottokings .banner_hiw_button li a {
+        height:36px;
+        line-height:36px;
+        color:#fff!important;
+        background:#9aaeb7;
+        border-radius:4px;
+        -webkit-border-radius:4px;
+        -moz-border-radius:4px;
+    }
+
+    .lottokings .banner_hiw_button li a:hover {
+        background:#b7cdd7;
+    }
+
+    .lottokings .main_banner .banner_caption,
+    .lottokings .main_banner .banner_caption .caption_play_now,
+    .lottokings .main_banner .banner_caption .caption_jackpot  {
+        height:90px;
+    }
+
+    .lottokings .main_banner .banner_caption .caption_jackpot {
+        float:left;
+    }
+
+    .lottokings .main_banner .banner_caption .caption_play_now,
+    .fright {
+        float:right;
+    }
+
+    .lottokings .banner_hiw_button li .banner_hiw {
+        top:19px;
+        border-color:#9db1ba;
+        border:none;
+        z-index:300;
+        box-shadow:0 3px 10px rgba(0, 0, 0, .7);
+    }
+
+    .lottokings .main_banner .banner_caption,
+    .lottokings .main_banner{
+        border-bottom:none;
+    }
+	
+/*Banner Halloween*/	
+	body.lang_en-us.lottokings .home_new_users .main_banner.halloween .banner_bg {
+        background:url(../../images_v4/congalotto.com/banner_home/banner_halloween_en.html) center center no-repeat #ff9f1e !important;
+    }
+	
+	.lottokings .home_new_users .main_banner.halloween .banner_bg {
+        background:url(../../images_v4/congalotto.com/banner_home/banner_halloween_en.html) center center no-repeat #ff9f1e !important;
+    }
+	
+	body.lang_es-la.lottokings .home_new_users .main_banner.halloween .banner_bg {
+        background:url(../../images_v4/congalotto.com/banner_home/banner_halloween_es.html) center center no-repeat #ff9f1e !important;
+    }
+	
+	body.lang_pt-la.lottokings .home_new_users .main_banner.halloween .banner_bg {
+        background:url(../../images_v4/congalotto.com/banner_home/banner_halloween_pt.html) center center no-repeat #ff9f1e !important;
+    }
+
+	.home_new_users .halloween .banner_jackpot{
+	background-color: rgba(0, 0, 0, 0.6) !important;
+	width:340px !important;
+	}
+	
+	.home_new_users .halloween .banner_jackpot h2 em{
+	color: #FFFFFF !important;
+	border-right-color:#FFFFFF !important;
+	}
+	
+	.home_new_users .halloween .banner_jackpot h2, .halloween .tl_special_boxes li em{
+	color: #FFFFFF !important;
+	}
+	
+	.halloween .bjackpot, .halloween .tb_jackpot{
+	color: #fbf70d;
+	}	
+
+/* BANNER Lotosena (PT) */
+
+ body.lang_pt-la .home_new_users .main_banner, 
+ body.lang_pt-la .home_new_users .main_banner .banner_bg{
+         height:370px!important;
+     }
+	 
+/*.lottokings .main_banner.b-mega-da-virada,
+.home_new_users .main_banner.b-mega-da-virada .banner_bg {
+    height:370px !important;
+}
+
+.lottokings .main_banner.b-mega-da-virada .banner_bg {
+    background:url(../../images_v4/congalotto.com/banner_home/banner-mega-da-virada_pt-la.jpg) center center no-repeat #e2a100!important;
+}*/
+
+body.lang_pt-la.lottokings .home_new_users .main_banner .banner_jackpot,
+.home_new_users .main_banner .banner_jackpot {
+    position:absolute;
+	float:none;
+	bottom:0;
+	left:0;
+	height:152px;
+	padding:17px 20px 17px 20px;
+	-webkit-border-radius:10px 10px 0 0;
+	-moz-border-radius:10px 10px 0 0;
+	border-radius:10px 10px 0 0;
+    background: #005c96;
+	background: -moz-linear-gradient(left,#005c96 0%,#0092ca 50%,#00e0f2 100%);
+	background: -webkit-linear-gradient(left,#005c96 0%,#0092ca 50%,#00e0f2 100%);
+	background: linear-gradient(to right, #005c96 0%,#0092ca 50%,#00e0f2 100%);
+}
+
+    body.lang_pt-la.lottokings .home_new_users .b-mega-da-virada .banner_jackpot {
+		background: #ffcf00;
+		background: -moz-linear-gradient(left,  #ffcf00 0%, #fff301 100%);
+		background: -webkit-linear-gradient(left,  #ffcf00 0%,#fff301 100%);
+		background: linear-gradient(to right,  #ffcf00 0%,#fff301 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcf00', endColorstr='#fff301',GradientType=1 );     
+    }
+
+        body.lang_pt-la.lottokings .home_new_users .main_banner h2,
+        .bjackpot-box,
+        .bjackpot-box img,
+        .bjackpot-box p,
+		.lottokings .home_new_users .main_banner .banner_jackpot .btn.bg_red{
+            position:relative;
+        }
+
+         body.lang_pt-la.lottokings .home_new_users .main_banner h2,
+        .bcta-wrap {
+            float:right;
+        }
+
+		body.lang_pt-la.lottokings .home_new_users .main_banner h2 {
+            top:50px;
+            width:537px;
+            margin:0 40px 0 0;
+            font-size:50px;
+            line-height:49px;
+            color:#000;
+            font-family:'PTSansBold', Arial Black, Arial, sans-serif;
+
+        }
+
+        body.lang_pt-la.lottokings .home_new_users .main_banner.b-mega-da-virada h2 {
+            color:#000;
+            text-transform:uppercase;
+            font-family:'PTSansBold', Arial Black, Arial, sans-serif;
+
+        }
+
+            body.lang_pt-la.lottokings .home_new_users .main_banner h2 span {
+                font-size:44px;
+                line-height:44px;
+                /*color:#fff;*/
+            }
+
+
+     body.lang_pt-la.lottokings .home_new_users .bjackpot-box,
+     body.lang_pt-la.lottokings .home_new_users .bjackpot-box img,
+     body.lang_pt-la.lottokings .home_new_users .bjackpot-box p,
+     .home_new_users .bjackpot-box,
+     .home_new_users .bjackpot-box img,
+     .home_new_users .bjackpot-box p {
+        float:left;
+     }
+
+        
+		body.lang_pt-la.lottokings .home_new_users .bjackpot-box p,
+        .home_new_users .bjackpot-box p {
+            top:20px;
+            margin:0 0 0 11px;
+            font-family:Helvetica, Arial, sans-serif;
+            font-weight:700;
+            font-size:63px;
+            line-height:38px;
+            color:#fff600!important;
+            text-align:left;
+            
+         }
+		 
+		 body.lang_pt-la.lottokings .home_new_users .b-mega-da-virada .bjackpot-box p{
+			color:#00a026!important;	
+		}
+
+            body.lang_pt-la.lottokings .home_new_users .bjackpot-box p small,
+            .home_new_users .bjackpot-box p small {
+                font-size:60px;
+            }
+
+            body.lang_pt-la.lottokings .home_new_users .bjackpot-box p span,
+		   .home_new_users .bjackpot-box p span {
+                color:#fff;
+                font-size:24px;
+				line-height: 2.2em;
+				font-weight: normal !important;
+           }
+
+		   body.lang_pt-la.lottokings .home_new_users .bjackpot-box p span em,
+           .home_new_users .bjackpot-box p span em{
+		   		color: #fff;
+				padding: 0 6px 0 0;
+				margin: 0 6px 0 0;
+				border-right: 1px solid #fff;
+		   }
+		   
+		   
+		    body.lang_pt-la.lottokings .home_new_users .b-mega-da-virada .bjackpot-box p span {
+                color:#000 !important;
+				font-weight: bold !important;
+           }
+
+   body.lang_pt-la.lottokings .home_new_users .main_banner .tl_special_boxes,
+    .lottokings .home_new_users .main_banner .tl_special_boxes {
+        float:none;
+        width:auto!important;
+    }
+
+     body.lang_pt-la.lottokings .home_new_users .main_banner .banner_jackpot .btn.bg_red,
+	 .lottokings .home_new_users .main_banner .btn.bg_red {
+         min-width:200px;
+         /*top:-4px;*/
+		 text-transform: uppercase !important;
+     }
+	 
+	 .lottokings .main_banner.games .btn.bg_red {
+		/*background: #8ece27 !important;	*/
+		position: absolute;
+		bottom: 10px;
+		right: 20px; 
+	 }
+
+     

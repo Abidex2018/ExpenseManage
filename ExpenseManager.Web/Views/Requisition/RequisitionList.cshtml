@@ -1,0 +1,225 @@
+﻿
+@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.Utilities
+@using Microsoft.AspNet.Identity
+@using XPLUG.WEBTOOLKIT
+@model IEnumerable<ExpenseManager.Helper.ViewModels.RequisitionViewModel>
+
+
+<style>
+    .tr-hide {
+        display: none;
+        background-color: #d9f7d0 !important;
+    }
+</style>
+
+
+<table class="table table-bordered dataTable">
+    <thead>
+        <tr>
+            <th>
+                <b>Request Title</b>
+            </th>
+            <th>
+                <b> Expense Item</b>
+            </th>
+
+            <th>
+                <b>  Total Amount</b>
+            </th>
+
+            <th>
+                <b> Approval Level</b>
+            </th>
+            <th style="width:120px">
+                <b> Status</b>
+            </th>
+
+            <th style="width:70px">
+                <b>Actions</b>
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.RequestTitle
+
+                    </td>
+                    <td>
+                        @item.ExpenseItemName
+                    </td>
+                   
+                    <td class="text-right">
+                        @item.TotalAmount.ToString().ToNaira()
+                    </td>
+
+
+                    
+                    <td>
+                        @item.WorkflowLevel
+                    </td>
+                    <td>
+                        @if (item.IsApproved)
+                        {
+                            <span class="label label-success"> @item.StatusLabel</span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger"> @item.StatusLabel</span>
+                        }
+
+                    </td>
+                    <td>
+                        @if (Request.IsAuthenticated)
+                        {
+                            var userProfile = new UserRepository().GetById(@User.Identity.GetUserId());
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    Action <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-default pull-right" role="menu">
+                                    <li>
+                                        <a href="#" onclick="viewDetails('@item.Id')">
+                                            <i class="fa fa-eye"></i> View Details
+                                        </a>
+                                    </li>
+                                    @if (!item.IsApproved)
+                                    {
+                                        if (item.WorkflowEnumType <= (int) RequisitionWorkflow.Pending)
+                                        {
+                                            <li>
+                                                <a style="margin-bottom: 0;" href="@Url.Action("EditRequisition", "Requisition", new {requisitionId = item.Id})" data-modal=""><i class="fa fa-edit"></i> Edit </a>
+                                            </li>
+
+                                            @*<li>
+                                                <a href="#" onclick="sendForApproval('@item.Id')">
+                                                    <i class="fa fa-check"></i> Send for Approval
+                                                </a>
+                                            </li>*@
+                                        }
+                                      
+
+                                    }
+
+
+                                </ul>
+                            </div>
+                        }
+
+                    </td>
+
+                </tr>
+
+            }
+        }
+    </tbody>
+   
+   
+
+</table>
+
+
+
+<div class="modal fade" id="approveAgent" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="approveModal"></div>
+</div>
+
+
+
+
+<script>
+  
+    $(document).ready(function () {
+
+        $('.dataTable').DataTable({ "ordering": false});
+
+        $(document).on("click", ".tr-show", function () {
+            var mclass = $(this).attr("data-showTR");
+            $("." + mclass).toggle();
+        });
+
+        $("a[data-modal]").on("click", function (e) {
+            $(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+            $('#modalContent').load(this.href, function () {
+                $('#dvModal').modal('show', {
+                    backdrop: 'static',
+                    keyboard: false,
+                });
+            });
+
+            return false;
+        });
+    });
+
+    function viewDetails(id) {
+        if (id === "" || id < 1) return;
+        $.ajax({
+            url: '@Url.Action("ViewDetails", "Requisition")/?requisitionId=' + id,
+            dataType: "html",
+            success: function(data) {
+                if (!data) {
+                    location.reload();
+                    return;
+                }
+                $('#approveModal').html(data);
+                $('#approveAgent').modal();
+            },
+            complete: function() {
+
+            }
+        });
+    }
+
+    function sendForApproval(id) {
+        if (id === "" || id < 1) return;
+
+        Swal.fire({
+            title: 'Confirm',
+            text: "Send for approval now!",
+            type: 'info',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            showLoaderOnConfirm: true,
+            allowOutsideClick: false,
+            preConfirm: () => {
+                return $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("SendForApproval", "Requisition")',
+                    data: JSON.stringify({ requisitionId: id}),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        return data;
+                    }
+                });
+            },
+
+        }).then((result) => {
+
+            if (result.value.IsSuccessful) {
+                Swal.fire({
+                    type: 'success',
+                    title: 'Success',
+                    text: 'Submitted for approval successfully'
+
+                }).then((result) => {
+                    window.location.reload();
+                });
+
+
+            } else {
+                Swal.fire('Error!', result.value.Error,'error');
+            }
+        });
+
+    }
+
+
+   
+</script>

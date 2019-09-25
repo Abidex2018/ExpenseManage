@@ -1,0 +1,310 @@
+﻿
+@{
+   
+    ViewBag.Title = "Approved Requisition";
+  
+    string s = ViewBag.sDate;
+    string e = ViewBag.eDate;
+    int counter = 0;
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+
+    int companyId = ViewBag.companyId;
+   
+    int departmentId = ViewBag.departmentId;
+}
+@using ExpenseManager.Helper.Entities
+@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.ViewModels
+@using XPLUG.WEBTOOLKIT
+@model List<ExpenseManager.Helper.ViewModels.RequisitionViewModel>
+<div>
+    <h4>Approved Requisition</h4>
+</div>
+
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <form action="/ExpenseReport/ApprovedRequisition" method="post" novalidate="novalidate">
+
+                    <div class="row">
+                        <div class=" col-md-3 ">
+                            <label>Date Range:</label>
+                            <input type="hidden" id="sDate" name="sDateTime" value="@s" />
+                            <input type="hidden" id="eDate" name="eDateTime" value="@e" />
+                            <div id="reportrange" class="form-control search-slt" style="cursor: pointer; padding-top: 3px; font-size: 14px;">
+                                <i class="fa fa-calendar"></i>&nbsp;
+                                <span></span> <i class="fa fa-caret-down"></i>
+                            </div>
+                        </div>
+                        <div class=" col-md-3 ">
+                            <label>Company:</label>
+                            <select class="form-control search-slt" name="companyId" id="ddlCompanyId">
+                                @if (companyId == 0)
+                                {
+                                    <option value="0">--select Company--</option>
+                                }
+                                else
+                                {
+                                    
+                                    <option value="@companyId">@cp.Where(c => c.Id == companyId).Select(a => a.Name).FirstOrDefault()</option>
+                                }
+
+
+                                @foreach (var item in cp)
+                                {
+                                    if (item.Id != companyId)
+                                    {
+
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+                                }
+                            </select>
+                        </div>
+                        <div class="col-md-3 ">
+                            <label>Department:</label>
+                            <select class="form-control search-slt" name="departmentId" id="ddlDepartmentId">
+
+                                <option value="@departmentId">--select Department--</option>
+
+                            </select>
+                        </div>
+
+
+                        <div class="col-md-3 ">
+                            <button type="submit" class="btn btn-danger wrn-btn" id="btn_submit" style="float: right; margin-top: 30px;">Get Record</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
+
+
+<div class="row" id="blockDiv" style="background-color: white; margin-top: 10px">
+    <div class="col-md-12">
+        <div class="card">
+
+            <div style="background-color: white; margin-top: 10px;">
+                <table class="table table-bordered dataTable" id="approReport">
+                    <thead>
+                        <tr>
+                            <th><b>S/No</b></th>
+                            <th><b>Time Span</b></th>
+                            <th><b>Beneficiary</b></th>
+                            <th>
+                                <b>Request Title</b>
+                            </th>
+                            <th>
+                                <b> Expense Item</b>
+                            </th>
+                            <th>
+                                <b>Description</b>
+                            </th>
+                            <th>
+                                <b> Total Amount</b>
+                            </th>
+
+                            <th>
+                                <b> Approval Level</b>
+                            </th>
+                            <th style="width: 120px">
+                                <b> Status</b>
+                            </th>
+
+                            <th style="width: 70px">
+                                <b>Actions</b>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                counter++;
+                                <tr>
+                                    <td>@counter</td>
+                                    <td>@item.DateCreated.ToString("MMM dd, yyyy hh:mm tt")</td>
+                                    <td>@item.BeneficiaryName</td>
+                                    <td>
+                                        @item.RequestTitle
+
+                                    </td>
+                                    <td>
+                                        @item.ExpenseItemName
+                                    </td>
+                                    <td>
+                                        @item.ExpenseDescription
+                                    </td>
+                                    <td class="text-right">
+                                        @item.TotalAmount.ToString().ToNaira()
+                                    </td>
+
+
+                                    <td>
+                                        @item.WorkflowLevel
+                                    </td>
+                                    <td>
+                                        @if (item.IsApproved)
+                                        {
+                                            <span class="label label-success">@item.StatusLabel</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="label label-danger">@item.StatusLabel</span>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        @if (Request.IsAuthenticated)
+                                        {
+
+
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                    Action <span class="caret"></span>
+                                                </button>
+                                                <ul class="dropdown-menu dropdown-default pull-right" role="menu">
+                                                    <li>
+                                                        <a href="#" onclick="viewDetails('@item.Id')">
+                                                            <i class="fa fa-eye"></i> View Details
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+                                            </div>
+                                        }
+
+                                    </td>
+
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="approveAgent" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="approveModal"></div>
+</div>
+
+
+
+
+
+@section scripts{
+    <script>
+       
+        $(document).ready(function () {
+
+            $('.dataTable').DataTable({
+                "ordering": false,
+                "bAutoWidth": false,
+                responsive:true,
+                dom: 'Bfrtip',
+                buttons: [
+                    'excel'
+                     
+                ]
+               
+            });
+
+        });
+
+        $(function () {
+            var start = moment('@s', "DD/MM/YYYY"); //moment().subtract(7, 'days');
+            var end = moment('@e', "DD/MM/YYYY"); //moment();
+            function cb(start, end) {
+                //alert(start);
+                $('#sDate').val(start.format('DD/MM/YYYY'));
+                $('#eDate').val(end.format('DD/MM/YYYY'));
+                $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            }
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                opens: 'left',
+                autoApply: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+            cb(start, end);
+        });
+
+        //$('#btn_submit').on('click', function () {
+        //    $('#ddlDepartmentId').append('<option value="0">-- select Department--</option>');
+        //    $('#ddlCompanyId').append('<option value="0">--select Company--</option>');
+        //});
+
+
+        $('#ddlCompanyId').change(function() {
+
+            $('#ddlDepartmentId').html('');
+
+            if ($('#ddlCompanyId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/CompanyDepartment/GetLookupDepartment",
+                    data: JSON.stringify({ companyId: $('#ddlCompanyId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function(data) {
+                        $('#ddlDepartmentId').append('<option value="0">--select Department--</option>');
+                        $.each(data.Items,
+                            function(index, value) {
+                                $('#ddlDepartmentId')
+                                    .append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                            });
+                    }
+                });
+
+
+            }
+        });
+
+
+        function viewDetails(id) {
+            if (id === "" || id < 1) return;
+            $.ajax({
+                url: '@Url.Action("ViewDetails", "Requisition")/?requisitionId=' + id,
+                dataType: "html",
+                success: function(data) {
+                    if (!data) {
+                        location.reload();
+                        return;
+                    }
+                    $('#approveModal').html(data);
+                    $('#approveAgent').modal();
+                },
+                complete: function() {
+
+                }
+            });
+        }
+    </script>
+}
+
+
+

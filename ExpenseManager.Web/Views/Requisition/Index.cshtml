@@ -1,0 +1,240 @@
+﻿@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.ViewModels
+@using Microsoft.AspNet.Identity
+
+@{
+    ViewBag.Title = "Requisitions";
+    string s = ViewBag.sDate;
+    string e = ViewBag.eDate;
+    UserRepository userRepo = new UserRepository();
+    var currentUser = userRepo.GetById(User.Identity.GetUserId());
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+    int companyId = ViewBag.companyId;
+}
+<div>
+    <h4 class="page-title">Requisitions</h4>
+</div>
+@if (currentUser.IsHeadOfAccount || currentUser.IsAdmin || currentUser.IsExecutive)
+{
+    <div class="row" id="blockDiv">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+                      
+                        <div class=" col-md-4">
+                            <label> Company:</label>
+                            <select class="form-control search-slt" style="size: 50px;" name="companyId" id="ddlCompanyId" required>
+
+
+                                <option value="0">--select Company--</option>
+
+
+                                @foreach (var item in cp)
+                                {
+                                    if (item.Id != companyId)
+                                    {
+
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+
+                                }
+
+                            </select>
+                        </div>
+                        <div class=" col-md-4">
+                            <label> Status:</label>
+                            <select class="form-control search-slt" style="size: 50px;" name="companyId" id="ddlStatusId" required>
+
+                                <option value="0">--select Status--</option>
+                                <option value="1">Pending</option>
+                                <option value="2">Rejected</option>
+                                <option value="3">AwaitingApproval</option>
+                                <option value="4">PartialApproval</option>
+                                <option value="5">Approved</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <a class="modal-link btn btn-success" href="@Url.Action("AddRequisition", "Requisition")" style="float: right; margin-top: 20px;" data-modal=""><i class="fa fa-plus"></i> Add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12" id="partialList">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class="row" id="blockDiv">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <div class="row">
+
+                        <div class="col-md-12 text-right" style="float: right; margin-top: 40px;">
+                            <a class="modal-link btn btn-success" href="@Url.Action("AddRequisition", "Requisition")" data-modal=""><i class="fa fa-plus"></i> Add New</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12" id="partialList">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('#ddexpenseCategoryId').change(function () {
+
+                $('#partialList').html("");
+                loadRequisitionLists();
+
+            });
+
+            $('#ddlStatusId').change(function () {
+
+                $('#partialList').html("");
+                loadRequisitionLists();
+
+            });
+            
+            $('.dataTable').DataTable({ "ordering": false });
+        });
+
+        $(function() {
+            var start = moment('@s', "DD/MM/YYYY"); //moment().subtract(7, 'days');
+            var end = moment('@e', "DD/MM/YYYY"); //moment();
+
+            function cb(start, end) {
+                //alert(start);
+                $('#sDate').val(start.format('DD/MM/YYYY'));
+                $('#eDate').val(end.format('DD/MM/YYYY'));
+                $('#reportrange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+            }
+
+            $('#reportrange').daterangepicker({
+                    startDate: start,
+                    endDate: end,
+                    opens: 'left',
+                    autoApply: true,
+                    ranges: {
+                        'Today': [moment(), moment()],
+                        'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                        'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                        'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                        'This Month': [moment().startOf('month'), moment().endOf('month')],
+                        'Last Month': [
+                            moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')
+                        ]
+                    }
+                },
+                cb);
+            cb(start, end);
+        });
+      
+        function loadRequisitionLists() {
+            
+            var companyId = $("#ddlCompanyId").val();
+            if (companyId == null || companyId === "") {
+
+                return;
+            }
+            var status = $("#ddlStatusId").val();
+            if (status == null || status === "") {
+
+                return;
+            }
+          
+
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("RequisitionListBySearch", "Requisition")?&companyId=' + companyId + '&status=' + status,
+                data: params,
+                success: function (data) {
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+
+
+        jQuery(document).ready(function($) {
+
+            loadRequisitions();
+
+            //$('#regSession').change(function () {
+            //    $('#partialList').html("");
+            //    loadRequisitions();
+
+            //});
+        });
+
+
+        function loadRequisitions() {
+            //var regSessionId = $("#regSession").val();
+            //if (regSessionId == null || regSessionId === "") {
+
+            //    return;
+            //}
+
+            $('#blockDiv').block({
+                css: {
+                    border: 'none',
+                    padding: '10px',
+                    backgroundColor: '#000',
+                    '-webkit-border-radius': '10px',
+                    '-moz-border-radius': '10px',
+                    opacity: .5,
+                    color: '#fff'
+                }
+            });
+
+            //var frm = $("#fetchTxnFrom");
+            //var params = frm.serializeArray();
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("RequisitionList", "Requisition")',
+                //data: params,
+                success: function(data) {
+                    $('#partialList').html(data);
+                },
+                complete: function() {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+    </script>
+}
+
+

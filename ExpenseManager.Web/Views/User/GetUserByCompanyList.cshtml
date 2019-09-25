@@ -1,0 +1,118 @@
+﻿@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.Utilities
+@using Microsoft.AspNet.Identity
+@model IEnumerable<ExpenseManager.Helper.ViewModels.UserViewModel>
+@{
+                /**/
+
+                ViewBag.Title = " Edit User";
+}
+<div class="card-body">
+    <table class="table table-bordered dataTable">
+        <thead>
+            <tr>
+
+                <th>
+                    <b> Name</b>
+                </th>
+
+                <th>
+                    <b> Dept</b>
+                </th>
+                <th>
+                    <b> Company</b>
+                </th>
+                <th>
+                    <b>Role</b>
+                </th>
+                <th>
+                    <b>Status</b>
+                </th>
+                <th style="width:30px"><b>Actions</b></th>
+
+            </tr>
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr id="row">
+
+                    <td>
+                        @item.LastName @item.FirstName <br />
+                        <apsn> @item.Email</apsn>
+                    </td>
+
+
+                    <td>
+                        @item.DepartmentName
+                    </td>
+
+                    <td>
+                        @item.CompanyName
+                    </td>
+                    <td>
+                        @item.UserRoleName
+                    </td>
+                    <td>
+                        @if (item.IsActive)
+                        {
+                            <span class="label label-success"> @item.ActiveLabel</span>
+                        }
+                        else
+                        {
+                            <span class="label label-danger"> @item.ActiveLabel</span>
+                        }
+                    </td>
+                    <td>
+                        @if (Request.IsAuthenticated)
+                        {
+                            var userProfile = new UserRepository().GetById(@User.Identity.GetUserId());
+
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                    Action <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu dropdown-default pull-right" role="menu">
+                                    <li>
+                                        <a title="Edit" href="@Url.Action("EditUser","User", new {userId = item.Id})" data-modal=""><i class="fa fa-edit"></i> Edit</a>
+                                    </li>
+                                    
+                                    <li> 
+                                        <a title="Reset Password" href="@Url.Action("ResetPassword", "Account", new { userId = item.Id } )" ><i class ="fa fa-recycle"></i> Reset Password</a>
+                                        
+                                    </li>
+                                   
+
+                                </ul>
+                            </div>
+                        }
+
+                       
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+    </table>
+</div>
+
+@section scripts{
+    <script>
+
+        $(document).ready(function () {
+
+            $('.dataTable').DataTable({ "ordering": false });
+
+            $(document).on("click", ".tr-show", function () {
+                var mclass = $(this).attr("data-showTR");
+                $("." + mclass).toggle();
+            });
+      
+           
+        });
+
+    </script>
+}
+
+

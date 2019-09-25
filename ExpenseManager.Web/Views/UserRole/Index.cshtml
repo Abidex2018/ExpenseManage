@@ -1,0 +1,115 @@
+﻿
+
+@{
+    ViewBag.Title = "User Roles";
+}
+
+@using XPLUG.WEBTOOLKIT
+@model IEnumerable<ExpenseManager.Helper.ViewModels.UserRoleModel>
+
+
+ 
+
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="page-title">User Roles</h4>
+                    </div>
+
+                </div>
+              
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered dataTable">
+                    <thead>
+                    <tr>
+                        <th>
+                            <b> Name</b>
+                        </th>     
+                        <th>
+                            <b>Role Type</b>
+                        </th>
+                        <th>
+                            <b>Approval Level</b>
+                        </th>
+                        <th style="width:60px">
+                            <b>Action</b>
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (Model.Any())
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.Name
+                                </td>
+
+                                <td>
+                                    
+                                    @item.RoleType
+                                    
+                                </td>
+                                <td>
+                                    @item.ApprovalLevel
+
+                                </td>
+                                <td>
+                                    @if (item.Id != 1)
+                                    {
+                                        <a title="Edit" href="@Url.Action("EditRole", "UserRole", new {userRoleId = item.Id})" data-modal=""><i class="fa fa-edit"></i></a>
+                                    }
+                                  
+                                </td>
+                            </tr>
+
+                        }
+                    }
+                    </tbody>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTable').DataTable({ "ordering": false});
+
+            $(document).on("click", ".tr-show", function () {
+                var mclass = $(this).attr("data-showTR");
+                $("." + mclass).toggle();
+            });
+
+            $("a[data-modal]").on("click", function (e) {
+                $(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+                $('#modalContent').load(this.href, function () {
+                    $('#dvModal').modal('show', {
+                        backdrop: 'static',
+                        keyboard: false,
+                    });
+                });
+
+                return false;
+            });
+        });
+
+    </script>
+}
+
+
+
+
+

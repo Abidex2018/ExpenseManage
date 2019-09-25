@@ -1,0 +1,109 @@
+﻿
+
+@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<ExpenseManager.Helper.ViewModels.StaffViewModel>
+
+@{
+
+    ViewBag.Title = "Manage Staff";
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+    int companyId = ViewBag.companyId;
+}
+<div>
+    <h4 class="page-title">Staff Records</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class=" col-md-6 ">
+                       
+                            <select class="form-control search-slt" style="float: left; width: 50%;" name="companyId" id="lCompanyId2">
+
+                                <option value="0">--select Company--</option>
+
+
+                                @foreach (var item in cp)
+                                {
+                                    if (item.Id != companyId)
+                                    {
+
+                                        <option value="@item.Id">@item.Name</option>
+                                    }
+
+                                }
+
+                            </select>
+                      
+
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <a class="modal-link btn btn-success" href="@Url.Action("AddStaff", "Staff")" data-modal=""><i class="fa fa-plus"></i> Add New</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="partialList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+            $('.dataTable').DataTable({ "ordering": false});
+
+            loadStaffLists();
+           
+            $('#lCompanyId2').change(function () {
+                
+                $('#partialList').html("");
+                loadStaffLists();
+
+            });
+
+        });
+        function loadStaffLists() {
+
+
+
+            var companyId = $("#lCompanyId2").val();
+            if (companyId == null || companyId === "") {
+
+                return;
+            }
+            
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("GetStaffByCompanyList", "Staff")?companyId=' + companyId,
+                data: params,
+                success: function (data) {
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+
+    </script> 
+
+}
+
+

@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Approval Levels";
+}
+
+@using XPLUG.WEBTOOLKIT
+@model IEnumerable<ExpenseManager.Helper.ViewModels.WorkflowLevelModel>
+
+
+ 
+
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header row">
+                <div class="col-md-6">
+                    <h4 class="page-title">Approval Levels</h4>
+                </div>
+
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered dataTable">
+                    <thead>
+                    <tr>
+                        <th style="width:60px">
+                            <b> Level</b>
+                        </th>     
+                        <th>
+                            <b>Description</b>
+                        </th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.LevelNo
+                                    </td>
+
+                                    <td>
+                                        @item.Name
+
+                                    </td>
+
+
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,700 @@
+.media-list,
+.media-list li,
+#content .content .media-list a.btn,
+.games-inner-page .aside,
+body.newhome_v1 #content .aside .content,
+.gs-buttonBox a.btn {
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    box-sizing:border-box;
+}
+
+.casino-games .content h2 {
+    font-size:30px;
+    line-height:30px;
+    margin:25px 0;
+}
+
+.games-content,
+.casino-games .media-list {
+    padding:0 0 29px 0!important;
+    border-bottom: 4px solid #e9eaec;
+}
+	.games-content h4 {
+		padding: 0 0 16px 0 !important;
+	}
+
+.media-list,
+.media-list li,
+.games-inner-page .aside,
+.deposit-games .aside,
+.games-inner-page .aside img,
+.deposit-games .aside img,
+.aside-textbox,
+.g-slider-wrap,
+.g-slide{
+    position:relative;
+}
+
+.media-list,
+.media-list li,
+.glist-links,
+.games-inner-page .aside,
+.deposit-games .aside,
+.games-inner-page .aside img,
+.deposit-games .aside img,
+.games-content,
+.aside-textbox,
+.ltk-boxLeft,
+.g-slider,
+.g-slider li,
+.gs-buttonBox,
+.gs-buttonBox a.btn,
+.cgs-title,
+.cgs-title h2 {
+    float:left;
+}
+
+.ltk-boxRight,
+.cgs-title a {
+    float:right;
+}
+
+.ltk-boxRight {
+    max-width:295px;
+    width: 30%;
+    margin:0 0 0 3%;
+}
+
+/* games list */
+.media-list,
+#content .content .media-list a.btn,
+.glist-links,
+.games-inner-page .aside,
+.g-slider-wrap,
+.g-slider li img,
+.gs-buttonBox,
+.cgs-title {
+    width:100%;
+}
+    .media-list li {
+        width:calc((95% / 5) - (12px * 4) / 5);
+        min-height:220px;
+        margin:0 12px 20px 0;
+        padding:10px;
+        font-size:11px;
+        text-align:center;
+        border:1px solid #dedede;
+        -webkit-border-radius:8px;
+        -moz-border-radius:8px;
+        border-radius:8px;
+        overflow:hidden;
+        box-shadow:none;
+        -webkit-transition:.35s ease-in-out;
+        -moz-transition:.35s ease-in-out;
+        transition:.35s ease-in-out;
+    }
+
+    .media-list li:hover {
+        box-shadow: 0 0 8px rgba(0,0,0,.35);
+    }
+
+    .media-list li:nth-child(5n){
+        margin:0 0 20px 0;
+    }
+
+		 .media-list li a.btn.big{
+            font-family: "PTSansBold", Arial Black, Arial, sans-serif;
+			font-size: 16px !important;
+        }
+
+         .content .media-list h3,
+         .aside-textbox  a.btn,
+         .gs-buttonBox a.btn:first-child {
+             margin:0;
+         }
+
+         .casino-games .content .aside-textbox h3,
+         .content .media-list h3,
+         .content .ltk-boxLeft h3,
+         body.newhome_v1 #content .cgs-title a:hover {
+             color:#007394;
+         }
+
+         .content .media-list h3 {
+             font-size:13px;
+         }
+
+         .media-list img {
+             width:100%;
+             margin:8px 0;
+         }
+
+         #content .content .media-list li a {
+             text-decoration:none;
+         }
+
+         #content .content .media-list li a:hover,
+         body.newhome_v1 #content .cgs-title a:hover {
+             text-decoration:underline!important;
+         }
+         #content .content .media-list li .btn:hover {
+             text-decoration:none!important;
+         }
+
+    .glist-links {
+        margin:8px 0 0 0;
+    }
+
+        .glist-links a {
+            line-height:12px;
+        }
+
+        .glist-links a:first-child {
+            padding:0 3px 0 0;
+            border-right:1px solid #bbb;
+        }
+
+
+    /* games list responsive */
+    @media only screen and (max-width:1024px){
+        .media-list li {
+            width:calc((50% / 4) - (12px * 3) / 4);
+        }
+
+        .media-list li:nth-child(5n){
+            margin:0 12px 20px 0;
+        }
+
+        .media-list li:nth-child(4n){
+            margin:0 0 20px 0;
+        }
+    }
+
+    @media only screen and (max-width:780px){
+        .media-list li {
+            width:calc((100% / 3) - (12px * 2) / 3);
+        }
+
+        .media-list li:nth-child(4n){
+            margin:0 12px 20px 0;
+        }
+
+        .media-list li:nth-child(3n){
+            margin:0 0 20px 0;
+        }
+    }
+
+    @media only screen and (max-width:580px){
+        .media-list li {
+            width:calc((100% / 2) - (12px / 4));
+        }
+
+        .media-list li:nth-child(3n){
+            margin:0 12px 20px 0;
+        }
+
+        .media-list li:nth-child(2n){
+            margin:0 0 20px 0;
+        }
+    }
+
+    @media only screen and (max-width:480px){
+        .media-list li {
+            width:100%;
+            margin:0 0 20px 0;
+        }
+    }
+
+/* games inner page */
+.games-inner-page .aside {
+    max-height:230px;
+    margin:0 0 20px 0;
+    padding:0 0 20px 0;
+    border-bottom:1px solid #e9eaec;
+}
+
+.deposit-games .aside  {
+    margin:0 0 20px 0;
+}
+
+    .games-inner-page .aside img,
+    .deposit-games .aside img  {
+        width:260px;
+        margin:0 30px 0 0;
+    }
+
+    .aside-textbox  {
+        max-width:550px;
+        padding:20px 0;
+    }
+
+    .deposit-games .aside-textbox {
+        padding:0;
+    }
+        .casino-games .content .aside-textbox h3,
+        .deposit-games .content .aside-textbox h3 {
+            margin:0 0 10px 0;
+        }
+
+        .casino-games .content .aside-textbox h3 {
+            font-size: 26px;
+            line-height: 30px;
+        }
+
+        .aside-textbox p{
+            font-size:15px;
+            line-height:20px;
+            font-family: 'PTSansRegular', Helvetica, Arial, sans-serif;
+            margin:0 0 15px 0;
+        }
+
+       .cgs-title h2,
+       .aside-textbox a.btn,
+       .gs-buttonBox a.btn {
+           font-family: 'PTSansBold', Helvetica, Arial, sans-serif;
+       }
+
+       .aside-textbox a.btn,
+       .gs-buttonBox a.btn {
+           height:42px;
+           margin:0 8px 0 0;
+           font-size:18px !important;
+           line-height:42px;
+           padding:0 25px!important;
+       }
+
+       #content .content .aside-textbox a.btn.btnGray,
+       #content .content .gs-buttonBox a.btn.btnGray {
+            color:#475861!important;
+       }
+
+       a.btn.btnGray:hover{
+            background:#9eb1ba!important;
+       }
+
+    .ltk-boxLeft {
+        max-width: 680px;
+        width: 67%;
+    }
+
+        .content .ltk-boxLeft h3,
+        .ltk-boxLeft p,
+        .ltk-boxLeft ul li {
+            margin-bottom:15px;
+        }
+
+        .content .ltk-boxLeft h3 {
+            font-size:24px;
+            line-height:24px;
+            margin-top:25px;
+        }
+
+        .content .ltk-boxLeft h3:first-child{
+            margin-top:0;
+        }
+
+        .ltk-boxLeft p,
+        .ltk-boxLeft ul li {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size:14px;
+            color:#333;
+        }
+
+        .ltk-boxLeft ul {
+            margin:0 0 0 20px;
+            list-style:disc;
+        }
+
+             .ltk-boxLeft ul li {
+                 padding:0 0 0 8px;
+             }
+
+.gs-buttonBox {
+    margin:15px 0 0 0;
+}
+
+    .gs-buttonBox a.btn {
+        width:calc((100% / 2) - 8px / 2);
+        margin:0 0 0 8px;
+    }
+
+/* slider */
+.g-slider-wrap,
+.games-inner-page .content,
+.cgs-title{
+    overflow:hidden;
+}
+    .g-slider {
+        width:500%;
+        padding:0;
+        margin:0;
+        list-style:none;
+        -webkit-transform:translate3d(0,0,0);
+        -ms-transform:translate3d(0,0,0);
+        -moz-transform:translate3d(0,0,0);
+        transform:translate3d(0,0,0);
+        -webkit-animation: slider 6s ease-in-out infinite alternate backwards;
+        -moz-animation: slider 6s ease-in-out infinite alternate backwards;
+        animation: slider 6s ease-in-out infinite alternate backwards;
+    }
+
+        .g-slider li {
+            width:20%;
+        }
+
+        @-webkit-keyframes slider {
+            0%{
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            20% {
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            30%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            40%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            50%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            60%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            70%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            80%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            90%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+
+            100%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+        }
+
+        @-ms-keyframes slider {
+            0%{
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            20% {
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            30%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            40%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            50%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            60%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            70%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            80%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            90%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+
+            100%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+         }
+
+        @-moz-keyframes slider {
+            0%{
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            20% {
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            30%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            40%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            50%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            60%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            70%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            80%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            90%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+
+            100%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+        }
+
+        @keyframes slider {
+             0%{
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            20% {
+                -webkit-transform:translate3d(0,0,0);
+                -ms-transform:translate3d(0,0,0);
+                -moz-transform:translate3d(0,0,0);
+                transform:translate3d(0,0,0);
+            }
+
+            30%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            40%{
+                -webkit-transform:translate3d(-20%,0,0);
+                -ms-transform:translate3d(-20%,0,0);
+                -moz-transform:translate3d(-20%,0,0);
+                transform:translate3d(-20%,0,0);
+            }
+
+            50%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            60%{
+                -webkit-transform:translate3d(-40%,0,0);
+                -ms-transform:translate3d(-40%,0,0);
+                -moz-transform:translate3d(-40%,0,0);
+                transform:translate3d(-40%,0,0);
+            }
+
+            70%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            80%{
+                -webkit-transform:translate3d(-60%,0,0);
+                -ms-transform:translate3d(-60%,0,0);
+                -moz-transform:translate3d(-60%,0,0);
+                transform:translate3d(-60%,0,0);
+            }
+
+            90%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+
+            100%{
+                -webkit-transform:translate3d(-80%,0,0);
+                -ms-transform:translate3d(-80%,0,0);
+                -moz-transform:translate3d(-80%,0,0);
+                transform:translate3d(-80%,0,0);
+            }
+        }
+
+/* home games list */
+.section.casino-games {
+    margin-top:45px;
+}
+
+    .cgs-title {
+        height: 37px;
+        margin:0 0 10px 0;
+        font-weight:400;
+    }
+
+        .cgs-title a {
+            margin:10px 0 0 0;
+        }
+
+    .section.casino-games,
+    .section.casino-games .media-list {
+        border:none;
+    }
+
+    .section.casino-games .media-list {
+        padding:0!important;
+    }
+
+        .section.casino-games .media-list li {
+            min-height:220px;
+        }
+
+		 .section.casino-games .media-list li a.btn.big{
+            font-family: "PTSansBold", Arial Black, Arial, sans-serif;
+			font-size: 16px !important;
+        }
+
+/* deposit page */
+.content .sct_title_box h2 {
+    font-size:30px;
+}
+
+/* ltk-flag */
+.content span.ltk-flag {
+    color:#fff!important;
+}
+.ltk-flag {
+    position:absolute;
+    top:24px;
+    right:-6px;
+    font-family:'PTSansBold', Helvetica, Arial, Verdana, sans-serif;
+    display:inline-block;
+    padding: 4px 12px 2px 7px;
+    -webkit-border-radius: 6px 0 0 6px;
+    -moz-border-radius: 6px 0 0 6px;
+    border-radius: 6px 0 0 6px;
+    -webkit-transform: skew(-10deg);
+    -ms-transform: skew(-10deg);
+    -moz-transform: skew(-10deg);
+    transform: skew(-10deg);
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.37);
+}
+
+    .new-flag {
+       background: #f62b2f;
+
+    }
+
+    .hot-flag {
+        background: #ff005c;
+    }

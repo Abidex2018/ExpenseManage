@@ -1,0 +1,193 @@
+﻿@using System.Diagnostics.Eventing.Reader
+@using System.Linq
+@using ExpenseManager.Helper.Utilities
+@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<ExpenseManager.Helper.ViewModels.RequisitionViewModel>
+@using ExpenseManager.Helper.Repositories
+@using Microsoft.AspNet.Identity
+@{
+    UserRepository userRepo = new UserRepository();
+    var currentUser = userRepo.GetById(User.Identity.GetUserId());
+
+}
+@{
+    /**/
+
+    /**/
+
+    ViewBag.Title = "Dashboard";
+}
+
+@if (currentUser.IsOtherUser || currentUser.IsGeneralManager || currentUser.IsHod || currentUser.IsAdmin)
+{
+
+    {
+        var items = new List<RequisitionViewModel>();
+        long totalRequisition = 0;
+        long totalApproved = 0;
+        long totalRejected = 0;
+        long totalCompleted = 0;
+
+        //if (Model != null && Model.Any())
+        //{
+
+        //}
+         items = Model.ToList();
+            totalRequisition = items.Count(m => m.CreatedBy == currentUser.Id);
+            totalApproved = items.Where(m => m.CreatedBy == currentUser.Id).Count(m => m.IsApproved);
+            totalRejected = items.Where(m => m.CreatedBy == currentUser.Id).Count(m => m.Status == (int)RequisitionStatus.Rejected);
+            totalCompleted = items.Where(m => m.CreatedBy == currentUser.Id).Count(m => m.Status == (int)RequisitionStatus.Approved);
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-md-flex align-items-center">
+                                <div>
+                                    <h4 class="card-title">Site Analysis</h4>
+                                    <h5 class="card-subtitle">Overview of Latest Month</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Column -->
+                                <div class="col-md-6 col-lg-3 col-xlg-3">
+                                    <div class="card card-hover">
+                                        <div class="box bg-cyan text-center">
+                                            <h1 class="font-light text-white">
+                                                <i class="mdi mdi-chart-areaspline"></i>
+                                            </h1>
+                                            <h2>@totalRequisition</h2>
+                                            <h6 class="text-white">Requisition</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <div class="col-md-6 col-lg-3 col-xlg-3">
+                                    <div class="card card-hover">
+                                        <div class="box bg-success text-center">
+                                            <h1 class="font-light text-white">
+                                                <i class="mdi mdi-chart-areaspline"></i>
+                                            </h1>
+                                            <h2>@totalApproved</h2>
+                                            <h6 class="text-white">Approved</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <div class="col-md-6 col-lg-3 col-xlg-3">
+                                    <div class="card card-hover">
+                                        <div class="box bg-warning text-center">
+                                            <h1 class="font-light text-white">
+                                                <i class="mdi mdi-chart-areaspline"></i>
+                                            </h1>
+                                            <h2>@totalRejected</h2>
+                                            <h6 class="text-white">Rejected</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Column -->
+                                <div class="col-md-6 col-lg-3 col-xlg-3">
+                                    <div class="card card-hover">
+                                        <div class="box bg-danger text-center">
+                                            <h1 class="font-light text-white">
+                                                <i class="mdi mdi-chart-areaspline"></i>
+                                            </h1>
+                                            <h2>@totalCompleted</h2>
+                                            <h6 class="text-white">Completed</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    }
+}
+
+else
+{
+    {
+        var items = new List<RequisitionViewModel>();
+        long totalRequisition = 0;
+        long totalApproved = 0;
+        long totalRejected = 0;
+        long totalCompleted = 0;
+
+        items = Model.ToList();
+        totalRequisition = items.Count();
+        totalApproved = items.Count(m => m.IsApproved);
+        totalRejected = items.Count(m => m.Status == (int)RequisitionStatus.Rejected);
+        totalCompleted = items.Count(m => m.Status == (int)RequisitionStatus.Approved);
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="d-md-flex align-items-center">
+                            <div>
+                                <h4 class="card-title">Site Analysis</h4>
+                                <h5 class="card-subtitle">Overview of Latest Month</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="box bg-cyan text-center">
+                                        <h1 class="font-light text-white">
+                                            <i class="mdi mdi-chart-areaspline"></i>
+                                        </h1>
+                                        <h2>@totalRequisition</h2>
+                                        <h6 class="text-white">Requisition</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="box bg-success text-center">
+                                        <h1 class="font-light text-white">
+                                            <i class="mdi mdi-chart-areaspline"></i>
+                                        </h1>
+                                        <h2>@totalApproved</h2>
+                                        <h6 class="text-white">Approved</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="box bg-warning text-center">
+                                        <h1 class="font-light text-white">
+                                            <i class="mdi mdi-chart-areaspline"></i>
+                                        </h1>
+                                        <h2>@totalRejected</h2>
+                                        <h6 class="text-white">Rejected</h6>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Column -->
+                            <div class="col-md-6 col-lg-3 col-xlg-3">
+                                <div class="card card-hover">
+                                    <div class="box bg-danger text-center">
+                                        <h1 class="font-light text-white">
+                                            <i class="mdi mdi-chart-areaspline"></i>
+                                        </h1>
+                                        <h2>@totalCompleted</h2>
+                                        <h6 class="text-white">Completed</h6>
+                                    </div>
+                                </div>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        //if (Model != null && Model.Any())
+        //{
+
+        //}
+    }
+
+}

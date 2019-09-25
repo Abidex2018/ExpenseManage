@@ -1,0 +1,1432 @@
+/*  original clg styles */
+
+*{padding:0; margin:0; border:0;}
+
+em {font-weight:bold; font-style:normal;}
+
+#content, .content {min-height:100px;}
+/*
+#content .content {width:948px!important; margin:0 auto!important; color:#060606!important; font-size:0.88em!important; font-family:"PTSansRegular",Arial,sans-serif;}
+*/
+.contact_us .content h2{margin-bottom: -20px;}
+.contact_us strong {
+    font-weight:400;
+}
+	.contact_us .content a{font-weight: normal !important; display: inline !important;}
+.content .left {float: left; min-height: 50px; width: 700px; color:#060606;}
+.content .right {float:right;}
+
+.content .right2 {float: right; min-height: 50px; width: 700px; color:#060606;}
+.content.ltk_faqs_page .right2 h2 {
+    font-size:26px;
+    line-height:26px;
+}
+.content .left2 {float:left; width:228px!important;}
+.content.ltk_faqs_page .left2 {
+    width:208px!important;
+    border:1px solid #dbe1e3;
+    padding:10px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6, .ltk_faqs_page .content h2, .ltk_faqs_page .content h3, .ltk_faqs_page .content h4 {font-family:"PTSansBold",Arial,sans-serif; color: #084a6c; margin:16px 0;}
+.content h1 {/*color:#ff6d2e; border-bottom:2px solid #ff6d2e; padding:0.25em 0 0.5em;*/ font-size: 30px; font-weight:normal; margin-bottom:0.5em;}
+
+.content3, body.newhome_v1 #content .content3 {padding-bottom:100px!important; width:948px!important; margin:0 auto;}
+.content3 .left {float: left; min-height: 50px; width: 440px; color:#060606; border-right:1px solid #ccc; padding-right:20px;}
+.content3 .right {float:right; width:460px!important;}
+/*** DIV LEFT MAIN, TABLES AND OTHER ELEMENTS ***/
+
+.content .left h1 {margin-top:0!important; padding-top:0!important;}
+.content .left .txt h2 {margin-top:0; margin-bottom:0.5em;}
+.content .left p {font-family:"PTSansRegular",Arial,sans-serif; font-size:1.25em; margin:1em 0; line-height:1.25em;}
+.content .left a {font-family:"PTSansRegular",Arial,sans-serif; color:#060606!important; text-decoration:underline!important;}
+.content .left a:hover {text-decoration:none!important;}
+
+/*span, table span, table a, .content span {color:#060606!important;}*/
+table a {font-family:"PTSansRegular",Arial,sans-serif; text-decoration:underline!important; font-size:1.13em;}
+table.hoverable tr td em:hover, table.hoverable tr:hover td em, table.hoverable tr td strong:hover, table.hoverable tr:hover td strong {color:#FFFFFF!important;}
+
+input, textarea {border:1px #bdccd4 solid; border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width:220px; color: #333; font-size:13px!important; font-family:"PTSansRegular",Arial,sans-serif;}
+input {
+    height:auto;
+    padding:0 5px 0 5px;
+}
+textarea {
+    padding:5px;
+}
+.txt input, .txt textarea, .content3 input, .content3 textarea {border:1px #d5d5d5 solid; width:280px; color: #333; padding:4px; font-size:1.13em!important; font-family:"PTSansRegular",Arial,sans-serif; -webkit-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.15); -moz-box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.15); box-shadow: 3px 3px 7px 0px rgba(0,0,0,0.15); border-radius:0; -webkit-border-radius: 0; -moz-border-radius: 0;}
+
+.txt #div_add_method input {
+    width:220px;
+}
+
+input[type=submit]{border:none; width:auto;}
+#receiveademails {width:auto;}
+.content .left .div_form2 {margin-bottom:5px; float:left; margin-right:10px; width:150px!important;}
+.content .left .txt .div_form2 {width:200px!important;}
+.div_form3 {margin-left:210px;}
+
+div.submit input[type=button]{border:none;}
+
+.lotto_box {background-color:#ebe9e9!important; color:#060606; width: auto; height:58px; border-radius:8px; -webkit-border-radius: 8px; -moz-border-radius:8px; text-align:center; margin:20px 0; padding:10px; overflow: hidden;}
+
+.newpicker_lotto_box .lotto_box {
+    padding:0;
+}
+
+.lotto_box.picker {margin-bottom:0; border-radius:4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0; -moz-border-radius: 4px 4px 0 0;}
+
+.lotto_box .lotto_logo {width:270px; padding:2px; /*border-right:2px solid #c2c4d1;*/ -moz-border-radius: 0; -webkit-border-radius: 0; border-radius: 0; float:left; display:block; margin-bottom:7px; text-align:left; /*margin-right:15px;*/ color:#fff;}
+
+/*.lotto_box .lotto_logo img {float:left; margin-right:6px; height:30px; height:54px; width:auto;}*/
+
+.lotto_box .lotto_logo h3 {font-size:20px; margin:11px 0 5px 0; color:#333; text-transform:uppercase; font-weight:bold;}
+.lotto_box .lotto_logo p {font-size:13px; font-weight:normal; text-transform:uppercase; margin:0; color:#333;}
+
+.lotto_box .jackpot {margin:12px 0 0 0; font-size:24px; line-height:32px; line-height:16px; height:34px; text-align:left; float:left;}
+
+.lottoballs li {
+    width:10px;
+    height:10px;
+    line-height:24px;
+    list-style:none;
+    display:inline-block;
+    margin:0 6px 0 0;
+    border-radius:10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    text-align:center;
+    background-color:#FFF;
+    font-family:'PTSansBold';
+    font-size:13px;
+    color:#617b82;
+    border:1px solid #617b82;
+}
+
+.lottoballs li.extra {border-color:#07516b; background:#07516b; color:#FFF;}
+.lottoballs li.extra2 {border-color:#e9a60a;background:#e9a60a; color:#FFF;}
+
+.lotto_box .lottoballs li, .left table.myaccount .balls .lottoballs li {width:14px; height:14px; line-height:14px; padding: 1px; font-size:15px; margin: 0 2px 2px 0;}
+.lotto_box .lottoballs {float:left; display: block; width: 50%; text-align: left;}
+.lotto_box .drawdate {text-align:left; margin:2px 0 4px; color:#333; display: block; float: left;}
+
+.ball-white,
+.ball-red,
+.ball-extra,
+.games-lines-wrap .lottoballs li {
+    font-family:'PTSansBold', Helvetica, Arial, sans-serif;
+}
+
+.games-lines-wrap .lottoballs li {
+    width:22px;
+    height:22px;
+    line-height:32px;
+    font-size:16px;
+    color:#314951;
+}
+
+.games-lines-wrap .lottoballs .ball-red,
+.games-lines-wrap .lottoballs .ball-extra,
+.games-lines-wrap .lottoballs .red,
+.games-lines-wrap .lottoballs .extra,
+.games-lines-wrap .lottoballs .extra2 {
+    color:#fff;
+}
+
+.games-lines-wrap .lottoballs li:first-child {
+    width:auto;
+    height:auto;
+    margin:0 18px 0 0!important;
+    font-size:16px;
+    line-height:normal;
+    background:transparent!important;
+    border:none;
+    -webkit-border-radius:0;
+    -moz-border-radius:0;
+    border-radius:0;
+}
+
+.games-lines-wrap li .lottoballs li:last-child {
+    margin:0;
+}
+
+
+.ball-white,
+.ball-red,
+.ball-extra {
+    width:12px!important;
+    height:12px!important;
+    line-height:11px!important;
+    border-radius:10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    display:inline-block!important;
+    text-align:center;
+    font-weight:400!important;
+    font-size:13px;
+    border:1px solid;
+}
+
+.ball-white {
+    border-color:#617b82;
+    color:#314951;
+    background: #fff;
+}
+
+body.newhome_v1 #content.new_home .result_table table .ball-white,
+.lotto_info table .ball-white,
+body.newhome_v1 #content.new_home .result_table table .ball-red,
+.lotto_info table .ball-red,
+body.newhome_v1 #content.new_home .result_table table .ball-extra,
+.lotto_info table .ball-extra {
+    padding:0!important;
+}
+
+.ball-red,
+.ball-extra {
+    color:#fff;
+}
+
+.ball-red {
+    border-color:#07516b;
+    background:#07516b;
+}
+
+.ball-extra {
+    color:#fff;
+    border-color:#e9a60a;
+    background:#e9a60a;
+}
+
+div.error-alert
+{
+    width:301px;
+	padding:10px;
+	background:#fde4e4;
+	/*background-color:#E10404;*/
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+	color:#000;
+	margin-bottom:5px;
+	-moz-border-radius: 0px;
+	-webkit-border-radius: 0px;
+	border-radius: 0px; /* future proofing */
+	-khtml-border-radius: 0px; /* for old Konqueror browsers */
+	font-weight:bold;
+	border-left:5px solid #E10404;
+}
+
+	div.error-alert img {
+		display:none;
+	}
+
+div.notice-alert
+{
+	padding:10px;
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+	color:#333;
+	margin-bottom:20px;
+	background-color:#fee904;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px; /* future proofing */
+	-khtml-border-radius: 4px; /* for old Konqueror browsers */
+	font-weight:bold;
+}
+
+div.notice-alert img {vertical-align:text-bottom; margin-right:4px;}
+
+.account-results-box a {font-family:"PTSansRegular",Arial,sans-serif; text-decoration:underline!important; color:#060606!important; display:inline-block!important;}
+.content a:hover {text-decoration:none!important;}
+
+.myaccount_picker {margin:20px 0;}
+
+.left .txt, .content3 .right .txt, ul li.txt {background-color:#ebf9d5; padding:10px 15px; margin-bottom:20px; border-radius:0; -moz-border-radius:0; -webkit-border-radius:0;}
+
+.content3 .right .txt {
+    background:#e9eef1;
+}
+
+ul li.txt {width:299px; margin:0 20px 80px 0; display:inline-table; height:250px; font-family:"PTSansRegular",Arial,sans-serif; font-size:14px; color:#060606; }
+.raffle ul li.txt {
+    width:282px;
+    height:260px;
+}
+ul li.txt:last-of-type {margin-right:0;}
+ul li.txt p {margin-top:30px!important;}
+ul li.txt ul li {list-style:disc; margin:0 0 10px 20px;}
+ul li.txt .secure-icons img {float:left; margin-right:20px;}
+ul li.txt span.winner-number {font-family:"PTSansBold",Arial,sans-serif; font-size:30px; display:block; line-height:50px;}
+
+.link6 a, #fpag a {display:inline-block;}
+
+/*** DIV RIGHT SIDEBAR ***/
+
+
+.right .txt {background-color:#fff; padding:10px 15px; margin-bottom:20px; border: 1px solid #d4d4d4; border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; padding:10px; margin-bottom:20px; overflow: hidden;}
+.right .txt h2 {margin:-10px -10px; padding:10px 15px 0; display:block; color:#007493; font-family:"PTSansBold",Arial,sans-serif; margin-bottom:20px!important;}
+.right .txt p {color:#060606!important;}
+.right .txt p a {color:#060606!important; text-decoration:underline!important;}
+.right .txt p a:hover {text-decoration:none!important;}
+.right .txt ul li {list-style:disc; margin-left:20px; margin-bottom:10px;}
+.right .txt table.myaccount {/*padding:5px; */margin:10px 0 0; font-family:"PTSansRegular",Arial,sans-serif; width:100%;}
+/*.right .link {padding:10px 0; font-size:1.25em; font-family:"PTSansBold",Arial,sans-serif; position:relative;}*/
+.right .link {background-color:#00516c;color:#FFF; padding:10px 15px; display:block; font-size:1.25em; font-family:"PTSansBold",Arial,sans-serif; position:relative;}
+/*.right .link a {color:#060606!important; position:absolute; right:0; text-decoration:underline!important; font-family:"PTSansRegular",Arial,sans-serif; }*/
+.right .link a {color:#fff!important; position:absolute; right:10px; text-decoration:underline!important; font-family:"PTSansRegular",Arial,sans-serif; }
+.right a:hover {text-decoration:none!important;}
+.right .relevant_help {clear:both; background-color:#e9eef1; padding:10px 15px;}
+.right .relevant_help a {color:#060606!important;}
+
+.txt .lotto_logo {border:none; background-color:#FFF; display:block; margin-bottom:12px; text-align:left; padding:2px; width:auto; display:block;}
+.txt .lotto_logo img, .alerts_lotto_checkboxes .lotto_logo img {float:left; margin:0 6px 2px 0; height:30px;}
+.txt .lotto_logo h3, .alerts_lotto_checkboxes .lotto_logo h3 {font-size:12px; text-transform:uppercase; font-weight:bold; margin:0; line-height:14px;}
+.txt .lotto_logo p, .alerts_lotto_checkboxes .lotto_logo p {font-size:9px!important; font-weight:normal; text-transform:uppercase; margin:0; color:#333!important;}
+
+.right table.myaccount tr td {font-weight: normal !important; font-family: Arial, sans-serif !important; padding: 10px;}
+.right table.myaccount tr td:nth-of-type(3) {width:auto; text-align: right;}
+.right table.myaccount tr:nth-of-type(1) td {border-bottom: 1px solid #d4d4d4;}
+	.wallet .right table.myaccount tr:nth-of-type(1) td {border-bottom: none !important; padding-right: 0;}
+	.wallet .right table.myaccount tr:nth-of-type(2) td {background-color: #f4f4f4; font-weight: bold !important;}
+.wallet .right table.myaccount tr:nth-of-type(4) td {
+    background-color: #f4f4f4;
+    font-weight: bold !important;
+}
+	.wallet .right table.myaccount tr:nth-of-type(1) td:last-child {padding-right: 10px; padding-left: 0 !important;}
+		.wallet .right table.myaccount tr:nth-of-type(2) td:first-child {border-top-left-radius: 4px; -moz-border-top-left-radius: 4px; -webkit-border-top-left-radius: 4px; border-bottom-left-radius: 4px; -moz-border-bottom-left-radius: 4px; -webkit-border-bottom-left-radius: 4px; padding-right: 0 !important;}
+		.wallet .right table.myaccount tr:nth-of-type(2) td:last-child {border-top-right-radius: 4px; -moz-border-top-right-radius: 4px; -webkit-border-top-right-radius: 4px; border-bottom-right-radius: 4px; -moz-border-bottom-right-radius: 4px; -webkit-border-bottom-right-radius: 4px; width: 80px; padding-left: 0!important; padding-right: 10px;}
+
+.right .txt .btn {background-color: #8fce28 !important; float: right;}
+
+.right .lotto-logo {border-radius:8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; background-color:#ebe9e9; padding:10px; text-align:center; margin-bottom:20px;}
+.right .lotto-logo .top {border-radius:8px; -webkit-border-radius: 8px; -moz-border-radius: 8px; background-color:#ffffff; margin:0 auto; text-align:center; padding:5px 0;}
+.right .lotto-logo .bottom {background-color:#ebe9e9; padding:10px 0 0 0; font-family:"PTSansRegular",Arial,sans-serif;}
+.right .lotto-logo span {color:#060606!important; font-family:"PTSansBold",Arial,sans-serif; font-size:1.25em;}
+
+
+/*** DIV RIGHT2 MAIN, TABLES AND OTHER ELEMENTS ***/
+
+.content .right2 h1 {margin-top:0!important; padding-top:0!important;}
+.content .right2 .txt h2 {margin-top:0; margin-bottom:0.5em;}
+.content .right2 p {font-family:"PTSansRegular",Arial,sans-serif; font-size:1.25em; margin:1em 0; line-height:1.25em;}
+.content .right2 h2 {margin-top:0;}
+
+/*** DIV LEFT2 MAIN, TABLES AND OTHER ELEMENTS ***/
+
+.left2 .txt, .right2 .txt, .blue {background-color:#e9eef1; padding:10px; margin-bottom:20px; font-family:"PTSansRegular",Arial,sans-serif;}
+
+.blue .top {font-family:"PTSansBold",Arial,sans-serif; color:#060606;}
+.blue a, .blue span {color:#060606!important;}
+
+.textpag a {color:#060606!important; font-family:Helvetica, Arial, sans-serif; text-decoration:underline!important;}
+.textpag a:hover {color:#084a6c; text-decoration:none!important;}
+.textpag ul {margin-left:20px;}
+.textpag ul li {list-style:outside decimal; font-family:"PTSansRegular",Arial,sans-serif; margin-bottom:5px;}
+.textpag .answer {margin:10px 0 20px 0;}
+
+.blue .bottom {position:relative; padding:8px; background-color:#FFF; margin:10px 0;}
+.blue .bottom span {color:#ff6d2e!important;}
+.blue .bottom span.lotto {font-family:"PTSansBold",Arial,sans-serif; color:#060606!important;}
+.blue .play_link a {color:#FFF!important; text-transform:uppercase!important; font-family:"PTSansBold",Arial,sans-serif; font-weight:normal; width:100px!important; display:inline!important;}
+.blue .play_link {width:auto; position:absolute; right:5px; bottom:5px; text-align:center; background: #f96722;
+border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; border-top:1px solid #ffb288; border-bottom:2px solid #e53e16; padding:2px 10px; font-size:1em!important; cursor:pointer;
+}
+.blue .play_link:hover {
+    background:#ec5c30;
+}
+
+.content h2 strong {
+    font-weight:400;
+}
+
+.left2 h2 {padding:0 10px; margin:0;}
+.left2 a {color:#060606!important; text-decoration:underline!important; margin:0 10px; font-family:"PTSansRegular",Arial,sans-serif; font-size:1.13em; line-height:1em;}
+.left2 a:hover {text-decoration:none!important;}
+.left2 h2 a {margin:0; font-size:1em; font-family:"PTSansBold",Arial,sans-serif; color:#ff6d2e;}
+
+.left_blue {
+    margin:5px 0 20px 0;
+    padding:0 0 25px 0;
+    font-size: 30px;
+    line-height: 30px;
+    color: #084a6c;
+    font-family:"PTSansBold",Arial,sans-serif;
+    border-bottom:2px solid #85ef16;
+}
+
+.link5 {border-top:2px solid #ebe9e9; margin-bottom:10px;}
+
+.content .left h1 {margin-top:0!important; padding-top:0!important;}
+.content .left h2 {margin-bottom:0!important; margin-top:0!important;}
+.content .left h2.border {
+    margin-top:20px!important;
+}
+
+.content2 + .content .left .border  {
+    margin:0 0 15px 0!important;
+}
+
+.content3 .right .txt h2.border,
+.content2 + .content .left .border + .txt h2 {
+    background:#00516c!important;
+}
+.content .left .txt h2, .content3 .right .txt h2, ul li.txt h2 {margin:-10px -15px; padding:10px 15px; display:block; background-color:#8fce27; color:#FFF!important; font-family:"PTSansBold",Arial,sans-serif; margin-bottom:20px!important; font-size:21px!important;}
+.content .left p {font-family:"PTSansRegular",Arial,sans-serif; font-size:1.0em; margin:1em 0; line-height:1.25em;}
+ul li.txt h2 {
+    font-size:20px!important;
+}
+body.lang_es-la.newhome_v1 #content.new_home .content .left .result_table table td p.set_an_alert {
+    font-size:.8em!important;
+}
+
+.worldmap {
+    background-image: url("../../images_v4/gnt.com/worldmap.gif");
+    background-repeat: no-repeat;
+    color: #031429;
+    font-size: 1em;
+    height: 340px;
+    margin: 0 0 20px;
+    position: relative;
+    width: 637px;
+	border-top:2px solid #ebe9e9;
+	border-bottom:2px solid #ebe9e9;
+	padding:5px 0;
+	font-family:"PTSansBold",Arial,sans-serif;
+}
+.africa {
+    left: 320px;
+    position: absolute;
+    top: 180px;
+}
+.asia {
+    left: 470px;
+    position: absolute;
+    top: 100px;
+}
+.australia {
+    left: 527px;
+    position: absolute;
+    top: 254px;
+}
+.central_america {
+    left: 40px;
+    position: absolute;
+    top: 160px;
+	width:80px;
+}
+.europe {
+    left: 290px;
+    position: absolute;
+    top: 72px;
+}
+.north_america {
+    left: 70px;
+    position: absolute;
+    top: 70px;
+	width:80px;
+}
+.south_america {
+    left: 140px;
+    position: absolute;
+    top: 210px;
+	width:80px;
+}
+
+.worldmap table {z-index:1; border:2px solid #060606; border-radius:8px; -webkit-border-radius: 8px; -moz-border-radius: 8px;}
+.worldmap table thead td {background-color:#060606; color:#FFF;}
+.worldmap table td {padding:5px;}
+
+.result_table tbody, #result-africa tbody, #result-asia tbody, #result-australia tbody, #result-central-america tbody, #result-europe tbody, #result-north-america tbody, #result-south-america tbody, .confirm_table tbody, .creditcard tbody, .other-pm tbody, .billing-info tbody, .personal-info tbody, .lotto_info tbody {font-size:1em; color:#060606;}
+
+#result-africa {
+    left: 300px;
+    position: absolute;
+    top: 195px;
+}
+#result-asia {
+    left: 300px;
+    position: absolute;
+    top: 138px;
+}
+#result-australia {
+    left: 250px;
+    position: absolute;
+    top: 275px;
+}
+#result-central-america {
+    left: 20px;
+    position: absolute;
+    top: 168px;
+}
+#result-europe {
+    left: 290px;
+    position: absolute;
+    top: 93px;
+}
+#result-north-america {
+    left: 70px;
+    position: absolute;
+    top: 111px;
+}
+#result-south-america {
+    left: 140px;
+    position: absolute;
+    top: 251px;
+}
+
+.result_table td, #result-africa td, #result-asia td, #result-australia td #result-central-america td, #result-europe td, #result-north-america td, #result-south-america td, .lotto_info td {font-weight:bold; padding-bottom:5px; }
+
+.lotto_info table thead td {background-color:#00516c; color:#FFF; padding:10px; font-size:14px;}
+.lotto_info table tbody td {padding:10px;}
+
+div.play_link2, a.btn, div.submit2 input, div.submit input, div.submitbtn input, div.submitbtngrey input, input.btn, .content .left div.play_link2 a {text-decoration:none!important; color:#FFF!important; text-align:center;}
+
+.buttons {border-bottom:2px solid #85ef16; padding-bottom:25px;}
+.buttons li {display:inline-block; margin-right:10px;}
+.buttons li .left_blue {border:none!important; padding:0; margin:0;}
+.buttons li a {text-decoration:none!important;}
+.buttons li h2,
+.buttons li a h2 {
+    font-size:20px!important;
+    color:#007394!important;
+    line-height:41px;
+}
+.buttons li a h2 { text-decoration:none!important; background:transparent!important; }
+.buttons li h2 {border-radius:4px 4px 0 0; -webkit-border-radius:4px 4px 0 0; -moz-border-radius:4px 4px 0 0; padding:0 15px 0 15px; margin:0 0 0 9px; background:#fff}
+
+.content .left .buttons a {text-decoration:none!important;}
+
+.lotto_box .lotto_logo h3 {margin:6px 0 0 0!important; font-size:16px!important;}
+.lotto_box .lotto_logo p {margin:0!important;}
+.lotto_box {min-height:58px!important; height:auto!important;}
+
+.detail a.subscriptiondetail, .detail a.btn, .detail a.subscriptiondetail strong, .detail a.btn strong, #content .left .detail a, #content .left .lotto_info a, #content .left .lotto_info a.btn {color:#FFF!important; text-decoration:none!important;}
+
+.list .info .fl {float:left; padding-top:5px; width:380px; text-align:left;}
+
+div.play_link2, a.btn, div.submit2 input, div.submit input, div.submitbtn input, div.submitbtngrey input, input.btn {border-right:none!important; border-left:none!important; box-shadow:none; -moz-box-shadow:none; -webkit-box-shadow:none;}
+
+.txt .submit input[type=submit], .txt .submit input, .txt .submitbtn input, .content3 .submit input, .content3 .submitbtn input {background-color:#f87934; border:none; border-bottom:none!important; border-radius:0; -moz-border-radius:0; -webkit-border-radius:0; width:280px; padding:0 15px 0 15px!important; margin:10px 0;}
+
+input[type="checkbox"], input#is_default {width:auto!important; height:auto; box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;}
+
+/* Educatiional Emails */
+
+#content .content2 {font-size:12px; width: 100%;}
+#content .content p a, #content .content li a {display:inline-block; color:#007493!important; text-decoration:underline;}
+#content .content.ltk_faqs_page li,
+#content .content.ltk_faqs_page li a {
+    float:left;
+}
+#content .content.ltk_faqs_page li a {
+    float: none !important;
+}
+
+#content .content.ltk_faqs_page li {
+    width:100%;
+}
+
+#content .content p a:hover, #content .content li a:hover {text-decoration:none;}
+#content .content p a.btn {color:#FFF!important; text-decoration:none!important; text-transform:uppercase!important;}
+#content .content p a.btn:hover {text-decoration:none; color:#FFF;}
+
+#content .content ol li {margin-bottom:10px; list-style-type:disc; list-style-position:outside; margin-left:10px;}
+
+.heading {background-color:#f87934; text-align:center; padding:70px 0 30px 0; margin-bottom:30px; background:url(../../images_v4/educationalemails/bg-heading.png) 0 0 no-repeat;}
+.heading h1 {color:#bf4116; font-family:"PTSansBold",Arial,sans-serif; font-size:45px; line-height:45px; margin:10px 0;}
+.heading h2 {color:#ffffff; font-family:"PTSansBold",Arial,sans-serif; font-size:30px; line-height:30px; margin:10px 0;}
+
+/*.heading2 {background-color: transparent; text-align:center; padding:40px 0; margin-bottom:30px; background:url(../../images_v4/gnt.com/bg-heading2.png) 0 0 no-repeat; height:59px; z-index:1;}
+.heading2 h1 {color:#ffffff; font-family:"PTSansBold",Arial,sans-serif; font-size:40px; line-height:40px; margin:10px 0;}
+.heading2 h2 {color:#ffffff; font-family:"PTSansBold",Arial,sans-serif; font-size:30px; line-height:30px; margin:10px 0;}*/
+
+.heading2 .main_center,
+.heading3 .main_center {
+    width:984px;
+}
+.heading2 h1 {color:#084a6c; font-family:"PTSansBold",Arial,sans-serif; font-size:30px; line-height:30px; margin:25px 0 25px 0; font-weight:400;}
+.heading2 h2 {color:#ffffff; font-family:"PTSansBold",Arial,sans-serif; font-size:20px; line-height:20px; margin:10px 0;}
+
+.heading3 h1 {color:#084a6c; font-family:"PTSansBold",Arial,sans-serif; font-size:30px; line-height:30px; margin:25px 0 25px 0; font-weight:400;}
+.heading3 h2 {color:#084a6c; font-family:"PTSansBold",Arial,sans-serif; font-size:30px; line-height:30px; margin:25px 0 25px 0; font-weight:400;}
+
+/* ANGELS */
+
+ul.angels { margin-bottom:24px; text-align:center;}
+ul.angels li {display:inline-block; width:300px; text-align:center; margin-right:20px; background-color:#003366; border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px;}
+ul.angels li:last-child {margin-right:0;}
+
+ul.angels li div.angel-lotto {padding:10px 15px 0 15px; height:68px; position:relative; text-align:left; color:#FFF;}
+ul.angels li div.angel-lotto h2 {text-transform:uppercase; font-size:16px; font-weight:bold; color:#FFF;}
+ul.angels li div.angel-lotto p.jackpot {font-size:24px; font-weight:bold; margin-top:6px; }
+ul.angels li div.angel-lotto img {position:absolute; top:4px; right:4px;}
+
+ul.angels li div.angel-link {padding:7px 7px 0 15px; height:35px; position:relative; text-align:left; background:url(../../images/gnt.com/bg_fff_75.png) 0 0 repeat; font-size:13px;}
+ul.angels li div.angel-link p.time {float:left; line-height:30px; font-weight:bold; text-transform:uppercase; font-size:13px; margin:0; padding:0;}
+ul.angels li div.angel-link a {float:right;}
+ul.angels li div.angel-link p.time span {font-size:13px!important;}
+
+.right ul.angels li {width:226px; margin-bottom:20px; background-color:#83b53b;}
+.right ul.angels li div.angel-lotto {padding:10px 10px 0;}
+.right ul.angels li div.angel-lotto h2 {margin:5px 0 5px 0;}
+.right ul.angels li div.angel-lotto img {height:65px; width:auto; margin-top:2px;}
+.right ul.angels li div.angel-lotto p.jackpot {font-size:20px; margin:0;}
+.right ul.angels li div.angel-link {height:auto; padding:7px 7px 7px 7px; text-align:center; background-color:#f17f48; border-radius:0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px; -moz-border-radius: 0 0 4px 4px; color:#FFF;}
+.right ul.angels li div.angel-link p.time {font-size:14px!important; line-height:14px!important; padding-top:5px;}
+.right ul.angels li div.angel-link p.time span {font-size:14px!important;}
+.right ul.angels li .btn {text-align:center; background:#8ec540; border:none; text-transform:uppercase!important; padding:4px 10px; color:#ffffff!important;}
+#content .content .right ul.angels li .angel-link a.btn {color:#ffffff!important;}
+
+table.hoverable {font-family:Arial, Helvetica, sans-serif!important;}
+table.hoverable .playbtn a {text-decoration:none!important;}
+
+.section.playlottousps .main_center {background-color:#80b400; border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width:994px; padding:20px; margin-top:10px; margin-bottom:40px; font-family:"PTSansRegular",Arial,sans-serif; color:#000; font-size:15px;}
+.section.playlottousps .main_center div.playlottousps-item {background-color:#f1ece8; border-radius:4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; width:954px; padding:20px; margin-bottom:20px;}
+.section.playlottousps .main_center div.playlottousps-item:last-of-type {margin-bottom:0!important;}
+.section.playlottousps .main_center div.playlottousps-item img {float:left; margin:5px 20px 5px 0;}
+.section.playlottousps .main_center div.playlottousps-item h3 {font-family:"PTSansBold",Arial,sans-serif; color:#000; margin-bottom:5px;}
+.section.playlottousps .main_center div.playlottousps-item ul li {color:#000; display:inline-block; width:350px; margin:0 10px 10px 0;}
+
+.section.playlottousps .main_center div.playlottousps-item ul li {
+    background: url(../../images_v4/gnt.com/ico-checkbox.html) 0 4px no-repeat;
+	list-style:none;
+	padding-left:20px;
+}
+
+/* Results */
+
+.newhome_v1 .result_table {width:auto; margin:0 auto; font-size:14px; font-family:"PTSansRegular",Arial,sans-serif; color:#000; margin-bottom:80px; text-align:left;}
+.left .result_table {width:700px;}
+.newhome_v1 .result_table table {width:100%!important; font-family:"PTSansRegular",Arial,sans-serif!important; margin:20px 0; text-align:center;}
+.newhome_v1 .result_table table tr td:nth-of-type(1) {text-align:left;}
+.newhome_v1 .result_table table tr td.resultnums {font-family:"PTSansBold",Arial,sans-serif!important; font-size:17px;}
+.newhome_v1 .result_table table tr td:last-of-type, .lotto_info table td:last-of-type {border-right:none;}
+.left .result_table table a.btn {
+    line-height:31px;
+    padding:0 15px 0 15px!important;
+}
+.newhome_v1 .result_table table thead {background-color:#00516c; color:#FFF; font-family:"PTSansBold",Arial,sans-serif!important;}
+.newhome_v1 .result_table table thead td {border:none; font-size:14px!important; cursor:default;}
+
+.newhome_v1 .result_table table tr.darkbk {background-color:#f7f8f9;}
+.newhome_v1 .result_table table tr.lightbk {background-color:#fff;}
+
+.newhome_v1 .result_table table td, .lotto_info table td {padding:10px 15px!important;  font-weight:normal; cursor:pointer;}
+
+#content .content .result_table a.ajax {color:#000!important; text-decoration:none!important; font-weight:normal!important; font-size:1em!important;}
+
+.newhome_v1 .table_nav li {border-radius:0; -moz-border-radius:0; -webkit-border-radius:0; background-color:#ebebeb; text-transform:none; font-family:"PTSansBold",Arial,sans-serif!important; color:#000; font-weight:normal; font-size:18px!important; height:40px; line-height:40px; width:auto; padding:0 20px 0 20px; text-align:left;}
+.newhome_v1 .table_nav li.selected, .newhome_v1 .table_nav li.selected:hover {color:#007493!important;}
+.newhome_v1 .table_nav li img {vertical-align:text-bottom;}
+.newhome_v1 .table_nav li:hover {background-color:#d3d2d2;color:#000!important;}
+
+.newhome_v1 .result_table h2 {font-family:"PTSansBold",Arial,sans-serif;}
+
+.newhome_v1 table a {margin:0!important; display:inline-block!important; float:left;}
+.newhome_v1 table .set_an_alert {float:left; margin:0;}
+.newhome_v1 table .set_an_alert span {margin-left:8px;}
+
+.right .newbanner {width:100%; background-color:#e9eef1; text-align:center; margin:20px 0;}
+.right .newbanner h3 {color:#084a6c; text-transform:uppercase; font-family:"PTSansBold",Arial,sans-serif; font-size:25px; margin:15px 0!important;}
+.lang_de-de .right .newbanner h3 {font-size:19px;}
+.right .newbanner a.btn {display:block; padding:8px 10px!important;}
+
+.generic_hiw {background-color:#f2f3f5; min-height:20px; width:100%; margin:40px 0;}
+.generic_hiw li {display:table-cell; width:188px; padding:20px 12px 20px 52px; position:relative;}
+.generic_hiw li div.num {border-radius:50%; -webkit-border-radius: 50%; -moz-border-radius: 50%; background-color:#ff6d2e; color:#FFF; text-align:center; width:35px; height:35px; line-height:35px; font-size:25px; font-family:"PTSansBold",Arial,sans-serif; position:absolute; top:27px; left:50px;}
+.generic_hiw li h3 {padding-left:42px; font-family:"PTSansBold",Arial,sans-serif; color:#000; font-size:25px; margin:0!important;}
+.generic_hiw li p {font-family:"PTSansRegular",Arial,sans-serif; color:#000; font-size:14px; margin:12px 0 0 0;}
+
+.generic_hiw li:nth-child(1) {background-color:#d1d1d1; padding:20px 32px 20px 32px;}
+.generic_hiw li:nth-child(1) div.num {left:30px;}
+.generic_hiw li:nth-child(2) {background:url(../../images_v4/gnt.com/picker_images/picker_hiw_1.png) -33px -52px no-repeat #dfdfdf;}
+.generic_hiw li:nth-child(3) {background:url(../../images_v4/gnt.com/picker_images/picker_hiw_2.png) -33px -52px no-repeat #eaeaea;}
+.generic_hiw li:nth-child(4) {background:url(../../images_v4/gnt.com/picker_images/picker_hiw_3.png) -33px -52px no-repeat #f2f3f5;}
+
+.generic_hiw li .right-arrow {position:absolute; top:0; right:0;}
+
+.generic_hiw li.active {background-color:#ff6d2e;}
+.generic_hiw li.active div.num {background-color:#060606;}
+.generic_hiw li.active_arrow {background-image:url(../../images_v4/gnt.com/picker_images/picker_hiw_active.png);}
+
+.jackpot_list {width:100%; margin:40px 0;}
+.jackpot_list li {display:inline-table; width:310px; margin-right:19px!important; border:1px solid #d4d6d5; position:relative; min-height:300px; text-align:center; background:url(../../images_v4/gnt.com/bg_jackpot_list.jpg) 0 0 no-repeat #f87934; padding:0 0 10px 0; color:#FFF; font-family:"PTSansRegular",Arial,sans-serif; font-size:16px;}
+.jackpot_list.two li {width:501px; background-image:url(../../images_v4/gnt.com/bg_jackpot_list_raffle.jpg);}
+.raffle_list .jackpot_list.two li {width:310px; min-height:350px!important; background-color:#e44b07;}
+.jackpot_list li:last-of-type {margin-right:0!important;}
+.jackpot_list .lotto_logo {text-align:center; background-color:#FFF; padding:10px 0; margin-bottom:15px;}
+.jackpot_list a.btn {display:inline-block!important; margin:20 auto 10px; /*height:35px; line-height:35px;*/}
+.jackpot_list li span.jackpot {color:#FFF!important; font-size:40px; font-family:"PTSansBold",Arial,sans-serif; text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);}
+.jackpot_list li span.jackpot small {
+    font-size:20px;
+    /* 27-12-2016 fixed */
+    width:100%;
+    display:inline-block;
+}
+.lang_de-de .jackpot_list li span.jackpot small {
+    font-size:15px;
+}
+
+.jackpot_list li p {color:#FFF!important; margin:20px!important;}
+.jackpot_list span.draw_date {background-color:#ebebeb; padding:5px 10px; color:#000!important; font-family:"PTSansBold",Arial,sans-serif; text-shadow:none; font-size:17px; margin-top:20px; display:inline-block;}
+
+.right .jackpot_list li {width:228px; margin-right:0!important}
+.right .jackpot_list li a.btn, #content .content .right .jackpot_list li a {color:#FFF!important;}
+body.lang_pl-pl .right .jackpot_list li a.btn {
+    min-width:120px;
+}
+.jackpot_list li a.btn {
+    line-height:41px;
+}
+
+.right .jackpot_list li span.jackpot {font-size:30px;}
+.right .jackpot_list li img {height:64px; width:auto;}
+.right .jackpot_list li .lotto_logo h3 {font-size:16px; margin:10px 0 0 0!important;}
+.right .jackpot_list li .lotto_logo p {font-size:13px!important;}
+
+.jackpot_box {-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); background:url(../../images_v4/gnt.com/bg_jackpot_box.jpg) 0 0 no-repeat #f87934; border:2px solid #b75018; position:relative; margin:20px 0 40px 0; color:#FFF; font-family:"PTSansBold",Arial,sans-serif!important; height:150px;}
+.jackpot_box .lotto_logo {width:288px; margin:25px 86px 0 183px; float:left; background-color:transparent!important;}
+.jackpot_box .jackpot_info {float:left; font-size:50px; text-transform:uppercase; margin-top:30px; text-shadow: 0px 0px 5px rgba(0, 0, 0, 1);}
+body.lang_pl-pl .jackpot_box .jackpot_info {
+    max-width:420px;
+}
+.jackpot_box .jackpot_info small {font-size:18px; text-transform:none; text-shadow:none;}
+
+.jackpot_box .lotto_logo, .jackpot_list .lotto_logo {background-color:#FFF; text-align:left; padding:10px; display:block; font-family:"PTSansBold",Arial,sans-serif;}
+.lang_de-de .jackpot_list .lotto_logo {height:78px;}
+.jackpot_box .lotto_logo img, .jackpot_list .lotto_logo img {float:left; margin:0 6px 2px 0; height:70px;}
+.jackpot_box .lotto_logo h3, .jackpot_list .lotto_logo h3 {font-size:21px; text-transform:uppercase; margin:0; line-height:23px; font-family:"PTSansBold",Arial,sans-serif; margin:8px 0!important;}
+.lang_de-de .jackpot_list .lotto_logo h3 {font-size:17px;}
+.jackpot_box .lotto_logo p, .jackpot_list .lotto_logo p {font-size:15px!important; font-weight:normal; text-transform:uppercase; margin:0!important; color:#000!important;}
+
+.raffle {}
+
+	.raffle .desc {margin: 30px 0;}
+
+.raffle_box {-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3); border:2px solid #b75018; position:relative; margin:40px 0 20px 0; display:block; min-height:200px; background:url(../../images_v4/gnt.com/bg_raffle_box.jpg) center center no-repeat #e44b07; text-align:center; color:#FFF!important; padding:40px 0; background-size:cover;}
+
+.raffle_box.raffle_39 {background-image:url(../../images_v4/gnt.com/bg_raffle_box_id_39.html)}
+.raffle_box.raffle_12el_padre {background-image:url(../../images_v4/gnt.com/bg_raffle_box_id_12_elpadre.jpg)}
+
+.raffle_box h3 {font-family:"PTSansBold",Arial,sans-serif; text-shadow: 0px 0px 5px rgba(0, 0, 0, 1); text-decoration:underline; font-size:50px!important; color:#FFF!important; clear:both; float:none; margin:0!important;}
+.raffle_box span.jackpot {color:#FFF!important; font-size:32px; font-family:"PTSansBold",Arial,sans-serif; text-shadow: 0px 0px 5px rgba(0, 0, 0, 1); width:42%; padding:3%; margin: 10px auto 0; padding: 0;}
+span.jackpot.sm {font-size:25px!important;}
+.raffle_box span.jackpot small {font-size:20px;}
+.raffle_box div.fl {color:#FFF!important; width:42%; padding:3%; float:left; text-align:left;}
+.raffle_box p, .raffle_box ul li {color:#FFF!important; font-size:15px; font-family:"PTSansRegular",Arial,sans-serif;}
+.raffle_list .raffle_box small + p {
+    font-size:21px!important;
+}
+
+.raffle_box ul li {list-style:disc; margin:0 0 10px 18px;}
+.raffle_box a.btn {width:200px;}
+.raffle_box .sticker {padding:0!important; margin:0!important; background:url(../../images_v4/gnt.com/sticker_special.png) 0 0 no-repeat; height:39px; width:281px; line-height:37px; color:#000!important; text-align:center; text-transform:uppercase; font-family:"PTSansBold",Arial,sans-serif; font-size:17px; margin:0 auto; float:none; display:inline-block; margin-bottom:20px!important;}
+.raffle_box span.draw_date {background-color:#ebebeb; padding:5px 10px; color:#000!important; font-family:"PTSansBold",Arial,sans-serif; text-shadow:none; font-size:17px; display:inline-block; margin-top:20px;}
+.raffle_box span.jackpot br + small {
+    position:relative;
+    top:-10px;
+    display:inline-block;
+}
+ul.ul_tick li {list-style-image:url(../../images_v4/gnt.com/ico-tick-green.png)!important; margin:0 5px 12px 30px!important;}
+
+div.steps {background-color:#eee; padding:15px 0; width:100%; margin:-60px 0 30px 0; z-index:9;}
+div.steps .main_center {width:900px; margin:0 auto; text-align:center;}
+div.steps .main_center ul li {display:inline-block; margin:0 10px; font-size:21px; color:#000; font-family:"PTSansBold",Arial,sans-serif; line-height:49px; }
+div.steps ul li:nth-child(3) {color:#d04b1e; font-size:30px;}
+div.steps ul li:nth-child(2), div.steps ul li:nth-child(4) {background:url(../../images_v4/gnt.com/bg_steps_inactive.png) 0 0 no-repeat; height:45px; width:47px; text-align:center; font-size:25px; color:#000; background-size:cover;}
+div.steps ul li.active {color:#d04b1e; background:url(../../images_v4/gnt.com/bg_steps_active.png) 0 0 no-repeat; background-size:cover;}
+
+/* Cart Step */
+
+#orderForm {margin-bottom:60px;}
+
+span.txttotal {text-align:right; float:right; line-height:30px; font-size:21px; font-family:"PTSansBold",Arial,sans-serif;}
+
+.totalbox {background-color:transparent!important; font-size:21px; font-family:"PTSansBold",Arial,sans-serif;}
+.totalbox p {width:70%; float:left;}
+.totalbox .submit2 {float:right; width:auto;}
+.txt p.alert {border-top:2px solid #dedede; margin-top:10px; padding-top:10px;}
+
+div.cartbuttons {width:100%; margin-top:20px;}
+div.cartbuttons .btnleft {float:left;}
+div.cartbuttons .btnright {float:right;}
+
+table.cart {margin:20px 0;}
+table.cart a, .content table.cart a {color:#f60!important; float:none!important; font-size:14px;}
+table.cart a:hover {text-decoration:underline!important;}
+
+table.cart tr td {border-top:1px solid #ccc; border-right:1px solid #ccc; padding:10px;}
+table.cart tr td:last-child {border-right:none;}
+table.cart tr:last-child td {border-bottom:1px solid #ccc;}
+
+table.cart p {margin:0!important;}
+
+table.cart .lotto_logo {text-align: left; width: auto; background-color:transparent!important; margin:0!important; padding:0!important;}
+table.cart .lotto_logo img {float: left; height: 40px; margin: 0 6px 2px 0;}
+table.cart .lotto_logo h3 {font-size: 15px!important; line-height: 21px; margin:0; text-transform: uppercase; color: #000 !important;}
+table.cart .lotto_logo p {color: #000 !important; font-size: 11px !important; font-weight: normal; margin: 0; text-transform: uppercase;}
+
+.right table.cart {font-size:12px!important; margin: 0 0 10px 0; position:relative;}
+
+table.cart tr:nth-child(even) td {background-color:#F2F3F5!important;}
+table.cart tr:nth-child(odd) td {background-color:#FFF!important;}
+
+.right table.cart tr td {border:1px solid #becfa1; border-top:none; border-left:none;}
+.right table.cart tr:nth-child(odd) td {background:#d4e6b6!important;}
+.right table.cart tr:nth-child(even) td {background:#ddedc3!important;}
+
+.right table.cart tr:last-of-type td {font-family:"PTSansBold",Arial,sans-serif; font-size:16px;}
+.right table.cart tr td:last-of-type {border-right:none;}
+
+table.cart tr#tr_offer.offer td {background-color:#fee904!important; font-weight:bold!important; text-align:right;}
+table.cart tr.subtotal td {font-weight:bold!important; text-align:right;}
+
+#total  {margin-bottom:10px; padding:10px 0; background-color:#d4e6b6;}
+#total .fl {float:left; padding-left:10px; font-weight:bold; font-size:15px!important;}
+#total .fr {float:right; padding-right:10px; font-weight:bold; font-size:15px!important;}
+
+#promotioncode_box.txt {background-color:#ebf9d5; color:#000!important;}
+#promotioncode_box.txt a, #promotioncode_box.txt span.txttotal {color:#000!important;}
+
+.fl {float:left;}
+.fr {float:right;}
+
+a.removebtn, table.cart a.removebtn {position:absolute; top:-5px; right:-8px; z-index:1; background-color:#ccc!important; color:#FFF!important; border-radius:50%; -moz-border-radius:50%; -webkitz-border-radius:50%; width:20px; height:20px; line-height:20px; text-align:center;}
+a.removebtn:hover, table.cart a.removebtn:hover {background-color:#f60!important; color:#FFF!important; text-decoration:none!important;}
+
+form#f_promo_code {display:inline;}
+form#f_promo_code a {vertical-align:middle;}
+
+.popup {min-width:220px;}
+.popup .lottoballs li {
+    width:30px;
+    height:30px;
+    line-height:29px;
+    margin:5px 0 0 1px;
+}
+
+.popup .lottoballs li:first-child {
+    margin-left:0;
+}
+
+.btnGrey, .left a.btnGrey, input#apply_code.btnGrey {color:#000!important; background: #bcbcbc!important; text-decoration:none!important; border-bottom-color:#a1a1a1!important; font-family:Arial, Helvetica, sans-serif; font-size:14px;}
+input#apply_code.btnGrey {margin:0!important; padding:6px 15px 3px 15px!important; font-size:14px!important;}
+input#promo_code {box-shadow:none; -webkit-box-shadow:none; -moz-box-shadow:none;}
+.btnGrey:hover {background:#999!important; text-decoration:none!important;}
+
+#payway_id {margin:20px 0;}
+#payway_id li {display:inline-block; margin:5px 8px;}
+#payway_id li, #payway_id input, #payway_id label {height:30px; line-height:30px;}
+#payway_id li input {width:auto!important; margin-right:5px;}
+
+#credit_card_div h3 {margin: 0; font-size:30px;}
+
+/* ALERTS */
+
+ul.alerts_lotto_checkboxes li {display:inline-block; margin:10px; border:1px solid #ebebeb; width:276px;}
+ul.alerts_lotto_checkboxes li input {float:left; margin:21px 10px 0 10px;}
+ul.alerts_lotto_checkboxes li .lotto_logo {padding:10px;}
+ul.alerts_lotto_checkboxes li .lotto_logo img {height:40px; width:auto;}
+ul.alerts_lotto_checkboxes li .lotto_logo h3 {font-weight:normal; font-size:17px; line-height:22px;}
+ul.alerts_lotto_checkboxes li .lotto_logo p {margin:0; font-size:12px!important;}
+
+#content .content a.btn {color:#FFF!important; text-decoration:none!important; display:inline-block;}
+
+.lang_de-de #content .content .newbanner a.btn {
+    max-width:185px;
+}
+
+/* btn and ajax hover fix*/
+body.newhome_v1 #content.new_home .lotto_info table.hoverable tr:hover a.btn {color:#f87934!important;}
+body.newhome_v1 #content.new_home .lotto_info table.hoverable tr.hover a.btn {color:#fff!important;}
+body.newhome_v1 #content.new_home .result_table table tr.darkbk a.btn,
+body.newhome_v1 #content.new_home .result_table table tr.lightbk a.btn {
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+}
+
+body.newhome_v1 #content.new_home .result_table table tr.darkbk.hover a.btn,
+body.newhome_v1 #content.new_home .result_table table tr.lightbk.hover a.btn {
+    color:#fff!important;
+    background:#f76a29!important;
+
+}
+
+body.newhome_v1 #content.new_home .content .result_table tr.darkbk.hover a.ajax,
+body.newhome_v1 #content.new_home .content .result_table tr.lightbk.hover a.ajax {color:#003366!important;}
+
+body.newhome_v1 #content.new_home .result_table table td,
+.lotto_info table td {
+    padding:10px!important;
+}
+
+#cboxContent input[type="checkbox"] {
+    margin:0 5px 0 0;
+}
+
+#cboxContent p.buttons a.btn {
+    min-width:210px;
+    display:inline-block!important;
+}
+
+#cboxContent p.buttons {
+    border:none;
+    padding-bottom:15px;
+}
+
+/* main_center styletext_main_center*/
+.styletext_main_center,
+body.newhome_v1 #content.new_home .styletext_main_center {
+     color:#060606!important;
+     font-weight:normal;
+
+}
+body.newhome_v1 #content.new_home .styletext_main_center h4 {
+    font-size:21px!important;
+}
+
+body.newhome_v1 #content.new_home .styletext_main_center  {
+    font-size:15px;
+}
+
+body.newhome_v1 #content.new_home .styletext_main_center ul li.txt,
+body.newhome_v1 #content.new_home .styletext_main_center ul li.txt ul li{
+    font-size:13px!important;
+}
+
+body.newhome_v1 #content.new_home .styletext_main_center ul li.txt {
+    margin:0 0 80px 19px!important;
+}
+
+body.newhome_v1 #content.new_home .styletext_main_center ul li.txt:first-child {
+    margin-left:0!important;
+}
+
+body.newhome_v1 #content.new_home .styletext_main_center ul li.txt ul li {
+    margin:0 0 10px 18px!important;
+}
+
+body.newhome_v1 #content .content {margin:0 auto!important; color:#060606!important; font-size:0.88em!important; font-family:"PTSansRegular",Arial,sans-serif;}
+body.newhome_v1 #content .content3 {
+    width:984px!important;
+}
+body.newhome_v1 #content.scratchcards .content {
+    width:984px;
+}
+
+#banner_countdown_days_1 img {
+    position:relative;
+    top:17px;
+}
+
+/* e-check */
+#eCheck {
+    font-family:Arial;
+}
+
+#eCheck input,
+#eCheck .selectborder.electronicCheckState {
+    border:1px solid #4d4d4d!important;
+    border-radius:4px;
+    -wekkit-border-radius:4px;
+    -moz-border-radius:4px;
+    box-shadow:0 2px 2px rgba(0,0,0,.3) inset!important;
+}
+
+#eCheck label.address,
+#eCheck label.tel {
+    top:72px!important;
+}
+
+#eCheck label.check-nmb ,
+#eCheck label.tel {
+    right:173px!important;
+}
+
+#eCheck label.check-nmb {
+    top:15px!important;
+}
+
+#eCheck label.scp {
+    top:127px!important;
+}
+
+#eCheck span.ip {
+    top:85px!important;
+}
+
+#eCheck input.pc {
+    top:140px!important;
+}
+
+#eCheck span.logo-echeck,
+#eCheck label {
+    font-size:12px!important;
+}
+
+#eCheck span.logo-echeck,
+#eCheck label.tel {
+    left:auto!important;
+}
+
+#eCheck span.logo-echeck {
+    top:9px!important;
+    right:22px!important;
+}
+
+#eCheck .payto {
+    top:175px!important;
+}
+
+#eCheck .sign {
+    top:283px!important;
+}
+
+#eCheck .bottom-line {
+    bottom:15px!important;
+}
+
+#eCheck .bottom-line img {
+   margin-top:24px;
+}
+
+#eCheck .selectborder.electronicCheckState {
+    height:20px!important;
+    top:147px!important;
+}
+
+#eCheck .bottom-line input {
+    font-size:26px!important;
+}
+
+body.newhome_v1 #content.new_home #eCheck  .form_select2-moz,
+.txt .form_select2-moz{
+    background:transparent!important;
+}
+
+body.newhome_v1 #content.new_home #eCheck  .form_select2-moz {
+    width:54px!important;
+    height:20px!important;
+    padding:0!important;
+}
+
+#eCheck select.state{
+    background:url("../../images_v4/gnt.com/arrow-down.png") 40px 8px no-repeat!important;
+}
+
+#eCheck a.check-help {
+    bottom:15px!important;
+}
+
+#eCheck select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: window;
+    -moz-appearance: none;
+    -moz-user-select:none;/* this is important for fixed in old firefox! */
+    text-indent:0.01px;/* this is important for fixed in old firefox! */
+    text-overflow: ''; /* this is important for fixed in old firefox! */
+}
+
+ select::-ms-expand select {
+     display:none;
+ }
+
+ .content.account {
+		position: relative;
+ 	}
+
+	 .content.account .right{
+		/*float: none;
+		position: absolute;
+		right: 0;
+		width: 300px !important;*/
+        float:left;
+        width:274px!important;
+ 	}
+
+	.content.account .left{
+		width: 690px !important;
+        margin:0 20px 0 0;
+ 	}
+
+
+ .newpicker .about_lottery {
+		margin-top: 20px;
+ }
+
+ .newpicker .about_lottery h2 {
+	display: block;
+  	height: 53px;
+  	width: 982px;
+    position: relative;
+	border-top-left-radius: 10px;
+	-webkit-top-left-border-radius: 10px;
+	-moz-border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	-webkit-top-right-border-radius: 10px;
+	-moz-border-top-right-radius: 10px;
+	background: #e6e6e7;
+	font-size: 28px;
+	text-transform: uppercase;
+	line-height: 70px;
+	text-align: center;
+ }
+ 	.newpicker .about_lottery h2:after {
+		border-top: 35px solid #e6e6e7;
+	  	border-left: 491px solid transparent;
+	  	border-right: 491px solid transparent;
+	  	content: "";
+	  	height: 0;
+	  	left: 0;
+	  	position: absolute;
+	 	top: 53px;
+	  	width: 0;
+		margin-bottom: 60px;
+ }
+
+ 	.newpicker .about_lottery section {
+		display: block;
+		position: relative;
+		min-height: 170px;
+		padding: 30px 320px 30px 5px;
+		border-bottom: 3px solid #e7eaed;
+		width: 590px;
+		margin: 15px auto 0;
+		background-position: right top;
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+		.newpicker .about_lottery h2 + section {
+			margin-top: 50px;
+		}
+
+ 	.newpicker .about_lottery section img.logo {
+		width: 140px;
+		position: absolute;
+		left: 88px;
+		top: 16px;
+	}
+
+	.newpicker .about_lottery section h3 {
+		font-size: 24px !important;
+    	text-transform: uppercase !important;
+    	color: #06506d !important;
+	}
+
+	.newpicker .about_lottery section p{
+		font-size: 18px !important;
+		line-height: 1.5em !important;
+	}
+	.newpicker .about_lottery section ul li{
+		font-size: 18px !important;
+		margin-bottom: 20px;
+		padding-left: 40px;
+		background: url(../../images_v4/gnt.com/ico-tick-green%40x2.png) no-repeat top left;
+		background-size: 31px auto;
+	}
+
+    .faqs_section_wrap {
+        position:relative;
+        margin:40px 0 0 0;
+    }
+
+        .newpicker .about_lottery section:nth-child(even) {
+			padding-left: 320px;
+			padding-right: 5px;
+        }
+
+        .newpicker .about_lottery section:last-child {
+			border: none !important;
+		}
+
+        .ltk_faqs_txt {
+            width:573px;
+        }
+
+        .ltk_faqs_bg {
+           position:absolute;
+           width:320px;
+           height:228px;
+           display:inline-block;
+           background-size:contain;
+           background-repeat: no-repeat;
+           background-position:center center;
+        }
+
+        .newpicker .about_lottery section .ltk_faqs_bg{
+           bottom:0;
+           right:0;
+		}
+
+        .newpicker .about_lottery section:nth-child(even) .ltk_faqs_bg{
+           top:0;
+           left:0;
+        }
+
+        .newpicker .about_lottery section.howtoplay .ltk_faqs_bg {
+		    background-image: url(../../images_v4/gnt.com/picker_about_bg_howtoplay.jpg);
+		}
+		/*.newpicker .about_lottery section.prizes,*/
+        .newpicker .about_lottery section.prizes .ltk_faqs_bg{
+			background-image: url(../../images_v4/gnt.com/picker_about_bg_prizes.jpg);
+		}
+		/*.newpicker .about_lottery section.tickets*/
+        .newpicker .about_lottery section.tickets .ltk_faqs_bg {
+            background-image: url(../../images_v4/gnt.com/picker_about_bg_ticket.jpg);
+		}
+
+		/*.newpicker .about_lottery section.funfacts,*/
+        .newpicker .about_lottery section.funfacts .ltk_faqs_bg {
+            background-image: url(../../images_v4/gnt.com/picker_about_bg_funfacts.jpg);
+		}
+		/*.newpicker .about_lottery section.winner,*/
+        .newpicker .about_lottery section.winner .ltk_faqs_bg {
+            background-image: url(../../images_v4/gnt.com/picker_about_bg_winner.jpg);
+		}
+
+/* lkt - lts: styles equalization */
+.content .left2 h2,
+.content .right2 h2,
+.content h1 + h2,
+.content h1 + br + h2,
+.content .left h1 + h2,
+.content .left h1 + br + h2,
+.content .left h1 + form + h2,
+.lotto_info h2,
+.table_nav + h2,
+.content2 + .content .left h2{
+    color:#007495;
+}
+
+.link + h2 {
+    color:#084a6c;
+}
+
+.buttons + .link + h2 {
+    margin:15px 0 0 0!important;
+}
+
+.content .left .table_nav + h2,
+.table_nav + h2 {
+    margin-top:10px!important;
+    font-size:20px;
+    line-height:20px;
+}
+
+.textpag + br + br + br + .textpag ul li a {
+    cursor:default;
+    text-decoration:none;
+}
+
+.never_mis_jackpot {
+    float: left;
+    padding: 20px 20px 0 20px;
+    margin: 0;
+}
+
+
+/*///////////////////////Live-lotos-home-inicio/////////////////////////////////*/
+
+.terminarFlotacion:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+    }
+.terminarFlotacion { display: inline-table; }
+/* Hides from IE-mac \*/
+* html .terminarFlotacion { height: 1%; }
+.terminarFlotacion { display: block; }
+/* End hide from IE-mac */
+
+.section.live-lottos {
+    padding: 30px;
+    background: url(../../images_v4/gnt.com/livelottos/bg-home.jpg) no-repeat #18a809;
+    border-radius: 6px;
+    margin-top: 40px;
+	max-width: 922px;
+	overflow: hidden;
+}
+
+.section.live-lottos .arrow-right {
+ 	background-color: #f62b2f;
+    box-shadow: 0 0 10px 5px rgba(74, 68, 68, 0.5);
+    height: 180px;
+    right: -113px;
+    position: absolute;
+    top: -104px;
+    width: 180px;
+    -webkit-transform: rotate(46deg);
+}
+
+.section.live-lottos .arrow-right span {
+    color: #FFF!important;
+    font-family: sans-serif;
+    font-size: 1.005em;
+    right: 42px;
+    top: 154px;
+    position: absolute;
+	width: 80px;
+	font-weight: bold;
+}
+.section.live-lottos .ticket_box{
+    width: 100%;
+	display: block;
+}
+.live-lottos ul.Livelotto-list{
+	width: 100%;
+	display: block;
+    margin-top: 55px;
+}
+.live-lottos ul.Livelotto-list li{
+	width: calc(453px - 4px);
+	float: left;
+	border: 2px solid #FFF/*#d6d6d6*/;
+    border-radius: 4px;
+	background: #FFF;
+}
+.section.live-lottos h2{
+	color: #FFF;
+}
+.section.live-lottos h2 span{
+	color: #ffff00 !important;
+}
+.home_new_users .section.live-lottos{
+	border: none;
+}
+.live-lottos ul.Livelotto-list li:last-child, .live-lottos ul.Livelotto-list li.logo_44{
+    margin-left: 16px;
+}
+.live-lottos ul.Livelotto-list li .slider_logo{
+	left: 18px;
+	top: -22px;
+}
+.live-lottos ul.Livelotto-list li .content-cta {
+	width: 300px;
+	float: right;
+	position: relative;
+    top: -40px;
+    right: 11px;
+}
+.live-lottos ul.Livelotto-list li .txt-companion {
+    width: 180px;
+    float: left;
+    text-align: right;
+	margin-top: 12px;
+	margin-right: 10px;
+}
+	body.lang_es-la .live-lottos ul.Livelotto-list li .txt-companion,
+	body.lang_pt-la .live-lottos ul.Livelotto-list li .txt-companion {
+		letter-spacing: -0.7px;
+		}
+
+.live-lottos ul.Livelotto-list li .contenedor-liveLottoB {
+    width: 100%;
+}
+.live-lottos ul.Livelotto-list li .btk_wrap {
+    float: right;
+    position: relative;
+    right: 10px;
+    margin-left: 8px;
+}
+.live-lottos ul.Livelotto-list li .tb_time_left{
+    display: block;
+    width: 128px;
+    float: left;
+    top: 14px;
+    position: relative;
+    left: 10px;
+}
+.live-lottos ul.Livelotto-list .logo_43 .ticket_box img.slider_box_bg {
+    position: absolute;
+    left: 24px;
+    top: -5px;
+    z-index: 0;
+    clip: rect(4px,300px,105px,0);
+}
+.live-lottos ul.Livelotto-list .logo_44 .ticket_box img.slider_box_bg {
+    position: absolute;
+    left: 24px;
+    top: -5px;
+    z-index: 0;
+    clip: rect(4px,300px,105px,0);
+}
+.live-lottos ul.Livelotto-list .logo_43 .ticket_box{
+    background: #008306;
+		background: -moz-linear-gradient(bottom, #00b201 0%, #008306 50%, #004f06 100%);
+		background: -webkit-linear-gradient(bottom, #00b201 0%,#008306 50%,#004f06 100%);
+		background: linear-gradient(to top, #00b201 0%,#008306 50%,#004f06 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00b201', endColorstr='#004f06',GradientType=0 );
+    margin: 0 0 0 10px;
+    padding: 0 4px 0 0;
+    /* overflow: hidden; */
+    border-radius: 4px 4px 0 0;
+	height: 100px;
+}
+.live-lottos ul.Livelotto-list .logo_44 .ticket_box{
+     background: #008306;
+		background: -moz-linear-gradient(bottom, #fbb000 0%, #ff6c00 50%, #d93800 100%);
+		background: -webkit-linear-gradient(bottom, #fbb000 0%,#ff6c00 50%,#d93800 100%);
+		background: linear-gradient(to top, #fbb000 0%,#ff6c00 50%,#d93800 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbb000', endColorstr='#d93800',GradientType=0 );
+    margin: 0 0 0 10px;
+    margin: 0 0 0 10px;
+    padding: 0 4px 0 0;
+    /* overflow: hidden; */
+    border-radius: 4px 4px 0 0;
+	height: 100px;
+}
+.live-lottos ul.Livelotto-list li p{
+font-size: 28px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+    text-align: right;
+    z-index: 5;
+    position: absolute;
+    right: 10px;
+    top: 50px;
+	color: #fff;
+}
+.logo_44 .ticket_box h3 em, .logo_43 .ticket_box h3 em{
+    border-right-color: #ffff00!important;
+}
+.logo_44 .ticket_box h3, .logo_43 .ticket_box h3 {
+    color: #faec21!important;
+}
+.section.casino-games {
+    margin-top: 36px !important;
+}
+.cgs-title {
+    margin: 0 0 20px 0 !important;
+	height: 40px !important;
+}
+#content .content a.btn {
+    color: #FFF!important;
+    text-decoration: none!important;
+    display: inline-block;
+    font-family: "PTSansBold", Arial Black, Arial, sans-serif;
+    font-size: 16px !important;
+}
+.live-lottos ul.Livelotto-list li .live {
+    background: yellow;
+    padding: 4px 10px;
+    border-radius: 2px;
+    text-align: center;
+	text-transform: uppercase;
+}
+.qdb-lottos a .live{
+	background: yellow;
+    padding: 0px 8px;
+    border-radius: 2px;
+    text-align: center;
+    text-transform: uppercase;
+    color: black;
+    line-height: 22px;
+	}
+/*///////////////////////Live-lotos-home-Fin/////////////////////////////////*/

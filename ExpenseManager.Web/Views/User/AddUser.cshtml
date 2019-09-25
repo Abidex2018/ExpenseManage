@@ -1,0 +1,148 @@
+﻿
+
+@model ExpenseManager.Web.Models.RegisterViewModel
+
+
+
+<div class="modal-dialog" role="document">
+    <form class="modal-content" id="frmForm" method="post" data_parsley_validate="">
+        <div class="modal-header">
+            <h4 class="modal-title">Add User</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row" style="margin:2px">
+
+                <div class="form-group col-md-6">
+                    <label>Company</label>
+                    @Html.DropDownListFor(c => c.CompanyId, new SelectList(ViewBag.CompaniesLookup, "Id", "Name", @Model.CompanyId), "-- Please select --", new { @id = "dlCompanyId", @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Department</label>
+                    @Html.DropDownListFor(c => c.CompanyDepartmentId, new SelectList(ViewBag.CompDepartmentsLookup, "Id", "Name", @Model.CompanyDepartmentId), "-- Please select --", new { @id = "dlCompanyDepartmentId", @class = "form-control", required = "required" })
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control " value="" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>First Name</label>
+                    <input type="text" class="form-control " value="" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>User Role</label>
+                    @Html.DropDownListFor(c => c.UserRoleId, new SelectList(ViewBag.UserRolesLookup, "Id", "Name", @Model.UserRoleId), "-- Please select --", new { @class = "form-control", required = "required" })
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Email</label>
+                    <input type="text" class="form-control " value="" id="email" name="email" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Password</label>
+                    <input type="password" class="form-control " value="" id="password" name="password" autocomplete="off" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Confirm Password</label>
+                    <input type="password" class="form-control " value="" id="confirmPassword" name="confirmPassword" autocomplete="off" required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i>  Close</button>
+            <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Save</button>
+        </div>
+    </form>
+</div>
+
+<script>
+
+
+    $(document).ready(function () {
+
+        $('#dlCompanyId').change(function () {
+
+
+            $('#dlCompanyDepartmentId').html('');
+            if ($('#dlCompanyId').val() != null) {
+
+                $.ajax({
+                    type: "POST",
+                    url: "/CompanyDepartment/GetLookup",
+                    data: JSON.stringify({ companyId: $('#dlCompanyId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        $('#dlCompanyDepartmentId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items, function (index, value) {
+                            $('#dlCompanyDepartmentId').append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                        });
+                    }
+                });
+
+            }
+        });
+
+
+        $('#frmForm').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+        }).on('form:submit', function () {
+
+
+            var frm = $("#frmForm");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("CreateUser", "User")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Staff created successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+</script>
+
+@section scripts{
+}
+
+
+

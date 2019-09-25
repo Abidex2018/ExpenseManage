@@ -1,0 +1,60 @@
+﻿
+
+<div class="card-body">
+    <table class="table table-bordered dataTable">
+        <thead>
+            <tr>
+
+                <th>
+                    <b>Name</b>
+                </th>
+                <th>
+                    <b>Category</b>
+                </th>
+                <th>
+                    <b>Status</b>
+                </th>
+                <th style="width: 70px"><b>Action</b></th>
+            </tr>
+        </thead>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.ExpenseCategoryName
+                </td>
+                <td>
+                    @if (item.IsActive)
+                    {
+                        <span class="label label-success"> @item.ActiveLabel</span>
+                    }
+                    else
+                    {
+                        <span class="label label-danger"> @item.ActiveLabel</span>
+                    }
+                </td>
+                <td>
+                    <a title="Edit" href="@Url.Action("EditExpenseType", "ExpenseType", new {expenseTypeId = item.Id})" data-modal=""><i class="fa fa-edit"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+
+<script>
+    $(document).ready(function () {
+
+        $('.dataTable').DataTable({ "ordering": false });
+
+       
+      
+    });
+
+
+</script>

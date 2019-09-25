@@ -1,0 +1,117 @@
+﻿
+@using ExpenseManager.Helper.Repositories
+@using Microsoft.AspNet.Identity
+@{
+    UserRepository userRepo = new UserRepository();
+    var currentUser = userRepo.GetById(User.Identity.GetUserId());
+
+}
+
+@using XPLUG.WEBTOOLKIT
+@model ExpenseManager.Helper.ViewModels.ApprovalModel
+
+
+
+@if (currentUser.IsHeadOfAccount)
+{
+    <div class="modal-dialog" role="document">
+        <form class="modal-content" id="frmApproval" method="post" data_parsley_validate="">
+
+            @Html.Hidden("RequisitionId", Model.RequisitionId)
+            <div class="modal-header">
+                <h4 class="modal-title">Retirement's Approval</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+               
+                <div class="row">
+                  
+                    <div class="form-group col-md-6">
+
+                        @Html.RadioButtonFor(model => model.IsApproved, true, new { id = "rdApproved", @style = "width:auto;background:none;border:none" })
+                        @Html.Label("rdApproved", "Approve")
+                    </div>
+                </div>
+             
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Approve</button>
+            </div>
+        </form>
+    </div>
+}
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+
+
+        $('#frmApproval').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+        }).on('form:submit', function () {
+
+
+            if ($("#rdApproved").prop("checked") === false){
+
+                InlineErrorMessage("Your Approval Action is required!", "dvError");
+                return false;
+            }
+
+            var frm = $("#frmApproval");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("SubmitRetirementApproval", "Requisition")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Approval was added successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+</script>
+
+

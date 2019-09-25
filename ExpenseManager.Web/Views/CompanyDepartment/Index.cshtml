@@ -1,0 +1,260 @@
+﻿
+@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.ViewModels
+@model IEnumerable<ExpenseManager.Helper.ViewModels.DepartmentViewModel>
+
+@{
+
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+    int departmentId = ViewBag.departmentId;
+    List<LookupModel> dp = ViewBag.DepartmentsLookup;
+    int companyId = ViewBag.companyId;
+
+}
+<div>
+    <h4 class="page-title">Company Departments</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card-header">
+            <div class="row">
+               
+                <div class=" col-md-6 ">
+                   
+                    <select class="form-control search-slt" style="float: left; width: 50%;" value="companyId" name="companyId" id="ddlCompanyId" required>
+
+                        <option value="0">--select Company--</option>
+
+
+                        @foreach (var item in cp)
+                        {
+                            if (item.Id != companyId)
+                            {
+
+                                <option value="@item.Id">@item.Name</option>
+                            }
+
+                        }
+
+                    </select>
+
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="button" class="btn btn-success btn-md " data-toggle="modal" data-target="#exampleModal" style="float: right;" id="btn_AddCompany"><i class="fa fa-plus"></i> Add New </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                       
+                        <form class="modal-content" id="frmForm" method="post" data_parsley_validate="">
+                          <input type="hidden" id="dCompanyId" name="CompanyId"/>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">New Company's Department</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+
+                            <div class="modal-body">
+                                <div class="form-row" style="margin: 2px">
+                                   
+                                    <div class="form-group col-md-12">
+                                        <select class="form-control search-slt" name="departmentId" id="dlDepartmentId">
+                                               
+                                            <option value="0">--select Department--</option>
+                                            @foreach (var item in dp)
+                                            {
+                                                if (item.Id != departmentId)
+                                                {
+
+                                                    <option value="@item.Id">@item.Name</option>
+                                                }
+
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-12">
+                                        <input type="checkbox" name="CanCreateRequestForOtherDept" id="CanCreateRequestForOtherDept" >
+                                        <label class="control-label" for="CanCreateRequestForOtherDept"> User can make request for other department users</label>
+
+                                    </div>
+                                       
+                                     
+
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+                                <button type="submit" class="btn btn-success"> <i class="fa fa-check"></i> Submit </button>
+                            </div>
+                        </form>
+                      
+                    </div>
+                </div>
+            </div>
+         
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="partialList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        $(document).ready(function () {
+
+            $('.dataTable').DataTable({ "ordering": false});
+
+            $(document).on("click", ".tr-show", function () {
+                var mclass = $(this).attr("data-showTR");
+                $("." + mclass).toggle();
+            });
+
+            $("a[data-modal]").on("click", function (e) {
+                $(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+                $('#modalContent').load(this.href, function () {
+                    $('#dvModal').modal('show', {
+                        backdrop: 'static',
+                        keyboard: false,
+                    });
+                });
+
+                return false;
+            });
+        });
+
+
+        function loadStaffLists() {
+
+
+
+            var companyId = $("#ddlCompanyId").val();
+            if (companyId == null || companyId === "") {
+
+                return;
+            }
+
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("DepartmentCompanyByCompanyList", "CompanyDepartment")?companyId=' + companyId,
+                data: params,
+                success: function (data) {
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+
+        $(document).ready(function() {
+            $('#ddlCompanyId').change(function() {
+                var companyId = $('#ddlCompanyId option:selected').val();
+                $('#dCompanyId').val(companyId);
+
+                $('#ddlDepartmentId').empty();
+                $.ajax({
+                    type: "POST",
+                    url: "/CompanyDepartment/GetLookup",
+                    data: JSON.stringify({ companyId: $('#dCompanyId').val() }),
+                    contentType: "application/json; charset=utf-8",
+                    success: function(data) {
+                        $('#ddlDepartmentId').append('<option value="">--Please select--</option>');
+                        $.each(data.Items,
+                            function(index, value) {
+                                $('#ddlDepartmentId')
+                                    .append('<option value="' + value.Id + '">' + value.Name + '</option>');
+                            });
+                    }
+                });
+                
+                $('#partialList').html("");
+                loadStaffLists();
+            });
+
+
+        });
+
+        $(document).ready(function() {
+        
+            $('#frmForm').parsley().on('field:validated',
+                function() {
+                    var ok = $('.parsley-error').length === 0;
+                    $('.bs-callout-info').toggleClass('hidden', !ok);
+                    $('.bs-callout-danger').toggleClass('hidden', ok);
+                }).on('form:submit',
+                function() {
+
+
+                    var frm = $("#frmForm");
+                    var params = frm.serializeArray();
+
+
+                    Swal.fire({
+                        title: 'Confirm',
+                        text: "Are you sure you want to submit now!",
+                        type: 'info',
+                        showCancelButton: true,
+                        confirmButtonText: 'Yes',
+                        showLoaderOnConfirm: true,
+                        allowOutsideClick: false,
+                        preConfirm: () => {
+                            return $.ajax({
+                                type: "POST",
+                                url: '@Url.Action("CreateDepartment", "CompanyDepartment")',
+                                data: params,
+                                success: function(data) {
+                                    return data;
+                                }
+                            });
+                        },
+
+                    }).then((result) => {
+
+                        if (result.value.IsSuccessful) {
+                            Swal.fire({
+                                type: 'success',
+                                title: 'Success',
+                                text: 'Department submitted successfully'
+
+                            }).then((result) => {
+                                loadStaffLists();
+                            });
+
+
+                        } else {
+                            Swal.fire('Error!', result.value.Error, 'error');
+                        }
+                    });
+
+
+                    return false;
+                });
+
+
+        });
+
+
+    </script>
+
+
+}

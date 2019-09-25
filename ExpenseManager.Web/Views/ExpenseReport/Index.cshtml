@@ -1,0 +1,201 @@
+﻿@using ExpenseManager.Helper.Entities
+@using ExpenseManager.Helper.Repositories
+@using ExpenseManager.Helper.ViewModels
+@using XPLUG.WEBTOOLKIT
+@model List<ExpenseManager.Helper.ViewModels.RequisitionViewModel>
+@{
+    ViewBag.Title = "Pending Requisition";
+   
+    string s = ViewBag.sDate;
+    string e = ViewBag.eDate;
+    int counter = 0;
+
+    List<LookupModel> cp = ViewBag.CompaniesLookup;
+    int companyId = ViewBag.companyId;
+ 
+   
+}
+
+
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <div class="row">
+                    <div class=" col-md-3 ">
+                        <label>Date Range:</label>
+                        <input type="hidden" id="sDate" name="sDateTime" value="@s" />
+                        <input type="hidden" id="eDate" name="eDateTime" value="@e" />
+
+                        <div id="dateRange" class="form-control search-slt" style="cursor: pointer; padding-top: 3px; font-size: 14px;">
+                            <i class="fa fa-calendar"></i>&nbsp;
+                            <span></span> <i class="fa fa-caret-down"></i>
+                        </div>
+                    </div>
+                    <div class=" col-md-3 ">
+                        <label>Company:</label>
+                        <select class="form-control search-slt" name="companyId" id="ddlCompanyId">
+                            @if (companyId == 0)
+                            {
+                                <option value="0">--select Company--</option>
+                            }
+                            else
+                            {
+
+                                <option value="@companyId">@cp.Where(c => c.Id == companyId).Select(a => a.Name).FirstOrDefault()</option>
+                            }
+
+
+                            @foreach (var item in cp)
+                            {
+                                if (item.Id != companyId)
+                                {
+
+                                    <option value="@item.Id">@item.Name</option>
+                                }
+                            }
+                        </select>
+                    </div>
+                    <div class="col-md-3 ">
+                        <label>Department:</label>
+                        <select class="form-control search-slt" name="departmentId" id="ddlDepartmentId">
+
+                            <option value="0">--select Department--</option>
+                        </select>
+                    </div>
+
+
+                    <div class="col-md-3 ">
+                        <button type="submit" class="btn btn-danger wrn-btn" id="btn_submit" style="float: right; margin-top: 30px;">Get Record</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-12" id="partialList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+      $(function() {
+        var start = moment('@s', "DD/MM/YYYY"); //moment().subtract(7, 'days');
+        var end = moment('@e', "DD/MM/YYYY"); //moment();
+
+        function cb(start, end) {
+            //alert(start);
+            $('#sDate').val(start.format('DD/MM/YYYY'));
+            $('#eDate').val(end.format('DD/MM/YYYY'));
+            $('#dateRange span').html(start.format('MMM D, YYYY') + ' - ' + end.format('MMM D, YYYY'));
+        }
+
+        $('#dateRange').daterangepicker({
+                startDate: start,
+                endDate: end,
+                opens: 'left',
+                autoApply: true,
+                ranges: {
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [
+                        moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')
+                    ]
+                }
+            },
+            cb);
+        cb(start, end);
+    });
+
+      $(document).ready(function () {
+          $('#btn_submit').click(function () {
+
+              $('#partialList').html("");
+              loadPendingRequisitionLists();
+
+          });
+
+
+          $('.dataTable').DataTable({ "ordering": false });
+
+
+
+          $('#ddlCompanyId').change(function () {
+              var companyId = $('#ddlCompanyId option:selected').val();
+              $('#ddlCompanyId').val(companyId);
+              $('#ddlDepartmentId').empty();
+
+              $.ajax({
+                  type: "POST",
+                  url: "/Companydepartment/GetLookup",
+                  data: JSON.stringify({ companyId: $('#ddlCompanyId').val()}),
+                  contentType: "application/json; charset=utf-8",
+                  success: function (data) {
+                      $('#ddlDepartmentId').append('<option value="">--Select Department--</option>');
+                      $.each(data.Items, function (index, value) {
+                          $('#ddlDepartmentId').append('<option value="'+ value.Id+'">'+ value.Name+'</option>');
+                      });
+                  }
+              });
+
+          });
+
+      });
+
+             function loadPendingRequisitionLists() {
+
+            var companyId = $("#ddlCompanyId").val();
+            if (companyId == null || companyId === "") {
+
+                return;
+            }
+            var departmentId = $("#ddlDepartmentId").val();
+            if (departmentId == null || departmentId === "") {
+
+                return;
+            }
+            var sDate = $("#sDate").val();
+            if (sDate == null || sDate === "") {
+
+                return;
+            }
+            var eDate = $("#eDate").val();
+            if (eDate == null || eDate === "") {
+
+                return;
+            }
+
+
+            $('#blockDiv').block({
+                css: { border: 'none', padding: '10px',
+                    backgroundColor: '#000','-webkit-border-radius': '10px','-moz-border-radius': '10px', opacity: .5, color: '#fff'
+                }
+            });
+
+            var frm = $("#fetchTxnFrom");
+            var params = frm.serializeArray();
+
+            $.ajax({
+
+                type: "POST",
+                url: '@Url.Action("PendingRequisitionList", "ExpenseReport")?&sDateTime=' + sDate + '&eDateTime=' + eDate + '&companyId=' + companyId + '&departmentId=' + departmentId,
+                data: params,
+                success: function (data) {
+                    alert(data.count());
+                    $('#partialList').html(data);
+                },
+                complete: function () {
+                    $('#blockDiv').unblock();
+                }
+            });
+
+        }
+
+</script>

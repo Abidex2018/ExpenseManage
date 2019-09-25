@@ -1,0 +1,129 @@
+﻿
+
+@using XPLUG.WEBTOOLKIT
+@model ExpenseManager.Helper.ViewModels.DisbursementViewModel
+
+
+
+<div class="modal-dialog" role="document">
+    <form class="modal-content" id="frmAddDisbursement" method="post" data_parsley_validate="">
+        @Html.Hidden("RequisitionId", Model.RequisitionId)
+        @Html.Hidden("OpeningBalance", Model.OpeningBalance)
+        <div class="modal-header">
+            <h4 class="modal-title">Pay Out</h4>
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form-row" style="margin: 2px">
+                <div class="form-group col-md-6">
+                    <label>Company</label>
+                    <input type="text" class="form-control" value="@Model.CompanyName" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Department</label>
+                    <input type="text" class="form-control" value="@Model.DepartmentName" readonly>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Request Title</label>
+                    <input type="text" class="form-control" value="@Model.RequestTitle" name="requestTitle" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Total Amount</label>
+                    <input type="text" class="form-control" value="@Model.TotalAmount.ToString().ToNaira()" name="totalAmount" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Total Paidout</label>
+                    <input type="text" class="form-control" value="@Model.TotalPaidout.ToString().ToNaira()" name="totalPaidout" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Balance</label>
+                    <input type="text" class="form-control" value="@Model.OpeningBalance.ToString().ToNaira()" name="openingBalance" readonly>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Amount to Pay </label>
+                    <input type="number" min="1" max="@Model.OpeningBalance" step="0.01" class="form-control " value="@Model.AmountToPay" id="amountToPay" name="amountToPay" required>
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Beneficiary</label>
+                    @Html.DropDownListFor(c => c.BeneficiaryId, new SelectList(ViewBag.BeneficiariesLookup, "Value", "Name", @Model.BeneficiaryId), "-- Please select --", new {@id = "ddlBeneficiaryId", @class = "form-control", required = "required", @readonly="readonly", @select="false"})
+                </div>
+                <div class="form-group col-md-12">
+                    <label>Description</label>
+                    <input type="text" class="form-control " value="@Model.Description" id="description" name="description" required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><i class="fa fa-remove"></i> Close</button>
+            <button type="submit" class="btn btn-primary"> <i class="fa fa-check"></i> Save</button>
+        </div>
+    </form>
+</div>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+       
+
+        $('#frmAddDisbursement').parsley().on('field:validated', function() {
+            var ok = $('.parsley-error').length === 0;
+            $('.bs-callout-info').toggleClass('hidden', !ok);
+            $('.bs-callout-danger').toggleClass('hidden', ok);
+        }).on('form:submit', function () {
+
+
+            var frm = $("#frmAddDisbursement");
+            var params = frm.serializeArray();
+
+
+            Swal.fire({
+                title: 'Confirm',
+                text: "Are you sure you want to submit now!",
+                type: 'info',
+                showCancelButton: true,
+                confirmButtonText: 'Yes',
+                showLoaderOnConfirm: true,
+                allowOutsideClick: false,
+                preConfirm: () => {
+                    return $.ajax({
+                        type: "POST",
+                        url: '@Url.Action("CreateDisbursement", "Requisition")',
+                        data: params,
+                        success: function (data) {
+                            return data;
+                        }
+                    });
+                },
+
+            }).then((result) => {
+
+                if (result.value.IsSuccessful) {
+                    Swal.fire({
+                        type: 'success',
+                        title: 'Success',
+                        text: 'Disbursement added successfully'
+
+                    }).then((result) => {
+                        window.location.reload();
+                    });
+
+
+                } else {
+                    Swal.fire('Error!', result.value.Error,'error');
+                }
+            });
+
+
+            return false;
+        });
+
+
+    });
+
+
+</script>
+

@@ -1,0 +1,471 @@
+﻿@using ExpenseManager.Helper.Repositories
+@*@model IEnumerable<ExpenseManager.Helper.ViewModels.RequisitionViewModel>*@
+@using Microsoft.AspNet.Identity
+@{
+    UserRepository userRepo = new UserRepository();
+    var currentUser = userRepo.GetById(User.Identity.GetUserId());
+
+}
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Favicon icon -->
+    <link rel="icon" type="image/png" sizes="16x16" href="../../Scripts/assets/images/expense-fav.png">
+    <title>Expense Manager</title>
+    <link href="~/Scripts/dist/css/style.css" rel="stylesheet" />
+
+    <link href="~/Scripts/dist/css/style.min.css" rel="stylesheet" />
+    <link href="~/Scripts/daterangepicker/daterangepicker.css" rel="stylesheet" />
+    <link href="~/Scripts/assets/libs/flot/css/float-chart.css" rel="stylesheet" />
+    <script src="~/Scripts/sweetAlert2/sweetalert2.all.min.js"></script>
+    <link href="~/Scripts/DataTables/datatables.min.css" rel="stylesheet" />
+   
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+
+  
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <!-- ============================================================== -->
+    <!-- Preloader - style you can find in spinners.css -->
+    <!-- ============================================================== -->
+    <div class="preloader">
+        <div class="lds-ripple">
+            <div class="lds-pos"></div>
+            <div class="lds-pos"></div>
+        </div>
+    </div>
+    <!-- ============================================================== -->
+    <!-- Main wrapper - style you can find in pages.scss -->
+    <!-- ============================================================== -->
+    <div id="main-wrapper">
+        <!-- ============================================================== -->
+        <!-- Topbar header - style you can find in pages.scss -->
+        <!-- ============================================================== -->
+        <header class="topbar" data-navbarbg="skin5">
+            <nav class="navbar top-navbar navbar-expand-md navbar-dark">
+                <div class="navbar-header" data-logobg="skin5">
+                    <!-- This is for the sidebar toggle which is visible on mobile only -->
+                    <a class="nav-toggler waves-effect waves-light d-block d-md-none" href="javascript:void(0)"><i class="ti-menu ti-close"></i></a>
+                    <!-- ============================================================== -->
+                    <!-- Logo -->
+                    <!-- ============================================================== -->
+                    <a class="navbar-brand" href="@Url.Action("Index","Home")">
+                        <!-- Logo icon -->
+                        <b class="logo-icon p-l-10">
+                            <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
+                            <!-- Dark Logo icon -->
+
+                            <img src="~/Scripts/assets/images/E-pense.png" alt="homepage" class="light-logo" style="height:60px" />
+
+                        </b>
+                        <!--End Logo icon -->
+
+                    </a>
+
+                    <!-- ============================================================== -->
+                    <a class="topbartoggler d-block d-md-none waves-effect waves-light" href="javascript:void(0)" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="ti-more"></i></a>
+                </div>
+                <!-- ============================================================== -->
+                <!-- End Logo -->
+                <!-- ============================================================== -->
+                <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
+
+                    <!-- ============================================================== -->
+                    <!-- toggle and nav items -->
+                    <!-- ============================================================== -->
+                    <ul class="navbar-nav float-left mr-auto">
+                        <li class="nav-item d-none d-md-block"><a class="nav-link sidebartoggler waves-effect waves-light" href="javascript:void(0)" data-sidebartype="mini-sidebar"><i class="mdi mdi-menu font-24"></i></a></li>
+                        <!-- ============================================================== -->
+                        <!-- create new -->
+                        <!-- ============================================================== -->
+
+                    </ul>
+                    @*<div style="float: left;">Total Amount disburse: <span class="badge badge-success" id="totalAmounts"></span></div>
+                    &nbsp;
+                    <div style="float: left;">Balance: <span class="badge badge-success">Success</span></div>*@
+
+                    @if (currentUser.IsHeadOfAccount)
+                    {
+                        <div class="circle-text " id="countReq"><a href="javascript:void(0)" id="reloadList"><b id="myReqcount" style="color: white;"></b></a> </div><b> &nbsp;Requisition Awaiting your Approval</b>
+                    }
+                    @if (currentUser.IsGeneralManager)
+                    {
+                        <div class="circle-text " id="countReq"><a href="javascript:void(0)" id="reloadList"><b id="myReqcount" style="color: white;"></b></a>  </div><b> &nbsp;Requisition Awaiting your Approval</b>
+                    }
+                    @if (currentUser.IsHod)
+                    {
+                        <div class="circle-text " id="countReq"><a href="javascript:void(0)" id="reloadList"><b id="myReqcount" style="color: white;"></b></a> </div><b> &nbsp;Requisition Awaiting your Approval</b>
+                    }
+                    @if (currentUser.IsExecutive)
+                    {
+                        <div class="circle-text " id="countReq"><a href="javascript:void(0)" id="reloadList"><b id="myReqcount" style="color: white;"></b></a> </div><b> &nbsp;Requisition Awaiting your Approval</b>
+                    }
+
+
+                    <!-- ============================================================== -->
+                    <!-- Right side toggle and nav items -->
+                    <!-- ============================================================== -->
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </nav>
+        </header>
+        <!-- ============================================================== -->
+        <!-- End Topbar header -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <aside class="left-sidebar" data-sidebarbg="skin5">
+            <!-- Sidebar scroll-->
+            <div class="scroll-sidebar">
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav">
+                    <ul id="sidebarnav" class="p-t-30">
+                        @if (currentUser.IsAdmin)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("RetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">User Management </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","User")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Manage Users </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","Staff")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Manage Staff </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","UserRole")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approval Roles </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","ApprovalWorkflowLevel")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approval Levels </span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">Settings</span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","Department")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Departments </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","CompanyDepartment")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Company Departments </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseCategory")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Categories </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseType")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Types </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseItem")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Items </span></a></li>
+ 
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">Expense Report </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("PendingRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Pending Requisition </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("ApprovedRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approved Requisition </span></a></li>
+
+                                </ul>
+                            </li>
+
+                        }
+                        else if (currentUser.IsHeadOfAccount)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("RetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("ApproveRetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approve Retirement</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Approval","Requisition")" aria-expanded="false"><i class="mdi mdi-check"></i><span class="hide-menu"> Approval</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("CashDisbursement","Requisition")" aria-expanded="false"><i class="fa fa-dollar-sign"></i><span class="hide-menu"> Cash Disbursement</span></a></li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">Expense Report </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("PendingRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Pending Requisition </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("ApprovedRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approved Requisition </span></a></li>
+
+                                </ul>
+                            </li>
+                        }
+                        else if (currentUser.IsOtherUser)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("RetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+
+                        }
+                        else if (currentUser.IsGeneralManager)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Approval","Requisition")" aria-expanded="false"><i class="mdi mdi-check"></i><span class="hide-menu"> Approval</span></a></li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">Expense Report </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("PendingRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Pending Requisition </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("ApprovedRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approved Requisition </span></a></li>
+
+                                </ul>
+                            </li>
+                        }
+
+                        else if (currentUser.IsHod)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("RetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Approval","Requisition")" aria-expanded="false"><i class="mdi mdi-check"></i><span class="hide-menu"> Approval</span></a></li>
+
+                        }
+                        else if (currentUser.IsExecutive)
+                        {
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Home")" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span class="hide-menu"> Dashboard</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Index","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Requisitions</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("RetirementList","Requisition")" aria-expanded="false"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Retirement</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("Approval","Requisition")" aria-expanded="false"><i class="mdi mdi-check"></i><span class="hide-menu"> Approval</span></a></li>
+                            <li class="sidebar-item"> <a class="sidebar-link waves-effect sidebar-link" href="@Url.Action("CashDisbursement","Requisition")" aria-expanded="false"><i class="fa fa-dollar-sign"></i><span class="hide-menu"> Cash Disbursement</span></a></li>
+
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="fa fa-user"></i><span class="hide-menu">Staff Management </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","User")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Manage Users </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","Staff")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Manage Staff </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","UserRole")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approval Roles </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","ApprovalWorkflowLevel")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approval Levels </span></a></li>
+                                </ul>
+                            </li>
+
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">AppSettings</span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","Department")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Departments </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index","CompanyDepartment")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Company Departments </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseCategory")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Categories </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseType")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Types </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("Index", "ExpenseItem")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Expense Items </span></a></li>
+
+
+                                </ul>
+                            </li>
+                            <li class="sidebar-item">
+                                <a class="sidebar-link has-arrow waves-effect" href="javascript:void(0)" aria-expanded="false"><i class="mdi mdi-group"></i><span class="hide-menu">Expense Report </span></a>
+                                <ul aria-expanded="false" class="collapse  first-level">
+                                    <li class="sidebar-item"><a href="@Url.Action("PendingRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Pending Requisition </span></a></li>
+                                    <li class="sidebar-item"><a href="@Url.Action("ApprovedRequisition","ExpenseReport")" class="sidebar-link"><i class="mdi mdi-note-outline"></i><span class="hide-menu"> Approved Requisition </span></a></li>
+
+                                </ul>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!-- ============================================================== -->
+        <!-- End Left Sidebar - style you can find in sidebar.scss  -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Page wrapper  -->
+        <!-- ============================================================== -->
+        <div class="page-wrapper">
+
+            <!-- ============================================================== -->
+            <div class="container-fluid">
+                        
+                @RenderBody()
+
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- End Container fluid  -->
+            <!-- ============================================================== -->
+            <!-- ============================================================== -->
+            <!-- footer -->
+            <!-- ============================================================== -->
+            <footer class="footer text-center">
+                All Rights Reserved. Designed and Developed by xPlug Technologies.
+            </footer>
+            <!-- ============================================================== -->
+            <!-- End footer -->
+            <!-- ============================================================== -->
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Page wrapper  -->
+        <!-- ============================================================== -->
+    </div>
+    <!-- ============================================================== -->
+    <!-- End Wrapper -->
+    <!-- ============================================================== -->
+    <!-- ============================================================== -->
+    <!-- All Jquery -->
+    <!-- ============================================================== -->
+
+
+    <div class="modal fade" id="dvModal" tabindex="-1" role="dialog" aria-hidden="true" style="z-index: 11">
+        <div id="modalContent"></div>
+    </div>
+
+
+
+    <script src="~/Scripts/assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="~/Scripts/assets/libs/popper.js/dist/umd/popper.min.js"></script>
+
+    <script src="~/Scripts/assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
+
+    <script src="~/Scripts/assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="~/Scripts/dist/js/waves.js"></script>
+    <script src="~/Scripts/dist/js/sidebarmenu.js"></script>
+    <script src="~/Scripts/dist/js/custom.min.js"></script>
+
+    <script src="~/Scripts/assets/libs/flot/excanvas.js"></script>
+    <script src="~/Scripts/assets/libs/flot/jquery.flot.js"></script>
+    <script src="~/Scripts/assets/libs/flot/jquery.flot.pie.js"></script>
+    <script src="~/Scripts/assets/libs/flot/jquery.flot.time.js"></script>
+    <script src="~/Scripts/assets/libs/flot/jquery.flot.stack.js"></script>
+    <script src="~/Scripts/assets/libs/flot.tooltip/js/jquery.flot.tooltip.min.js"></script>
+    <script src="~/Scripts/dist/js/pages/chart/chart-page-init.js"></script>
+
+    <script src="~/Scripts/sweetAlert2/sweetalert2.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+
+    <script src="~/Scripts/parsley.min.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/xp-face-tool.js"></script>
+    <script src="~/Scripts/DataTables/datatables.min.js"></script>
+    <script src="~/Scripts/daterangepicker/daterangepicker.js"></script>
+    <script src="~/Scripts/jQueryblockUI.js"></script>
+
+    @RenderSection("scripts", required: false)
+
+
+<script>
+    
+
+    function ReloadReqLists() {
+
+
+        window.location.reload();
+
+    }
+    $(document).ready(function () {
+       
+        $(function() {
+            window.setInterval(function () {
+
+                $('#countReq').toggle();
+              
+                    loadReqLists();
+            }, 2000);
+
+        });
+
+        $('#reloadList').click(function () {
+
+          
+            ReloadReqLists();
+
+        });
+    });
+    function loadReqLists() {
+       
+        var frm = $("#fetchTxnFrom");
+        var params = frm.serializeArray();
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("GetRequisitionCountList", "Requisition")',
+            data: params,
+            success: function (data) {
+              
+                $('#myReqcount').text(data);
+            }
+
+        });
+
+    }
+    function GetTotalAmountDisb() {
+       
+        var frm = $("#fetchTxnFrom");
+        var params = frm.serializeArray();
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("GetTotalAmountDisburshment", "Requisition")',
+            data: params,
+            success: function (data) {
+                if (data === 0) {
+                    $('#totalAmounts').text(CurrencyFormatted(0));
+                }
+                else {
+                    $('#totalAmounts').text(CurrencyFormatted(data));
+                }
+               
+            }
+
+        });
+
+    }
+    function loadApprovalLists() {
+
+
+
+     
+        var frm = $("#fetchTxnFrom");
+        var params = frm.serializeArray();
+
+        $.ajax({
+
+            type: "POST",
+            url: '@Url.Action("Approval", "Requisition")',
+            data: params,
+            success: function (data) {
+                $('#partialList').html(data);
+            },
+            complete: function () {
+                $('#blockDiv').unblock();
+            }
+        });
+
+    }
+    $(function () {
+
+        $(document).on("click", "a[data-modal]", function (e) {
+
+            $(e.target).closest('.btn-group').children('.dropdown-toggle').dropdown('toggle');
+            $('#modalContent').load(this.href, function () {
+                $('#dvModal').modal('show', {
+                    backdrop: 'static',
+                    keyboard: false
+                });
+
+            });
+
+            return false;
+        });
+
+        $(document).on("focusin", ".datePicker", function () {
+            $(this).datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true
+            });
+        });
+
+    });
+
+
+</script>
+
+</body>
+
+
+</html>

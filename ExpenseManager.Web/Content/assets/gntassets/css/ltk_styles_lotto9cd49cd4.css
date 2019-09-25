@@ -1,0 +1,2128 @@
+/* styles lottos 
+I. picker styles
+I.I. picker bg: background
+I.II. name lottery and jackpot: background
+I.III. lottos: styles ticket
+
+II. home slider styles
+II.I. ticket box - country and jackpot
+*/
+
+
+
+
+/* MEGA MILLIONS -  lotto_2 */
+
+	/* picker bg: background */
+	.lotto_2 .npicker_bg {
+		background:#00e0f2;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_2 .ltk_lotto_head {
+		background:#005c96;
+	}
+		.lotto_2 .ltk_txt_separator span{
+			color: #00e0f2;
+			border-color: #00e0f2;
+			}
+			
+	/* lottos: styles ticket */
+	#content.newstyle.lotto_2 ul#pick_numbers p.ticket_number {
+		color:#00e0f2;
+	}
+	
+	#content.newstyle.lotto_2 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_2 .newpicker .plv2:hover {
+		border:4px solid #005c96; 
+	}
+	
+	.lotto_2 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#005c96!important;} 
+	.lotto_2 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#005c96!important;} 
+	
+	.lotto_2 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#005c96!important; color:#fff!important;} 
+	.lotto_2 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#005c96!important; color:#fff!important; } 
+	
+ 	/* home slider: ticket box */
+	.logo_2 .ticket_box {
+		background: #005c96;
+		background: -moz-linear-gradient(top, #005c96 0%, #0092ca 50%, #00e0f2 100%); 
+		background: -webkit-linear-gradient(top, #005c96 0%,#0092ca 50%,#00e0f2 100%);
+		background: linear-gradient(to bottom, #005c96 0%,#0092ca 50%,#00e0f2 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005c96', endColorstr='#00e0f2',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+		.logo_2 .ticket_box h3 {
+		color:#00e0f2!important;
+	}
+		.logo_2 .ticket_box h3 em { 
+			border-right-color:#00e0f2;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_2 .banner_jackpot {
+		background: #005c96 !important;
+		background: -moz-linear-gradient(left,  #005c96 0%, #0092ca 50%, #00e0f2 100%) !important;
+		background: -webkit-linear-gradient(left,  #005c96 0%,#0092ca 50%,#00e0f2 100%) !important;
+		background: linear-gradient(to right,  #005c96 0%,#0092ca 50%,#00e0f2 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#005c96', endColorstr='#00e0f2',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_2 .bjackpot span {
+			color:#00e0f2!important;
+		}
+			.main_banner.logo_2 .bjackpot span em{
+				border-right-color:#00e0f2!important;
+			}
+   
+/* POWERBALL - lotto_3 */
+
+	/* picker bg: background */
+	.lotto_3 .npicker_bg {
+		background:#ff695e;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_3 .ltk_lotto_head {
+		background:#aa1218;
+	}
+		.lotto_3 .ltk_txt_separator span{
+			color: #ff695e;
+			border-color: #ff695e;
+			}
+			
+	/* lottos: styles ticket */
+	#content.newstyle.lotto_3 ul#pick_numbers p.ticket_number {
+			color:#ff695e;
+		}
+		
+		#content.newstyle.lotto_3 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+		#content.newstyle.lotto_3 .newpicker .plv2:hover {
+			border:4px solid #aa1218; 
+		}
+		
+		.lotto_3 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#aa1218!important;} 
+		.lotto_3 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#aa1218!important;} 
+		
+		.lotto_3 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#aa1218!important; color:#fff!important;} 
+		.lotto_3 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#aa1218!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */	
+	.logo_3 .ticket_box {
+		background: #aa1218;
+		background: -moz-linear-gradient(top, #aa1218 0%, #f0252d 50%, #ff695e 100%); 
+		background: -webkit-linear-gradient(top, #aa1218 0%,#f0252d 50%,#ff695e 100%);
+		background: linear-gradient(to bottom, #aa1218 0%,#f0252d 50%,#ff695e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff695e',GradientType=0 );
+	}
+	
+			
+	/* home slider: country and jackpot */
+	.logo_3 .ticket_box h3 {
+		color:#ff695e!important;
+	}
+		.logo_3 .ticket_box h3 em { 
+			border-right-color:#ff695e;
+		}
+				
+	/* home banner: banner_jackpot bg */	
+	.main_banner.logo_3 .banner_jackpot {
+		background: #aa1218 !important;
+		background: -moz-linear-gradient(left,  #aa1218 0%, #f0252d 50%, #ff695e 100%) !important;
+		background: -webkit-linear-gradient(left,  #aa1218 0%,#f0252d 50%,#ff695e 100%) !important;
+		background: linear-gradient(to right,  #aa1218 0%,#f0252d 50%,#ff695e 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff695e',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_3 .bjackpot span {
+			color:#ff695e!important;
+		}
+			.main_banner.logo_3 .bjackpot span em{
+				border-right-color:#ff695e!important;
+			}
+		
+		/* home banner: btn bg */	
+		.main_banner.logo_3 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+	
+/* CALIFORNIA LOTTO - lotto_4 */
+
+	/* picker bg: background */
+	.lotto_4 .npicker_bg {
+		background:#00bfe6;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_4 .ltk_lotto_head {
+	background:#104278;
+	}
+		.lotto_4 .ltk_txt_separator span{
+			color: #00bfe6;
+			border-color: #00bfe6;
+			}
+			
+	/* lottos: styles ticket */
+	#content.newstyle.lotto_4 ul#pick_numbers p.ticket_number {
+		color:#00bfe6;
+	}
+	
+	#content.newstyle.lotto_4 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_4 .newpicker .plv2:hover {
+		border:4px solid #104278; 
+	}
+	
+	.lotto_4 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+	.lotto_4 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+	
+	.lotto_4 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#104278!important; color:#fff!important;} 
+	.lotto_4 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#104278!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */		
+	.logo_4 .ticket_box {
+		background: #104278;
+		background: -moz-linear-gradient(top, #104278 0%, #0a78ac 50%, #00bfe6 100%); 
+		background: -webkit-linear-gradient(top, #104278 0%,#0a78ac 50%,#00bfe6 100%);
+		background: linear-gradient(to bottom, #104278 0%,#0a78ac 50%,#00bfe6 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bfe6',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_4 .ticket_box h3 {
+		color:#00bfe6!important;
+	}
+		.logo_4 .ticket_box h3 em {
+			border-right-color:#00bfe6;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_4 .banner_jackpot {
+		background: #104278 !important;
+		background: -moz-linear-gradient(left,  #104278 0%, #0a78ac 50%, #00bfe6 100%) !important;
+		background: -webkit-linear-gradient(left,  #104278 0%,#0a78ac 50%,#00bfe6 100%) !important;
+		background: linear-gradient(to right,  #104278 0%,#0a78ac 50%,#00bfe6 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bfe6',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_4 .bjackpot span {
+			color:#00bfe6!important;
+		}
+			.main_banner.logo_4 .bjackpot span em{
+				border-right-color:#00bfe6!important;
+			}
+		
+
+/* NEW YORK LOTTO - lotto_5 */
+
+	/* picker bg: background */
+	.lotto_5 .npicker_bg {
+		background:#00bce6;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_5 .ltk_lotto_head {
+		background:#104278;
+	}
+		.lotto_5 .ltk_txt_separator span{
+			color: #00bce6;
+			border-color: #00bce6;
+			}
+			
+	/* lottos: styles ticket */
+	#content.newstyle.lotto_5 ul#pick_numbers p.ticket_number {
+			color:#00bce6;
+		}
+		
+		#content.newstyle.lotto_5 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+		#content.newstyle.lotto_5 .newpicker .plv2:hover {
+			border:4px solid #104278; 
+		}
+		
+		.lotto_5 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+		.lotto_5 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+		
+		.lotto_5 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#104278!important; color:#fff!important;} 
+		.lotto_5 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#104278!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */	
+	.logo_5 .ticket_box {
+			background: #104278;
+			background: -moz-linear-gradient(top, #104278 0%, #0b72a3 50%, #00bce6 100%); 
+			background: -webkit-linear-gradient(top, #104278 0%,#0b72a3 50%,#00bce6 100%);
+			background: linear-gradient(to bottom, #104278 0%,#0b72a3 50%,#00bce6 100%);
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bce6',GradientType=0 );
+		}
+		
+		/* home slider: country and jackpot */
+		.logo_5 .ticket_box h3 {
+			color:#00bce6!important;
+		}
+			.logo_5 .ticket_box h3 em {
+				border-right-color:#00bce6;
+			}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_5 .banner_jackpot {
+		background: #104278!important;
+		background: -moz-linear-gradient(left,  #104278 0%, #0b72a3 50%, #00bce6 100%) !important;
+		background: -webkit-linear-gradient(left,  #104278 0%,#0b72a3 50%,#00bce6 100%) !important;
+		background: linear-gradient(to right,  #104278 0%,#0b72a3 50%,#00bce6 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bce6',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_5 .bjackpot span {
+			color:#00bce6!important;
+		}
+			.main_banner.logo_5 .bjackpot span em{
+				border-right-color:#00bce6!important;
+			}
+		
+
+/* FLORIDA LOTTO - lotto_6 */
+
+	/* picker bg: background */
+	.lotto_6 .npicker_bg {
+		background:#a5fab2;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_6 .ltk_lotto_head {
+		background:#5086a8;
+	}
+		.lotto_6 .ltk_txt_separator span{
+			color: #a5fab2;
+			border-color: #a5fab2;
+			}
+	
+	/* lottos: styles ticket */		
+	#content.newstyle.lotto_6 ul#pick_numbers p.ticket_number {
+		color:#a5fab2;
+	}
+	
+	#content.newstyle.lotto_6 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_6 .newpicker .plv2:hover {
+		border:4px solid #5086a8; 
+	}
+	
+	.lotto_6 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#5086a8!important;} 
+	.lotto_6 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#5086a8!important;} 
+	
+	.lotto_6 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#5086a8!important; color:#fff!important;} 
+	.lotto_6 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#5086a8!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_6 .ticket_box {
+		background: #5086a8;
+		background: -moz-linear-gradient(top, #5086a8 0%, #75dec9 50%, #a5fab2 100%); 
+		background: -webkit-linear-gradient(top, #5086a8 0%,#75dec9 50%,#a5fab2 100%);
+		background: linear-gradient(to bottom, #5086a8 0%,#75dec9 50%,#a5fab2 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5086a8', endColorstr='#a5fab2',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_6 .ticket_box h3 {
+		color:#a5fab2!important;
+	}
+		.logo_6 .ticket_box h3 em {
+			border-right-color:#a5fab2;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_6 .banner_jackpot {
+		background: #5086a8!important;
+		background: -moz-linear-gradient(left,  #5086a8 0%, #75dec9 50%, #a5fab2 100%) !important;
+		background: -webkit-linear-gradient(left,  #5086a8 0%,#75dec9 50%,#a5fab2 100%) !important;
+		background: linear-gradient(to right,  #5086a8 0%,#75dec9 50%,#a5fab2 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5086a8', endColorstr='#a5fab2',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_6 .bjackpot span {
+			color:#a5fab2!important;
+		}
+			.main_banner.logo_6 .bjackpot span em{
+				border-right-color:#a5fab2!important;
+			}
+		
+/* EUROMILLIONS - lotto_8*/
+	
+	/* picker bg: background */
+	.lotto_8 .npicker_bg {
+		background:#00cbf0;
+	}
+
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_8 .ltk_lotto_head {
+		background:#104279;
+	}
+		.lotto_8 .ltk_txt_separator span{
+			color: #00cbf0;
+			border-color: #00cbf0;
+			}
+	
+	/* lottos: styles ticket - chooser stars*/
+	#content.newstyle.lotto_8 ul#pick_numbers p.ticket_number {
+		color:#00cbf0;
+	}
+	
+	#content.newstyle.lotto_8 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_8 .newpicker .plv2:hover {
+		border:4px solid #104279; 
+	}
+	
+	.lotto_8 ul#pick_numbers li.plv2_li ul.power_number_selector li,
+	.lotto_8 ul#pick_numbers li.plv2_li ul.power_number_selector li span {color:#104279!important;} 
+	
+	.lotto_8 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {color:#104279!important;} 
+	
+	.lotto_8 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#104279!important;} 
+	
+	.lotto_8 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#104279!important; color:#fff!important;} 
+	
+	#content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector li {
+		border:none;
+	}
+	
+	#content.newstyle.lotto_8 .newpicker.last_picker li.power_number_chooser p {
+		width:100%;
+	}
+	
+	#content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector li, 
+	#content.newstyle.lotto_8  .newpicker.last_picker ul.power_number_selector li span,
+	.lotto_8 .last_picker ul#pick_numbers li.plv2_ticket_group.plv2_two_tickets ul.plv2 li > ul li,
+	.lotto_8 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {
+		background-color:transparent!important;
+	} 
+	
+	.lotto_8 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {
+		color:#fff!important;
+	} 
+	
+	.lotto_8 ul.power_number_selector li, 
+	.lotto_8 .last_picker ul#pick_numbers li.plv2_ticket_group.plv2_two_tickets ul.plv2 li > ul.power_number_selector li,
+	#content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector li span {
+		width:30px;
+		height:29px;
+		line-height:30px;
+	}
+	
+	 #content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector li, 
+	.lotto_8 .last_picker ul#pick_numbers li.plv2_ticket_group.plv2_two_tickets ul.plv2 li > ul.power_number_selector li {
+			margin:0 6px 2px 0!important;
+	}
+	
+	#content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector.power_number_selector li:nth-child(4n+1),
+	.lotto_8 .last_picker ul#pick_numbers li.plv2_ticket_group.plv2_two_tickets ul.plv2 li > ul.power_number_selector li:nth-child(4n+1){
+		margin:0 0 2px 0!important;
+	}
+	
+	#content.newstyle.lotto_8 .newpicker.last_picker ul.power_number_selector.power_number_selector li span,
+	#content.newstyle.lotto_8 .newpicker.last_picker .plv2_played_ticket ul.power_number_selector li span.pick_number_selected {
+		display:inline-block;
+		background:url(../../images_v4/congalotto.com/picker_images/picker_stars_bg.html) 0 0 no-repeat!important;
+		background-size:30px auto!important;
+	}
+	
+	#content.newstyle.lotto_8 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li:hover span,
+	#content.newstyle.lotto_8 .newpicker.last_picker li.plv2_li:hover ul.power_number_selector li:hover span.pick_number_selected {
+		color:#fff!important;
+		background-position:0 -29px!important;
+	}
+	
+	.lotto_8 .power_number_selector .newp_nselect {
+		top:2px;
+		left:4px;
+	}
+	
+	/* home slider: ticket box */
+	.logo_8 .ticket_box {
+		background: #104279;
+		background: -moz-linear-gradient(top, #104279 0%, #0f83ac 50%, #00cbf0 100%); 
+		background: -webkit-linear-gradient(top, #104279 0%,#0f83ac 50%,#00cbf0 100%);
+		background: linear-gradient(to bottom, #104279 0%,#0f83ac 50%,#00cbf0 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104279', endColorstr='#00cbf0',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_8 .ticket_box h3 {
+		 color:#00cbf0!important;
+	}
+		.logo_8 .ticket_box h3 em {
+			border-right-color:#00cbf0;
+		}	
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_8 .banner_jackpot {
+		background: #104279!important;
+		background: -moz-linear-gradient(left,  #104279 0%, #0f83ac 50%, #00cbf0 100%) !important;
+		background: -webkit-linear-gradient(left,  #104279 0%,#0f83ac 50%,#00cbf0 100%) !important;
+		background: linear-gradient(to right,  #104279 0%,#0f83ac 50%,#00cbf0 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104279', endColorstr='#00cbf0',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_8 .bjackpot span {
+			color:#00cbf0!important;
+		}
+			.main_banner.logo_8 .bjackpot span em{
+				border-right-color:#00cbf0!important;
+			}
+
+
+/* LOTTO 6/49 CANADA -  lotto_9 */
+
+	/* picker bg: background */
+	.lotto_9 .npicker_bg {
+		background:#ff555e;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_9 .ltk_lotto_head {
+		background:#aa1218;
+	}
+		.lotto_9 .ltk_txt_separator span{
+			color: #ff695e;
+			border-color: #ff695e;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_9 ul#pick_numbers p.ticket_number {
+		color:#ff695e;
+	}
+	
+	#content.newstyle.lotto_9 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_9 .newpicker .plv2:hover {
+		border:4px solid #aa1218; 
+	}
+	
+	.lotto_9 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#aa1218!important;} 
+	.lotto_9 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#aa1218!important;} 
+	
+	.lotto_9 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#aa1218!important; color:#fff!important;} 
+	.lotto_9 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#aa1218!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_9 .ticket_box {
+		background: #aa1218;
+		background: -moz-linear-gradient(top, #aa1218 0%, #ed1c24 50%, #ff555e 100%); 
+		background: -webkit-linear-gradient(top, #aa1218 0%,#ed1c24 50%,#ff555e 100%);
+		background: linear-gradient(to bottom, #aa1218 0%,#ed1c24 50%,#ff555e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff555e',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_9 .ticket_box h3 {
+		color:#ff555e!important;
+	}
+		.logo_9 .ticket_box h3 em {
+			border-right-color:#ff555e;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_9 .banner_jackpot {
+		background: #aa1218!important;
+		background: -moz-linear-gradient(left,  #aa1218 0%, #ed1c24 50%, #ff555e 100%) !important;
+		background: -webkit-linear-gradient(left,  #aa1218 0%,#ed1c24 50%,#ff555e 100%) !important;
+		background: linear-gradient(to right,  #aa1218 0%,#ed1c24 50%,#ff555e 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff555e',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_9 .bjackpot span {
+			color:#ff555e!important;
+		}
+			.main_banner.logo_9 .bjackpot span em{
+				border-right-color:#ff555e!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_9 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+
+
+/* MEGA-SENA - lotto_11 */
+
+	/* picker bg: background */
+	.lotto_11 .npicker_bg {
+		background:#7befa2;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_11 .ltk_lotto_head {
+		background:#00a056;
+	}
+		.lotto_11 .ltk_txt_separator span{
+			color: #7befa2;
+			border-color: #7befa2;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_11 ul#pick_numbers p.ticket_number {
+		color:#7befa2;
+	}
+	
+	#content.newstyle.lotto_11 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_11 .newpicker .plv2:hover {
+		border:4px solid #00a056; 
+	}
+	
+	.lotto_11 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#00a056!important;} 
+	.lotto_11 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#00a056!important;} 
+	
+	.lotto_11 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#00a056!important; color:#fff!important;} 
+	.lotto_11 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#00a056!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_11 .ticket_box {
+		background: #00a056;
+		background: -moz-linear-gradient(top, #00a056 0%, #14c16a 50%, #7befa2 100%); 
+		background: -webkit-linear-gradient(top, #00a056 0%,#14c16a 50%,#7befa2 100%);
+		background: linear-gradient(to bottom, #00a056 0%,#14c16a 50%,#7befa2 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a056', endColorstr='#7befa2',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_11 .ticket_box h3 {
+			color:#7befa2!important;
+		}
+			.logo_11 .ticket_box h3 em {
+				border-right-color:#7befa2;
+			}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_11 .banner_jackpot {
+		background: #00a056!important;
+		background: -moz-linear-gradient(left,  #00a056 0%, #14c16a 50%, #7befa2 100%) !important;
+		background: -webkit-linear-gradient(left,  #00a056 0%,#14c16a 50%,#7befa2 100%) !important;
+		background: linear-gradient(to right,  #00a056 0%,#14c16a 50%,#7befa2 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a056', endColorstr='#7befa2',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_11 .bjackpot span {
+			color:#7befa2!important;
+		}
+			.main_banner.logo_11 .bjackpot span em{
+				border-right-color:#7befa2!important;
+			}
+
+/* EL GORDO DE LA PRIMITIVA - lotto_12 */
+
+	/* picker bg: background */
+	.lotto_12 .npicker_bg {
+		background:#ff584c;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_12 .ltk_lotto_head {
+		background:#800c11;
+	}
+		.lotto_12 .ltk_txt_separator span{
+			color: #ff584c;
+			border-color: #ff584c;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_12 ul#pick_numbers p.ticket_number {
+		color:#ff584c;
+	}
+	
+	#content.newstyle.lotto_12 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_12 .newpicker .plv2:hover {
+		border:4px solid #800c11; 
+	}
+	
+	.lotto_12 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#800c11!important;} 
+	.lotto_12 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#800c11!important;} 
+	
+	.lotto_12 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#800c11!important; color:#fff!important;} 
+	.lotto_12 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#800c11!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_12 .ticket_box {
+		background: #800c11;
+		background: -moz-linear-gradient(top, #800c11 0%, #ed1c24 50%, #ff584c 100%); 
+		background: -webkit-linear-gradient(top, #800c11 0%,#ed1c24 50%,#ff584c 100%);
+		background: linear-gradient(to bottom, #800c11 0%,#ed1c24 50%,#ff584c 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800c11', endColorstr='#ff584c',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_12 .ticket_box h3 {
+		color:#ff584c!important;
+	}
+		.logo_12 .ticket_box h3 em {
+			border-right-color:#ff584c;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_12 .banner_jackpot {
+		background: #800c11!important;
+		background: -moz-linear-gradient(left,  #800c11 0%, #ed1c24 50%, #ff584c 100%) !important;
+		background: -webkit-linear-gradient(left,  #800c11 0%,#ed1c24 50%,#ff584c 100%) !important;
+		background: linear-gradient(to right,  #800c11 0%,#ed1c24 50%,#ff584c 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#800c11', endColorstr='#ff584c',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_12 .bjackpot span {
+			color:#ff584c!important;
+		}
+			.main_banner.logo_12 .bjackpot span em{
+				border-right-color:#ff584c!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_12 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+
+/* OZ LOTTO - lotto_13, SUPERENALOTO - lotto_18*/
+
+	/* picker bg: background */
+	.lotto_13 .npicker_bg,
+	.lotto_18 .npicker_bg {
+		background:#53e023;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_13 .ltk_lotto_head,
+	.lotto_18 .ltk_lotto_head {
+		background:#0d5e25;
+	}
+		.lotto_13 .ltk_txt_separator span,
+		.lotto_18 .ltk_txt_separator span{
+				color: #53e023;
+				border-color: #53e023;
+				}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_13 ul#pick_numbers p.ticket_number,
+	#content.newstyle.lotto_18 ul#pick_numbers p.ticket_number {
+		color:#53e023;
+	}
+	
+	#content.newstyle.lotto_13 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_13 .newpicker .plv2:hover,
+	#content.newstyle.lotto_18 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_18 .newpicker .plv2:hover {
+		border:4px solid #0d5e25; 
+	}
+	
+	.lotto_13 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span,
+	.lotto_18 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#0d5e25!important;} 
+	.lotto_13 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span,
+	.lotto_18 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#0d5e25!important;} 
+	
+	.lotto_13 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover,
+	.lotto_18 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#0d5e25!important; color:#fff!important;} 
+	.lotto_13 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover,
+	.lotto_18 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#0d5e25!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_13 .ticket_box,
+	.logo_18 .ticket_box  {
+		background: #0d5e25;
+		background: -moz-linear-gradient(top, #0d5e25 0%, #18a727 50%, #53e023 100%); 
+		background: -webkit-linear-gradient(top, #0d5e25 0%,#18a727 50%,#53e023 100%);
+		background: linear-gradient(to bottom, #0d5e25 0%,#18a727 50%,#53e023 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d5e25', endColorstr='#53e023',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_13 .ticket_box h3,
+	.logo_18 .ticket_box h3{
+		color:#53e023!important;
+	}
+		.logo_13 .ticket_box h3 em,
+		.logo_18 .ticket_box h3 em {
+			border-right-color:#53e023;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_13 .banner_jackpot,
+    .main_banner.logo_18 .banner_jackpot {
+		background: #0d5e25!important;
+		background: -moz-linear-gradient(left,  #0d5e25 0%, #18a727 50%, #53e023 100%) !important;
+		background: -webkit-linear-gradient(left,  #0d5e25 0%,#18a727 50%,#53e023 100%) !important;
+		background: linear-gradient(to right,  #0d5e25 0%,#18a727 50%,#53e023 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0d5e25', endColorstr='#53e023',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_13 .bjackpot span,
+        .main_banner.logo_18 .bjackpot span {
+			color:#53e023!important;
+		}
+			.main_banner.logo_13 .bjackpot span em,
+            .main_banner.logo_18 .bjackpot span em{
+				border-right-color:#53e023!important;
+			}
+
+
+/* POWERBALL AUSTRALIA - lotto_14*/
+	/* picker bg: background */
+	.lotto_14 .npicker_bg {
+		background:#00c9cb;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_14 .ltk_lotto_head {
+		background:#0f4f84;
+	}
+		.lotto_14 .ltk_txt_separator span{
+			color: #00c9cb;
+			border-color: #00c9cb;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_14 ul#pick_numbers p.ticket_number {
+		color:#00c9cb;
+	}
+	
+	#content.newstyle.lotto_14 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_14 .newpicker .plv2:hover {
+		border:4px solid #0f4f84; 
+	}
+	
+	.lotto_14 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#0f4f84!important;} 
+	.lotto_14 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#0f4f84!important;} 
+	
+	.lotto_14 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#0f4f84!important; color:#fff!important;} 
+	.lotto_14 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#0f4f84!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_14 .ticket_box {
+		background: #0f4f84;
+		background: -moz-linear-gradient(top, #0f4f84 0%, #0b739f 50%, #00c9cb 100%); 
+		background: -webkit-linear-gradient(top, #0f4f84 0%,#0b739f 50%,#00c9cb 100%);
+		background: linear-gradient(to bottom, #0f4f84 0%,#0b739f 50%,#00c9cb 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f4f84', endColorstr='#00c9cb',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_14 .ticket_box h3 {
+		color:#00c9cb!important;
+	}
+		.logo_14 .ticket_box h3 em {
+			border-right-color:#00c9cb;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_14 .banner_jackpot{
+		background: #0f4f84!important;
+		background: -moz-linear-gradient(left,  #0f4f84 0%, #0b739f 50%, #00c9cb 100%) !important;
+		background: -webkit-linear-gradient(left,  #0f4f84 0%,#0b739f 50%,#00c9cb 100%) !important;
+		background: linear-gradient(to right,  #0f4f84 0%,#0b739f 50%,#00c9cb 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0f4f84', endColorstr='#00c9cb',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_14 .bjackpot span{
+			color:#00c9cb!important;
+		}
+			.main_banner.logo_14 .bjackpot span em{
+				border-right-color:#00c9cb!important;
+			}
+
+
+/*6aus49 LOTTO GERMANY - lotto_15 */
+	/* picker bg: background */
+	.lotto_15 .npicker_bg {
+		background:#ffff00;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_15 .ltk_lotto_head {
+		background:#ff6100;
+	}
+		.lotto_15 .ltk_txt_separator span{
+			color: #ffff00;
+			border-color: #ffff00;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_15 ul#pick_numbers p.ticket_number {
+		color:#ffff00;
+	}
+	
+	#content.newstyle.lotto_15 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_15 .newpicker .plv2:hover {
+		border:4px solid #ff6100; 
+	}
+	
+	.lotto_15 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#ff6100!important;} 
+	.lotto_15 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#ff6100!important;} 
+	
+	.lotto_15 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#ff6100!important; color:#fff!important;} 
+	.lotto_15 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#ff6100!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_15 .ticket_box {
+		background: #ff6100;
+		background: -moz-linear-gradient(top, #ff6100 0%, #ffb600 50%, #ffff00 100%); 
+		background: -webkit-linear-gradient(top, #ff6100 0%,#ffb600 50%,#ffff00 100%);
+		background: linear-gradient(to bottom, #ff6100 0%,#ffb600 50%,#ffff00 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6100', endColorstr='#ffff00',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_15 .ticket_box h3 {
+		color:#ffff00!important;
+	}
+		.logo_15 .ticket_box h3 em {
+			border-right-color:#ffff00;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_15 .banner_jackpot{
+		background: #ff6100!important;
+		background: -moz-linear-gradient(left,  #ff6100 0%, #ffb600 50%, #ffff00 100%) !important;
+		background: -webkit-linear-gradient(left,  #ff6100 0%,#ffb600 50%,#ffff00 100%) !important;
+		background: linear-gradient(to right,  #ff6100 0%,#ffb600 50%,#ffff00 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ff6100', endColorstr='#ffff00',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_15 .bjackpot span{
+			color:#ffff00!important;
+		}
+			.main_banner.logo_15 .bjackpot span em{
+				border-right-color:#ffff00!important;
+			}
+
+/* UK LOTTO - lotto_16 */
+	/* picker bg: background */
+	.lotto_16 .npicker_bg {
+		background:#26eaff;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_16 .ltk_lotto_head {
+		background:#1269ff;
+	}
+		.lotto_16 .ltk_txt_separator span{
+			color: #26eaff;
+			border-color: #26eaff;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_16 ul#pick_numbers p.ticket_number {
+		color:#26eaff;
+	}
+	
+	#content.newstyle.lotto_16 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_16 .newpicker .plv2:hover {
+		border:4px solid #1269ff; 
+	}
+	
+	.lotto_16 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#1269ff!important;} 
+	.lotto_16 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#1269ff!important;} 
+	
+	.lotto_16 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#1269ff!important; color:#fff!important;} 
+	.lotto_16 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#1269ff!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_16 .ticket_box {
+		background: #1269ff;
+		background: -moz-linear-gradient(top, #1269ff 0%, #419cff 50%, #26eaff 100%); 
+		background: -webkit-linear-gradient(top, #1269ff 0%,#419cff 50%,#26eaff 100%);
+		background: linear-gradient(to bottom, #1269ff 0%,#419cff 50%,#26eaff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1269ff', endColorstr='#26eaff',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_16 .ticket_box h3 {
+		color:#26eaff!important;
+	}
+		.logo_16 .ticket_box h3 em {
+			border-right-color:#26eaff;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_16 .banner_jackpot{
+		background: #1269ff!important;
+		background: -moz-linear-gradient(left,  #1269ff 0%, #419cff 50%, #26eaff 100%) !important;
+		background: -webkit-linear-gradient(left,  #1269ff 0%,#419cff 50%,#26eaff 100%) !important;
+		background: linear-gradient(to right,  #1269ff 0%,#419cff 50%,#26eaff 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1269ff', endColorstr='#26eaff',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_16 .bjackpot span{
+			color:#26eaff!important;
+		}
+			.main_banner.logo_16 .bjackpot span em{
+				border-right-color:#26eaff!important;
+			}
+		
+
+/* FRANCE LOTTO - lotto_17 */
+	/* picker bg: background */
+	.lotto_17 .npicker_bg {
+		background:#00bce6;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_17 .ltk_lotto_head {
+		background:#104278;
+	}
+		.lotto_17 .ltk_txt_separator span{
+			color: #00bce6;
+			border-color: #00bce6;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_17 ul#pick_numbers p.ticket_number {
+		color:#00bce6;
+	}
+	
+	#content.newstyle.lotto_17 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_17 .newpicker .plv2:hover {
+		border:4px solid #104278; 
+	}
+	
+	.lotto_17 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+	.lotto_17 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#104278!important;} 
+	
+	.lotto_17 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#104278!important; color:#fff!important;} 
+	.lotto_17 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#104278!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_17 .ticket_box {
+		background: #104278;
+		background: -moz-linear-gradient(top, #104278 0%, #0b72a3 50%, #00bce6 100%); 
+		background: -webkit-linear-gradient(top, #104278 0%,#0b72a3 50%,#00bce6 100%);
+		background: linear-gradient(to bottom, #104278 0%,#0b72a3 50%,#00bce6 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bce6',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_17 .ticket_box h3 {
+		color:#00bce6!important;
+	}
+		.logo_17 .ticket_box h3 em {
+			border-right-color:#00bce6;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_17 .banner_jackpot{
+		background: #104278!important;
+		background: -moz-linear-gradient(left,  #104278 0%, #0b72a3 50%, #00bce6 100%) !important;
+		background: -webkit-linear-gradient(left,  #104278 0%,#0b72a3 50%,#00bce6 100%) !important;
+		background: linear-gradient(to right,  #104278 0%,#0b72a3 50%,#00bce6 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#104278', endColorstr='#00bce6',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_17 .bjackpot span{
+			color:#00bce6!important;
+		}
+			.main_banner.logo_17 .bjackpot span em{
+				border-right-color:#00bce6!important;
+			}
+		
+
+/* LA PRIMITIVA: lotto_19 */
+	/* picker bg: background */
+	.lotto_19 .npicker_bg {
+		background:#13e437;
+	}
+		/*Provisional Picker*/
+		.lotto_19 .cols_wrapper {height: 100% !important;}
+		.lotto_19 .np_options_wrap.np_two_box li {height: 120px !important;}
+		.lotto_19 .np_options_wrap .this_option {width: 100px; margin: 0 0 5px 12px !important;}
+		.lotto_19 .np_options_wrap .this_option:first-child {margin: 0 0 0 12px !important;}
+		.lotto_19 .np_options_wrap.np_two_box li:first-child .this_option {width: auto;}
+		
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_19 .ltk_lotto_head {
+		background:#0e922a;
+	}
+		.lotto_19 .ltk_txt_separator span{
+			color: #13e437;
+			border-color: #13e437;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_19 ul#pick_numbers p.ticket_number {
+		color:#13e437;
+	}
+	
+	#content.newstyle.lotto_19 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_19 .newpicker .plv2:hover {
+		border:4px solid #0e922a; 
+	}
+	
+	.lotto_19 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#0fa82e!important;} 
+	.lotto_19 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#0fa82e!important;} 
+	
+	.lotto_19 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#0fa82e!important; color:#fff!important;} 
+	.lotto_19 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#0fa82e!important; color:#fff!important; }
+	
+	/* home slider: ticket box */
+	.logo_19 .ticket_box {
+		background: #0e922a;
+		background: -moz-linear-gradient(top, #0e922a 0%, #0fa82e 50%, #13e437 100%); 
+		background: -webkit-linear-gradient(top, #0e922a 0%,#0fa82e 50%,#13e437 100%);
+		background: linear-gradient(to bottom, #0e922a 0%,#0fa82e 50%,#13e437 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e922a', endColorstr='#13e437',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_19 .ticket_box h3 {
+		color:#13e437!important;
+	}
+		.logo_19 .ticket_box h3 em {
+			border-right-color:#13e437;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_19 .banner_jackpot{
+		background: #0e922a!important;
+		background: -moz-linear-gradient(left,  #0e922a 0%, #0fa82e 50%, #13e437 100%) !important;
+		background: -webkit-linear-gradient(left,  #0e922a 0%,#0fa82e 50%,#13e437 100%) !important;
+		background: linear-gradient(to right,  #0e922a 0%,#0fa82e 50%,#13e437 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0e922a', endColorstr='#13e437',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_19 .bjackpot span{
+			color:#13e437!important;
+		}
+			.main_banner.logo_19 .bjackpot span em{
+				border-right-color:#13e437!important;
+			}
+		
+/* HOT LOTTO .lotto_20, IRISH LOTTO .lotto_21 */
+	/* picker bg: background */
+	.lotto_20 .npicker_bg,
+	.lotto_21 .npicker_bg {
+		background:#ffdb15;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_20 .ltk_lotto_head,
+	.lotto_21 .ltk_lotto_head {
+		background:#d12800;
+	}
+		.lotto_20 .ltk_txt_separator span,
+		.lotto_21 .ltk_txt_separator span{
+			color: #ffdb15;
+			border-color: #ffdb15;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_20 ul#pick_numbers p.ticket_number,
+	#content.newstyle.lotto_21 ul#pick_numbers p.ticket_number {
+		color:#ffdb15;
+	}
+	
+	#content.newstyle.lotto_20 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_20 .newpicker .plv2:hover,
+	#content.newstyle.lotto_21 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_21 .newpicker .plv2:hover {
+		border:4px solid #d12800; 
+	}
+	
+	.lotto_20 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span,
+	.lotto_21 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#d12800!important;} 
+	.lotto_20 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span,
+	.lotto_21 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#d12800!important;} 
+	
+	.lotto_20 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover,
+	.lotto_21 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#d12800!important; color:#fff!important;} 
+	.lotto_20 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover,
+	.lotto_21 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#d12800!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_20 .ticket_box {
+		background: #d12800;
+		background: -moz-linear-gradient(top, #d12800 0%, #ff8315 50%, #ffdb15 100%); 
+		background: -webkit-linear-gradient(top, #d12800 0%,#ff8315 50%,#ffdb15 100%);
+		background: linear-gradient(to bottom, #d12800 0%,#ff8315 50%,#ffdb15 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d12800', endColorstr='#ffdb15',GradientType=0 );
+	}
+	.logo_21 .ticket_box {
+		background: #d16200;
+		background: -moz-linear-gradient(top, #d16200 0%, #ff8a15 50%, #ffdb15 100%); 
+		background: -webkit-linear-gradient(top, #d16200 0%,#ff8a15 50%,#ffdb15 100%);
+		background: linear-gradient(to bottom, #d16200 0%,#ff8a15 50%,#ffdb15 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d16200', endColorstr='#ffdb15',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_20 .ticket_box h3,
+	.logo_21 .ticket_box h3 {
+		color:#ffdb15!important;
+	}
+		.logo_20 .ticket_box h3 em,
+		.logo_21 .ticket_box h3 em { 
+			border-right-color:#ffdb15;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_20 .banner_jackpot{
+		background: #d12800!important;
+		background: -moz-linear-gradient(left,  #d12800 0%, #ff8315 50%, #ffdb15 100%) !important;
+		background: -webkit-linear-gradient(left,  #d12800 0%,#ff8315 50%,#ffdb15 100%) !important;
+		background: linear-gradient(to right,  #d12800 0%,#ff8315 50%,#ffdb15 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d12800', endColorstr='#ffdb15',GradientType=1 ) !important;
+	}
+
+    .main_banner.logo_21 .banner_jackpot{
+		background: #0e922a!important;
+		background: -moz-linear-gradient(left,  #d16200 0%, #ff8a15 50%, #ffdb15 100%) !important;
+		background: -webkit-linear-gradient(left,  #d16200 0%,#ff8a15 50%,#ffdb15 100%) !important;
+		background: linear-gradient(to right,  #d16200 0%,#ff8a15 50%,#ffdb15 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d16200', endColorstr='#ffdb15',GradientType=1 ) !important;
+	}
+		
+		/* home banner: bjackpot colors */
+		.main_banner.logo_20 .bjackpot span,
+        .main_banner.logo_21 .bjackpot span{
+			color:#ffdb15!important;
+		}
+			.main_banner.logo_20 .bjackpot span em,
+            .main_banner.logo_21 .bjackpot span em{
+				border-right-color:#ffdb15!important;
+			}
+		
+
+/* HOOSIER LOTTO - lotto_22 */
+	/* picker bg: background */
+	.lotto_22 .npicker_bg {
+		background:#53dde8;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_22 .ltk_lotto_head {
+		background:#78b01f;
+	}
+		.lotto_22 .ltk_txt_separator span{
+			color: #78b01f;
+			border-color: #78b01f;
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_22 ul#pick_numbers p.ticket_number {
+		color:#53dde8;
+	}
+	
+	#content.newstyle.lotto_22 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_22 .newpicker .plv2:hover {
+		border:4px solid #78b01f; 
+	}
+	
+	.lotto_22 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#78b01f!important;} 
+	.lotto_22 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#78b01f!important;} 
+	
+	.lotto_22 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#78b01f!important; color:#fff!important;} 
+	.lotto_22 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#78b01f!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_22 .ticket_box {
+		background: #78b01f;
+		background: -moz-linear-gradient(top, #78b01f 0%, #82cb62 50%, #82cb62 100%); 
+		background: -webkit-linear-gradient(top, #78b01f 0%,#82cb62 50%,#82cb62 100%);
+		background: linear-gradient(to bottom, #78b01f 0%,#82cb62 50%,#82cb62 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b01f', endColorstr='#82cb62',GradientType=0 );
+	}
+
+	/* home slider: country and jackpot */
+	.logo_22 .ticket_box h3 {
+		color:#82cb62!important;
+	}
+		.logo_22 .ticket_box h3 em {
+			border-right-color:#82cb62;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_22 .banner_jackpot{
+		background: #78b01f!important;
+		background: -moz-linear-gradient(left,  #78b01f 0%, #82cb62 50%, #82cb62 100%) !important;
+		background: -webkit-linear-gradient(left,  #78b01f 0%,#82cb62 50%,#82cb62 100%) !important;
+		background: linear-gradient(to right,  #78b01f 0%,#82cb62 50%,#82cb62 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#78b01f', endColorstr='#82cb62',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_22 .bjackpot span{
+			color:#82cb62!important;
+		}
+			.main_banner.logo_22 .bjackpot span em{
+				border-right-color:#82cb62!important;
+			}
+		
+
+/* THUNDERBALL - lotto_23 */
+	/* picker bg: background */
+	.lotto_23 .npicker_bg {
+		background:#ff24d3;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_23 .ltk_lotto_head {
+		background:#6200a6;
+	}
+		.lotto_23 .ltk_txt_separator span{
+			color: #ff24d3;
+			border-color: #ff24d3;
+			}
+
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_23 ul#pick_numbers p.ticket_number {
+		color:#ff24d3;
+	}
+	
+	#content.newstyle.lotto_23 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_23 .newpicker .plv2:hover {
+		border:4px solid #6200a6; 
+	}
+	
+	.lotto_23 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#6200a6!important;} 
+	.lotto_23 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#6200a6!important;} 
+	
+	.lotto_23 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#6200a6!important; color:#fff!important;} 
+	.lotto_23 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#6200a6!important; color:#fff!important; }
+	
+	/* home slider: ticket box */
+	.logo_23 .ticket_box {
+		background: #6200a6;
+		background: -moz-linear-gradient(top, #6200a6 0%, #bb00b5 50%, #ff24d3 100%); 
+		background: -webkit-linear-gradient(top, #6200a6 0%,#bb00b5 50%,#ff24d3 100%);
+		background: linear-gradient(to bottom, #6200a6 0%,#bb00b5 50%,#ff24d3 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bb00b5', endColorstr='#ff24d3',GradientType=0 );
+	}
+
+	/* home slider: country and jackpot */
+	.logo_23 .ticket_box h3 {
+		color:#ff24d3!important;
+	}
+		.logo_23 .ticket_box h3 em {
+			border-right-color:#ff24d3;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_23 .banner_jackpot{
+		background: #6200a6!important;
+		background: -moz-linear-gradient(left,  #6200a6 0%, #bb00b5 50%, #ff24d3 100%) !important;
+		background: -webkit-linear-gradient(left,  #6200a6 0%,#bb00b5 50%,#ff24d3 100%) !important;
+		background: linear-gradient(to right,  #6200a6 0%,#bb00b5 50%,#ff24d3 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6200a6', endColorstr='#ff24d3',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_23 .bjackpot span{
+			color:#ff24d3!important;
+		}
+			.main_banner.logo_23 .bjackpot span em{
+				border-right-color:#ff24d3!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_23 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+
+/* EURO JACKPOT - lotto_24 */
+	/* picker bg: background */
+	.lotto_24 .npicker_bg {
+		background:#15d0ff;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_24 .ltk_lotto_head {
+		background:#033d48;
+	}
+		.lotto_24 .ltk_txt_separator span{
+			color: #15d0ff;
+			border-color: #15d0ff;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_24 ul#pick_numbers p.ticket_number {
+		color:#15d0ff;
+	}
+	
+	#content.newstyle.lotto_24 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_24 .newpicker .plv2:hover {
+		border:4px solid #033d48; 
+	}
+	
+	.lotto_24 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#033d48!important;} 
+	.lotto_24 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#033d48!important;} 
+	
+	.lotto_24 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#033d48!important; color:#fff!important;} 
+	.lotto_24 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#033d48!important; color:#fff!important; }
+	
+	/* home slider: ticket box */
+	.logo_24 .ticket_box {
+		background: #033d48;
+		background: -moz-linear-gradient(top, #033d48 0%, #0f7e99 50%, #15d0ff 100%); 
+		background: -webkit-linear-gradient(top, #033d48 0%,#0f7e99 50%,#15d0ff 100%);
+		background: linear-gradient(to bottom, #033d48 0%,#0f7e99 50%,#15d0ff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#033d48', endColorstr='#15d0ff',GradientType=0 );
+	}
+
+	/* home slider: country and jackpot */
+	.logo_24 .ticket_box h3 {
+		color:#15d0ff!important;
+	}
+		.logo_24 .ticket_box h3 em {
+			border-right-color:#15d0ff;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_24 .banner_jackpot{
+		background: #033d48!important;
+		background: -moz-linear-gradient(left,  #033d48 0%, #0f7e99 50%, #15d0ff 100%) !important;
+		background: -webkit-linear-gradient(left,  #033d48 0%,#0f7e99 50%,#15d0ff 100%) !important;
+		background: linear-gradient(to right,  #033d48 0%,#0f7e99 50%,#15d0ff 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#033d48', endColorstr='#15d0ff',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_24 .bjackpot span{
+			color:#15d0ff!important;
+		}
+			.main_banner.logo_24 .bjackpot span em{
+				border-right-color:#15d0ff!important;
+			}
+		
+
+/* MONEY 4 LIFE - lotto_32 */
+	/* picker bg: background */
+	.lotto_32 .npicker_bg {
+		background:#d9e021;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_32 .ltk_lotto_head {
+		background:#865200;
+	}
+		.lotto_32 .ltk_txt_separator span{
+			color: #d9e021;
+			border-color: #d9e021;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_32 ul#pick_numbers p.ticket_number {
+		color:#d9e021;
+	}
+	
+	#content.newstyle.lotto_32 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_32 .newpicker .plv2:hover {
+		border:4px solid #865200; 
+	}
+	
+	.lotto_32 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#865200!important;} 
+	.lotto_32 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#865200!important;} 
+	
+	.lotto_32 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#865200!important; color:#fff!important;} 
+	.lotto_32 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#865200!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_32 .ticket_box {
+		background: #865200;
+		background: -moz-linear-gradient(top, #865200 0%, #d9bf00 50%, #d9e021 100%); 
+		background: -webkit-linear-gradient(top, #865200 0%,#d9bf00 50%,#d9e021 100%);
+		background: linear-gradient(to bottom, #865200 0%,#d9bf00 50%,#d9e021 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#865200', endColorstr='#d9e021',GradientType=0 );
+	}
+	/* home slider: country and jackpot */
+	.logo_32 .ticket_box h3 {
+		color:#d9e021!important;
+	}
+		.logo_32 .ticket_box h3 em {
+			border-right-color:#d9e021;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_32 .banner_jackpot{
+		background: #865200!important;
+		background: -moz-linear-gradient(left,  #865200 0%, #d9bf00  50%, #d9e021 100%) !important;
+		background: -webkit-linear-gradient(left,  #865200 0%,#d9bf00  50%,#d9e021 100%) !important;
+		background: linear-gradient(to right,  #865200 0%,#d9bf00  50%,#d9e021 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#865200', endColorstr='#d9e021',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_32 .bjackpot span{
+			color:#d9e021!important;
+		}
+			.main_banner.logo_32 .bjackpot span em{
+				border-right-color:#d9e021!important;
+			}
+		
+
+/* DUPLA SENA - lotto_33 */
+	/* picker bg: background */
+	.lotto_33 .npicker_bg {
+		background:#ff6394;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_33 .ltk_lotto_head {
+		background:#b02236;
+	}
+		.lotto_33 .ltk_txt_separator span{
+			color: #ff6394;
+			border-color: #ff6394;
+			}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_33 ul#pick_numbers p.ticket_number {
+		color:#ff6394;
+	}
+	
+	#content.newstyle.lotto_33 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_33 .newpicker .plv2:hover {
+		border:4px solid #b02236; 
+	}
+	
+	.lotto_33 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#b02236!important;} 
+	.lotto_33 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#b02236!important;} 
+	
+	.lotto_33 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#b02236!important; color:#fff!important;} 
+	.lotto_33 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#b02236!important; color:#fff!important; }  
+	
+	/* home slider: ticket box */
+	.logo_33 .ticket_box {
+		background: #b02236;
+		background: -moz-linear-gradient(top, #b02236 0%, #d64d5b 50%, #ff6394 100%); 
+		background: -webkit-linear-gradient(top, #b02236 0%,#d64d5b 50%,#ff6394 100%);
+		background: linear-gradient(to bottom, #b02236 0%,#d64d5b 50%,#ff6394 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b02236', endColorstr='#ff6394',GradientType=0 );
+	}
+
+	/* home slider: country and jackpot */
+	.logo_33 .ticket_box h3 {
+		color:#ff6394!important;
+	}
+		.logo_33 .ticket_box h3 em {
+			border-right-color:#ff6394;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_33 .banner_jackpot{
+		background: #b02236!important;
+		background: -moz-linear-gradient(left,  #b02236 0%, #d64d5b  50%, #ff6394 100%) !important;
+		background: -webkit-linear-gradient(left,  #b02236 0%,#d64d5b  50%,#ff6394 100%) !important;
+		background: linear-gradient(to right,  #b02236 0%,#d64d5b  50%,#ff6394 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b02236', endColorstr='#ff6394',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_33 .bjackpot span{
+			color:#ff6394!important;
+		}
+			.main_banner.logo_33 .bjackpot span em{
+				border-right-color:#ff6394!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_33 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+		
+
+/* QUINA - lotto_34 */
+	/* picker bg: background */
+	.lotto_34 .npicker_bg {
+		background:#9282f1;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_34 .ltk_lotto_head {
+		background:#260d83;
+	}
+		.lotto_34 .ltk_txt_separator span{
+			color: #9282f1;
+			border-color: #9282f1;
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_34 ul#pick_numbers p.ticket_number {
+		color:#9282f1;
+	}
+	
+	#content.newstyle.lotto_34 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_34 .newpicker .plv2:hover {
+		border:4px solid #260d83; 
+	}
+	
+	.lotto_34 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#260d83!important;} 
+	.lotto_34 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#260d83!important;} 
+	
+	.lotto_34 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#260d83!important; color:#fff!important;} 
+	.lotto_34 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#260d83!important; color:#fff!important; }  
+	
+	/* home slider: ticket box */
+	.logo_34 .ticket_box {
+		background: #260d83;
+		background: -moz-linear-gradient(top, #260d83 0%, #523fb2 50%, #9282f1 100%); 
+		background: -webkit-linear-gradient(top, #260d83 0%,#523fb2 50%,#9282f1 100%);
+		background: linear-gradient(to bottom, #260d83 0%,#523fb2 50%,#9282f1 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#260d83', endColorstr='#9282f1',GradientType=0 );
+	}
+
+
+	/* home slider: country and jackpot */
+	.logo_34 .ticket_box h3 {
+		color:#9282f1!important;
+	}
+		.logo_34 .ticket_box h3 em {
+			border-right-color:#9282f1;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_34 .banner_jackpot{
+		background: #260d83!important;
+		background: -moz-linear-gradient(left,  #260d83 0%, #523fb2  50%, #9282f1 100%) !important;
+		background: -webkit-linear-gradient(left,  #260d83 0%,#523fb2  50%,#9282f1 100%) !important;
+		background: linear-gradient(to right,  #260d83 0%,#523fb2  50%,#9282f1 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#260d83', endColorstr='#9282f1',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_34 .bjackpot span{
+			color:#9282f1!important;
+		}
+			.main_banner.logo_34 .bjackpot span em{
+				border-right-color:#9282f1!important;
+			}
+           	
+	
+/* LOTO FÁCIL - lotto_39 */
+	/* picker bg: background */
+	.lotto_39 .npicker_bg {
+		background:#9282f1;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_39 .ltk_lotto_head {
+		background:#930089;
+	}
+		.lotto_39 .ltk_txt_separator span{
+			color: #9282f1;
+			border-color: #9282f1;
+			}
+		.lotto_39 p.ticket_number {
+				font-size: 100px !important;
+				top: 18%;	
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_39 ul#pick_numbers p.ticket_number {
+		color:#9282f1;
+	}
+	
+	#content.newstyle.lotto_39 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_39 .newpicker .plv2:hover {
+		border:4px solid #930089; 
+	}
+	
+	.lotto_39 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#930089!important;} 
+	.lotto_39 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#930089!important;} 
+	
+	.lotto_39 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#930089!important; color:#fff!important;} 
+	.lotto_39 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#930089!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_39 .ticket_box {
+		background: #930089;
+		background: -moz-linear-gradient(top, #930089 0%, #c63cb3 50%, #ff31d1 100%); 
+		background: -webkit-linear-gradient(top, #930089 0%,#c63cb3 50%,#ff31d1 100%);
+		background: linear-gradient(to bottom, #930089 0%,#c63cb3 50%,#ff31d1 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#930089', endColorstr='#ff31d1',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_39 .ticket_box h3 {
+		color:#9282f1!important;
+	}
+		.logo_39 .ticket_box h3 em {
+			border-right-color:#9282f1;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_39 .banner_jackpot{
+		background: #930089!important;
+		background: -moz-linear-gradient(left,  #930089 0%, #c63cb3  50%, #ff31d1 100%) !important;
+		background: -webkit-linear-gradient(left,  #930089 0%,#c63cb3  50%,#ff31d1 100%) !important;
+		background: linear-gradient(to right,  #930089 0%,#c63cb3  50%,#ff31d1 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#930089', endColorstr='#ff31d1',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_39 .bjackpot span{
+			color:#ff31d1!important;
+		}
+			.main_banner.logo_39 .bjackpot span em{
+				border-right-color:#ff31d1!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_39 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+
+
+/* MINI LOTTO - lotto_40 */
+	/* picker bg: background */
+	.lotto_40 .npicker_bg {
+		background:#fcbe00;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_40 .ltk_lotto_head {
+		background:#f67e05;
+	}
+		.lotto_40 .ltk_txt_separator span{
+			color: #fcbe00;
+			border-color: #fcbe00;
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_40 ul#pick_numbers p.ticket_number {
+		color:#fcbe00;
+	}
+	
+	#content.newstyle.lotto_40 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_40 .newpicker .plv2:hover {
+		border:4px solid #f67e05; 
+	}
+	
+	.lotto_40 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#f67e05!important;} 
+	.lotto_40 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#f67e05!important;} 
+	
+	.lotto_40 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#f67e05!important; color:#fff!important;} 
+	.lotto_40 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#f67e05!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_40 .ticket_box {
+		background: #f67e05;
+		background: -moz-linear-gradient(top, #f67e05 0%, #ffa300 50%, #fcbe00 100%); 
+		background: -webkit-linear-gradient(top, #f67e05 0%,#ffa300 50%,#fcbe00 100%);
+		background: linear-gradient(to bottom, #f67e05 0%,#ffa300 50%,#fcbe00 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67e05', endColorstr='#fcbe00',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_40 .ticket_box h3 {
+		color:#fcbe00!important;
+	}
+		.logo_40 .ticket_box h3 em {
+			border-right-color:#fcbe00;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_40 .banner_jackpot{
+		background: #f67e05!important;
+		background: -moz-linear-gradient(left,  #f67e05 0%, #ffa300  50%, #fcbe00 100%) !important;
+		background: -webkit-linear-gradient(left,  #f67e05 0%,#ffa300  50%,#fcbe00 100%) !important;
+		background: linear-gradient(to right,  #f67e05 0%,#ffa300  50%,#fcbe00 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67e05', endColorstr='#fcbe00',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_40 .bjackpot span{
+			color:#fcbe00!important;
+		}
+			.main_banner.logo_40 .bjackpot span em{
+				border-right-color:#fcbe00!important;
+			}
+
+/* MULTI MULTI - lotto_41 */
+	/* picker bg: background */
+	.lotto_41 .npicker_bg {
+		background:#ac2eaf;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_41 .ltk_lotto_head {
+		background:#5b0c6e;
+	}
+		.lotto_41 .ltk_txt_separator span{
+			color: #ac2eaf;
+			border-color: #ac2eaf;
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_41 ul#pick_numbers p.ticket_number {
+		color:#ac2eaf;
+	}
+	
+	#content.newstyle.lotto_41 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_41 .newpicker .plv2:hover {
+		border:4px solid #5b0c6e; 
+	}
+	
+	.lotto_41 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#5b0c6e!important;} 
+	.lotto_41 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#5b0c6e!important;} 
+	
+	.lotto_41 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#5b0c6e!important; color:#fff!important;} 
+	.lotto_41 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#5b0c6e!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_41 .ticket_box {
+		background: #5b0c6e;
+		background: -moz-linear-gradient(top, #5b0c6e 0%, #700989 50%, #ac2eaf 100%); 
+		background: -webkit-linear-gradient(top, #5b0c6e 0%,#700989 50%,#ac2eaf 100%);
+		background: linear-gradient(to bottom, #5b0c6e 0%,#700989 50%,#ac2eaf 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b0c6e', endColorstr='#ac2eaf',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_41 .ticket_box h3 {
+		color:#ac2eaf!important;
+	}
+		.logo_41 .ticket_box h3 em {
+			border-right-color:#ac2eaf;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_41 .banner_jackpot{
+		background: #5b0c6e!important;
+		background: -moz-linear-gradient(left,  #5b0c6e 0%, #700989  50%, #ac2eaf 100%) !important;
+		background: -webkit-linear-gradient(left,  #5b0c6e 0%,#700989   50%,#ac2eaf 100%) !important;
+		background: linear-gradient(to right,  #5b0c6e 0%,#700989   50%,#ac2eaf 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5b0c6e', endColorstr='#ac2eaf',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_41 .bjackpot span{
+			color:#ac2eaf!important;
+		}
+			.main_banner.logo_41 .bjackpot span em{
+				border-right-color:#ac2eaf!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.logo_41 .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+
+    /* Polish Lotto+ - lotto_42 */
+	/* picker bg: background */
+	.lotto_42 .npicker_bg {
+		background:#fcbe00;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_42 .ltk_lotto_head {
+		background:#f67e05;
+	}
+		.lotto_42 .ltk_txt_separator span{
+			color: #fcbe00;
+			border-color: #fcbe00;
+			}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_42 ul#pick_numbers p.ticket_number {
+		color:#fcbe00;
+	}
+	
+	#content.newstyle.lotto_42 .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_42 .newpicker .plv2:hover {
+		border:4px solid #f67e05; 
+	}
+	
+	.lotto_42 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#f67e05!important;} 
+	.lotto_42 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#f67e05!important;} 
+	
+	.lotto_42 ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#f67e05!important; color:#fff!important;} 
+	.lotto_42 ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#f67e05!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_42 .ticket_box {
+		background: #f67e05;
+		background: -moz-linear-gradient(top, #f67e05 0%, #ffa300 50%, #fcbe00 100%); 
+		background: -webkit-linear-gradient(top, #f67e05 0%,#ffa300 50%,#fcbe00 100%);
+		background: linear-gradient(to bottom, #f67e05 0%,#ffa300 50%,#fcbe00 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67e05', endColorstr='#fcbe00',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.logo_42 .ticket_box h3 {
+		color:#fcbe00!important;
+	}
+		.logo_42 .ticket_box h3 em {
+			border-right-color:#fcbe00;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_42 .banner_jackpot{
+		background: #f67e05!important;
+		background: -moz-linear-gradient(left,  #f67e05 0%, #ffa300  50%, #fcbe00 100%) !important;
+		background: -webkit-linear-gradient(left,  #f67e05 0%,#ffa300  50%,#fcbe00 100%) !important;
+		background: linear-gradient(to right,  #f67e05 0%,#ffa300  50%,#fcbe00 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f67e05', endColorstr='#fcbe00',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_42 .bjackpot span{
+			color:#fcbe00!important;
+		}
+			.main_banner.logo_42 .bjackpot span em{
+				border-right-color:#fcbe00!important;
+			}
+	
+
+/* EUROMILLIONS UK - lotto_xx */
+	/* picker bg: background */
+	.lotto_XX .npicker_bg {
+		background:#ffff00;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.lotto_XX .ltk_lotto_head {
+		background:#ffcf00;
+	}
+	
+	/* lottos: styles ticket*/
+	#content.newstyle.lotto_XX ul#pick_numbers p.ticket_number {
+		color:#ffff00;
+	}
+	
+	#content.newstyle.lotto_XX .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.lotto_XX .newpicker .plv2:hover {
+		border:4px solid #ffcf00; 
+	}
+	
+	.lotto_XX ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#ffcf00!important;} 
+	.lotto_XX ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#ffcf00!important;} 
+	
+	.lotto_XX ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#ffcf00!important; color:#fff!important;} 
+	.lotto_XX ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#ffcf00!important; color:#fff!important; } 
+	
+	/* home slider: ticket box */
+	.logo_xx .ticket_box {
+		background: #ffcf00;
+		background: -moz-linear-gradient(top, #ffcf00 0%, #fff300 50%, #ffff00 100%); 
+		background: -webkit-linear-gradient(top, #ffcf00 0%,#fff300 50%,#ffff00 100%);
+		background: linear-gradient(to bottom, #ffcf00 0%,#fff300 50%,#ffff00 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcf00', endColorstr='#ffff00',GradientType=0 );
+	}
+		
+	/* home slider: country and jackpot */
+	.logo_xx .ticket_box h3 {
+		color:#ffff00!important;
+	}
+		.logo_xx .ticket_box h3 em {
+			border-right-color:#ffff00;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.logo_xx .banner_jackpot{
+		background: #ffcf00!important;
+		background: -moz-linear-gradient(left,  #ffcf00 0%, #fff300  50%, #ffff00 100%) !important;
+		background: -webkit-linear-gradient(left,  #ffcf00 0%,#fff300   50%,#ffff00 100%) !important;
+		background: linear-gradient(to right,  #ffcf00 0%,#fff300   50%,#ffff00 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffcf00', endColorstr='#ffff00',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.logo_xx .bjackpot span{
+			color:#ffff00!important;
+		}
+			.main_banner.logo_xx .bjackpot span em{
+				border-right-color:#ffff00!important;
+			}
+		
+
+/* lotto .r_gordo_spain */
+	/* picker bg: background */
+	.r_gordo_spain .npicker_bg {
+		background:#ff555e;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.r_gordo_spain .ltk_lotto_head {
+		background:#f22b34;
+	}
+	
+	/* lottos: styles ticket*/
+	
+	
+	/* home slider: ticket box */
+	.r_spain .ticket_box,
+	.r_special_spain .ticket_box {
+		background: #4c50ab;
+		background: -moz-linear-gradient(top, #4c50ab 0%, #7171c2 50%, #9babff 100%); 
+		background: -webkit-linear-gradient(top, #4c50ab 0%,#7171c2 50%,#9babff 100%);
+		background: linear-gradient(to bottom, #4c50ab 0%,#7171c2 50%,#9babff 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c50ab', endColorstr='#9babff',GradientType=0 );
+	}
+	
+	/* home slider: country and jackpot */
+	.r_spain .ticket_box h3,
+	.r_special_spain .ticket_box h3 {
+		color:#9babff!important;
+	}
+		.r_spain .ticket_box h3 em,
+		.r_special_spain .ticket_box h3 em{
+			 border-right-color:#9babff;
+		}
+
+    /* home banner: banner_jackpot bg */	
+	.main_banner.r_spain .banner_jackpot,
+    .main_banner.r_special_spain .banner_jackpot{
+		background: #4c50ab!important;
+		background: -moz-linear-gradient(left,  #4c50ab 0%, #7171c2  50%, #9babff 100%) !important;
+		background: -webkit-linear-gradient(left,  #4c50ab 0%,#7171c2   50%,#9babff 100%) !important;
+		background: linear-gradient(to right,  #4c50ab 0%,#7171c2   50%,#9babff 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c50ab', endColorstr='#9babff',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.r_spain .bjackpot span,
+        .main_banner.r_special_spain .bjackpot span{
+			color:#9babff!important;
+		}
+			.main_banner.r_spain .bjackpot span em,
+            .main_banner.r_special_spain .bjackpot span em{
+				border-right-color:#9babff!important;
+			}
+		
+/* lotto .r_spain, .r_special_spain */
+	/* picker bg: background */
+	.r_spain .npicker_bg,
+	.r_special_spain .npicker_bg {
+		background:#9babff;
+	}
+	
+	/* picker: name lottery and jackpot (bg & color) */
+	.r_spain .ltk_lotto_head,
+	.r_special_spain .ltk_lotto_head {
+		background:#7171c2;
+	}
+		
+	/* lottos: styles ticket*/
+	#content.newstyle.r_spain ul#pick_numbers p.ticket_number,
+	#content.newstyle.r_special_spain ul#pick_numbers p.ticket_number {
+		color:#9babff;
+	}
+	
+	#content.newstyle.r_spain .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.r_spain .newpicker .plv2:hover,
+	#content.newstyle.r_special_spain .newpicker ul#pick_numbers li.plv2_li:hover .plv2, 
+	#content.newstyle.r_special_spain .newpicker .plv2:hover {
+		border:4px solid #7171c2; 
+	}
+	
+	.r_spain ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span,
+	.r_special_spain ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span {background-color:#fff!important; color:#7171c2!important;} 
+	.r_spain ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span,
+	.r_special_spain ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span {background-color:#fff!important; color:#7171c2!important;} 
+	
+	.r_spain ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover,
+	.r_special_spain ul#pick_numbers li.plv2_li:hover ul.regular_number_selector li span:hover {background-color:#7171c2!important; color:#fff!important;} 
+	.r_spain ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover,
+	.r_special_spain ul#pick_numbers li.plv2_li:hover ul.power_number_selector li span:hover {background-color:#7171c2!important; color:#fff!important; }
+		
+	/* home slider: ticket box */
+	.r_gordo_spain .ticket_box {
+		background: #aa1218;
+		background: -moz-linear-gradient(top, #aa1218 0%, #f22b34 50%, #ff555e 100%); 
+		background: -webkit-linear-gradient(top, #aa1218 0%,#f22b34 50%,#ff555e 100%);
+		background: linear-gradient(to bottom, #aa1218 0%,#f22b34 50%,#ff555e 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff555e',GradientType=0 );
+	}
+
+	
+	/* home slider: country and jackpot */
+	.r_gordo_spain.ticket_box h3 {
+		color:#ff555e!important;
+	}
+		.r_gordo_spain .ticket_box h3 em {
+			border-right-color:#ff555e;
+		}
+
+     /* home banner: banner_jackpot bg */	
+	.main_banner.r_gordo_spain .banner_jackpot{
+		background: #aa1218!important;
+		background: -moz-linear-gradient(left,  #aa1218 0%, #f22b34  50%, #ff555e 100%) !important;
+		background: -webkit-linear-gradient(left,  #aa1218 0%,#f22b34   50%,#ff555e 100%) !important;
+		background: linear-gradient(to right,  #aa1218 0%,#f22b34   50%,#ff555e 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aa1218', endColorstr='#ff555e',GradientType=1 ) !important;
+	}
+
+		/* home banner: bjackpot colors */
+		.main_banner.r_gordo_spain .bjackpot span{
+			color:#ff555e!important;
+		}
+			.main_banner.r_gordo_spain .bjackpot span em{
+				border-right-color:#ff555e!important;
+			}
+		
+		/* home banner: btn bg 	*/
+		.main_banner.r_gordo_spain .banner_jackpot .btn.bg_red {
+			background-color: #ffc500 !important;	
+		}
+		
+
+/* ############  styles ticket (padding double ticket): megaball, powerball ############ */
+		/*.last_picker ul#pick_numbers li.plv2_ticket_group.plv2_two_tickets,*/
+
+.lotto_2 .last_picker ul#pick_numbers li.plv2_ticket_group ul.plv2,
+.lotto_3 .last_picker ul#pick_numbers li.plv2_ticket_group ul.plv2{
+	padding:0 3px 10px 5px!important;
+}
+
+#content.lotto_2 .newpicker.last_picker ul#pick_numbers li.plv2_ticket_group:hover ul.plv2,
+#content.lotto_3 .newpicker.last_picker ul#pick_numbers li.plv2_ticket_group:hover ul.plv2{
+    padding:10px 3px 12px 5px!important;
+}
+
+/* ############ home slider styles ############ */
+
+
+
+/* slider ticket box: country and jackpot */
+
+
+.logo_2 .tb_jackpot,
+.logo_4 .tb_jackpot,
+.logo_13 .tb_jackpot,
+.logo_14 .tb_jackpot,
+.logo_18 .tb_jackpot,
+.logo_24 .tb_jackpot,
+.logo_41 .tb_jackpot,
+.r_special_spain .tb_jackpot,
+.r_gordo_spain .tb_jackpot {
+    color:#ff0;
+}
+
+.ticket_box h3 em,
+.logo_3 .tb_jackpot,
+.logo_5 .tb_jackpot,
+.logo_6 .tb_jackpot,
+.logo_8 .tb_jackpot,
+.logo_9 .tb_jackpot,
+.logo_12 .tb_jackpot,
+.logo_11 .tb_jackpot,
+.logo_15 .tb_jackpot,
+.logo_16 .tb_jackpot,
+.logo_17 .tb_jackpot,
+.logo_19 .tb_jackpot,
+.logo_20 .tb_jackpot, 
+.logo_21 .tb_jackpot, 
+.logo_22 .tb_jackpot,
+.logo_23 .tb_jackpot,
+.logo_32 .tb_jackpot,
+.logo_33 .tb_jackpot,
+.logo_34 .tb_jackpot,
+.logo_39 .tb_jackpot,
+.logo_40 .tb_jackpot,
+.r_spain .tb_jackpot{
+    color:#fff;
+}

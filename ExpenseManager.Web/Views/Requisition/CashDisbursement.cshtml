@@ -1,0 +1,170 @@
+﻿
+@{
+
+    ViewBag.Title = "Cash Disbursement";
+}
+
+@using XPLUG.WEBTOOLKIT
+@model IEnumerable<ExpenseManager.Helper.ViewModels.RequisitionViewModel>
+
+
+
+<div>
+    <h4 class="page-title">Cash Disbursement</h4>
+</div>
+<div class="row" id="blockDiv">
+    <div class="col-md-12">
+        <div class="card">
+           
+            <div class="card-body">
+                <table class="table table-bordered dataTable">
+                    <thead>
+                        <tr>
+                            <th>
+                                <b>Request Title</b>
+                            </th>
+                            <th>
+                                <b> Expense Item</b>
+                            </th>
+
+                            <th>
+                                <b>  Total Amount</b>
+                            </th>
+
+                            <th>
+                                <b>Approval Level</b>
+                            </th>
+                            <th style="width:120px">
+                                <b> Status</b>
+                            </th>
+
+                            <th style="width:70px">
+                                <b>Actions</b>
+                            </th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @item.RequestTitle
+
+                                    </td>
+                                    <td>
+                                        @item.ExpenseItemName
+                                    </td>
+
+                                    <td class="text-right">
+                                        @item.TotalAmount.ToString().ToNaira()
+                                    </td>
+                                    <td>
+                                        @item.WorkflowLevel
+                                    </td>
+                                    <td>
+                                        @if (item.IsApproved)
+                                        {
+                                            <span class="label label-success"> @item.StatusLabel</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="label label-danger"> @item.StatusLabel</span>
+                                        }
+
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                                Action <span class="caret"></span>
+                                            </button>
+                                          
+                                                <ul class="dropdown-menu dropdown-default pull-right" role="menu">
+                                                    @if (item.IsApproved && item.CanPayOut)
+                                                    {
+                                                        <li>
+                                                            <a href="#" onclick="viewDetails('@item.Id')">
+                                                                <i class="fa fa-eye"></i> View Details
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a style="margin-bottom: 0;" href="@Url.Action("DisbursementDialog", "Requisition", new {requisitionId = item.Id})" data-modal=""><i class="fa fa-check"></i> Pay Out </a>
+                                                        </li>
+                                                    }
+                                                  
+                                                    else
+                                                    {
+                                                        <li>
+                                                            <a href="#" onclick="viewDetails('@item.Id')">
+                                                                <i class="fa fa-eye"></i> View Details
+                                                            </a>
+                                                        </li>
+                                                    }
+                                                </ul>
+                                           
+                                          
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            }
+                        }
+                    </tbody>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal fade" id="approveAgent" tabindex="-1" role="dialog" aria-hidden="true">
+    <div id="approveModal"></div>
+</div>
+
+
+
+@section scripts{
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('.dataTable').DataTable({ "ordering": false});
+        });
+
+        function viewDetails(id) {
+            if (id === "" || id < 1) return;
+            $.ajax({
+                url: '@Url.Action("ViewDetails", "Requisition")/?requisitionId=' + id,
+                dataType: "html",
+                success: function(data) {
+                    if (!data) {
+                        location.reload();
+                        return;
+                    }
+                    $('#approveModal').html(data);
+                    $('#approveAgent').modal();
+                },
+                complete: function() {
+
+                }
+            });
+        }
+
+
+
+
+
+    </script>
+}
+
+
